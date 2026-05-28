@@ -1,0 +1,24 @@
+{
+  "label": "2026-05-28",
+  "date": "2026-05-28",
+  "generated_at": "2026-05-28T20:52:18",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202605/28/2605.28431v1-a-unified-maximum-likelihood-framework-for-3d-inisar-phase-unwrapping-with-outlier-rejection",
+      "section": "quick",
+      "title_en": "A Unified Maximum-Likelihood Framework for 3D InISAR Phase Unwrapping with Outlier Rejection",
+      "authors": "Matteo Pardi, Francesco Mancuso, Elisa Giusti, Marco Martorella",
+      "date": "2026-05-27",
+      "pdf": "https://arxiv.org/pdf/2605.28431v1",
+      "score": "7.0",
+      "evidence": "适用于InSAR智能处理的InISAR相位解缠方法",
+      "tldr": "三维干涉ISAR相位解缠面临歧义和异常值挑战。本文提出基于混合整数最小二乘的最大似然框架，逐散射体解缠，无需空间连续性，可统一处理多基线、多频率或混合设置。该框架自然产生后验质量指标用于统计异常值检测。蒙特卡罗仿真验证了在L型双频设置下的可靠3D重建，计算成本适于实际系统。",
+      "tags": "query:insar-deform",
+      "abstract_en": "This paper presents a novel mathematical framework for phase unwrapping in three-dimensional interferometric ISAR (3D InISAR) imaging. The approach works on a scatterer-by-scatterer basis and does not rely on any spatial continuity assumptions, making it suitable for sparse point clouds. The formulation is derived from the Mixed-Integer Least Squares (MILS) theory, an optimal maximum-likelihood framework for joint estimation of integer and real unknowns in the presence of Gaussian noise. This provides a unified way to handle generic sensor geometries, multi-baseline, multi-frequency, or hybrid setups. The method also produces a natural a posteriori quality metric for each unwrapped phase, which can be used to build a statistical test to reject outliers. The algorithm is simple to implement and has a computational cost suitable for operational systems. This paper presents the theoretical foundations of the framework and a first validation study on a standard L-shaped dual-frequency setup using Monte Carlo simulations. Results show that the proposed framework enables reliable 3D reconstruction in challenging ambiguity conditions.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
