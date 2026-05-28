@@ -25,3 +25,75 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: insar-deform
+      description: InSAR智能处理与形变监测，针对晋城和云冈遗址的高精度形变场、大气校正、形变驱动力解析等
+      enabled: true
+      paper_sources:
+        - arxiv
+        - biorxiv
+      keywords:
+        - keyword: annual deformation rate
+          keyword_cn: 年沉降速率
+          query: annual deformation rate estimation using InSAR
+        - keyword: ionospheric delay correction
+          keyword_cn: 电离层延迟校正
+          query: ionospheric delay correction for InSAR time series
+        - keyword: tropospheric delay correction
+          keyword_cn: 对流层延迟校正
+          query: neural network based tropospheric delay correction for InSAR
+        - keyword: deep learning atmospheric correction
+          keyword_cn: 深度学习大气校正
+          query: deep learning for atmospheric error correction in InSAR
+        - keyword: deformation driving force
+          keyword_cn: 形变驱动力
+          query: analysis of deformation driving forces from InSAR measurements
+        - keyword: intelligent InSAR processing
+          keyword_cn: InSAR智能处理
+          query: intelligent InSAR processing with automatic deformation interpretation
+      intent_queries:
+        - query: >-
+            Find research on high precision deformation monitoring of heritage sites using InSAR with atmospheric
+            correction
+          query_cn: 探寻利用InSAR进行遗址区高精度形变监测及大气校正的研究
+          enabled: true
+          source: manual
+          note: ''
+        - query: Retrieve papers on automatic identification of deformation driving forces from InSAR time series
+          query_cn: 检索关于从InSAR时间序列中自动识别形变驱动力的文献
+          enabled: true
+          source: manual
+          note: ''
+        - query: Search for methods combining deep learning and robust estimation for InSAR atmospheric correction
+          query_cn: 搜索结合深度学习和稳健估计的InSAR大气校正方法
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-05-28T12:37:06.761Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
+  biorxiv:
+    papers_table: biorxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_biorxiv_papers_exact
+    vector_rpc_exact: match_biorxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_biorxiv_papers_bm25
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
