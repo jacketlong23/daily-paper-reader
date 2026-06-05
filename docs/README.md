@@ -6,22 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-04
-- 运行时间：2026-06-04 21:57:46 UTC
+- 最新运行日期：2026-06-05
+- 运行时间：2026-06-05 21:48:34 UTC
 - 运行状态：成功
-- 本次总论文数：0
+- 本次总论文数：1
 - 精读区：0
-- 速读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202606/04/README](/202606/04/README)
+今日速读一篇高分论文，聚焦无RTM迭代的晴空地表温度与发射率分离新框架。  
+该研究提出RIFTES方法，无需辐射传输模型和迭代，显著提升反演精度与效率，值得关注。  
+建议关注方法在国产卫星数据上的适用性，可尝试用开源数据复现评估。
+- 详情：[/202606/05/README](/202606/05/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [RIFTES: An RTM- and iteration-free temperature-emissivity separation framework for accurate and efficient clear-sky land surface temperature retrieval](/202606/05/2606.03025v1-riftes-an-rtm--and-iteration-free-temperature-emissivity-separation-framework-for-accurate-and-efficient-clear-sky-land-surface-temperature-retrieval)  
+   标签：评分：7.0/10、query:insar-deform
+   evidence：深度残差网络用于大气校正
 
 
 <div class="dpr-home-promo-card">
