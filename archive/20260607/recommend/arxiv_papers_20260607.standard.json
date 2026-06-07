@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-07T20:04:28.164977+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.05700v1",
+      "source": "arxiv",
+      "title": "T-SAR-JEPA: Self-Supervised Temporal Anomaly Detection in SAR Amplitude Stacks via Latent Prediction",
+      "abstract": "We present T-SAR-JEPA, a self-supervised framework for temporal anomaly detection in SAR amplitude stacks via latent prediction. A ViT-Base/16 encoder from SAR-JEPA is domain-adapted on 39,300 Capella patches using local masked reconstruction with gradient feature prediction. A temporal transformer with sinusoidal time encoding forecasts future latent states from K=7 acquisitions, with progressive unfreezing substantially reducing validation loss. The model operates on amplitude alone; InSAR coherence serves exclusively as independent pseudo-ground-truth. On the DFC 2026 dataset (300 time-series, three AOIs), T-SAR-JEPA achieves ROC-AUC of 77.0% on the Hawaii eruption window, outperforming RX, PaDiM, Linear AR, and LSTM baselines (~50%). Spatial coherence of 99.9% (p < 0.001, permutation test) confirms structured detections. Code: https://github.com/TerraLatent/t-sar-jepa",
+      "authors": [
+        "Kerod Woldesenbet",
+        "Abem Woldesenbet"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-04T04:41:08+00:00",
+      "link": "https://arxiv.org/pdf/2606.05700v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-supervised temporal anomaly detection in SAR with InSAR coherence as pseudo-ground-truth; relates to intelligent InSAR processing and automatic deformation interpretation",
+      "llm_evidence_cn": "在SAR幅度堆栈中通过潜在预测进行自监督时间异常检测；与智能InSAR处理和自动形变解释相关",
+      "llm_evidence": "在SAR幅度堆栈中通过潜在预测进行自监督时间异常检测；与智能InSAR处理和自动形变解释相关",
+      "canonical_evidence": "在SAR幅度堆栈中通过潜在预测进行自监督时间异常检测；与智能InSAR处理和自动形变解释相关",
+      "llm_tldr_en": "T-SAR-JEPA uses self-supervised latent prediction on SAR amplitude stacks for temporal anomaly detection, with InSAR coherence as pseudo-ground-truth, achieving 77% ROC-AUC on Hawaii eruption data.",
+      "llm_tldr_cn": "针对SAR时间序列中异常检测任务，现有方法依赖大量标注数据且难以捕捉时间动态。本文提出T-SAR-JEPA框架，通过自监督潜在预测在SAR幅度堆栈上检测时序异常，利用SAR-JEPA编码器进行域自适应，并使用时序变换器预测未来潜在状态。在DFC 2026数据集上，该方法在夏威夷火山喷发窗口取得77.0%的ROC-AUC，优于多种基线，为智能化InSAR形变异常识别提供了新途径。",
+      "llm_tldr": "针对SAR时间序列中异常检测任务，现有方法依赖大量标注数据且难以捕捉时间动态。本文提出T-SAR-JEPA框架，通过自监督潜在预测在SAR幅度堆栈上检测时序异常，利用SAR-JEPA编码器进行域自适应，并使用时序变换器预测未来潜在状态。在DFC 2026数据集上，该方法在夏威夷火山喷发窗口取得77.0%的ROC-AUC，优于多种基线，为智能化InSAR形变异常识别提供了新途径。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "intelligent InSAR processing with automatic deformation interpretation",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
