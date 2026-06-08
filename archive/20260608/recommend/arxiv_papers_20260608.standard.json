@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-08T20:57:50.715774+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.07374v1",
+      "source": "arxiv",
+      "title": "Beyond Backscatter: InSAR coherence from detected SAR images",
+      "abstract": "In this work, we propose a deep learning framework for coherence regression directly from detected SAR images, without the need for accurate coregistration. A Residual U-Net is trained using coherence maps derived from precisely coregistered Sentinel-1 SLC data to learn the relationship between backscatter magnitudes and coherence. The model is trained on 12-day SLC pairs and evaluated across different datasets, including coregistered SLC products and open access analysis-ready data, covering diverse radiometric properties, geometries, and locations. Experimental results demonstrate that the proposed method achieves high-resolution coherence regression with improved accuracy compared to existing intensity-based approaches. The network generalizes well across diverse geographical locations and even across different temporal baselines that were never seen at training time. Additionally, the ability to operate on globally available analysis-ready data, such as ground range detected data, e.g., distributed through Google Earth Engine, enables its large-scale application in mission design, change monitoring, and diverse mapping tasks.",
+      "authors": [
+        "Francescopaolo Sica",
+        "Andrea Pulella",
+        "Michael Schmitt"
+      ],
+      "primary_category": "eess.SP",
+      "categories": [
+        "eess.SP",
+        "cs.CV"
+      ],
+      "published": "2026-06-05T15:18:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.07374v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Deep learning framework for InSAR coherence regression directly from detected SAR images, enabling improved coherence estimation without coregistration",
+      "llm_evidence_cn": "提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关",
+      "llm_evidence": "提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关",
+      "canonical_evidence": "提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关",
+      "llm_tldr_en": "Proposes a Residual U-Net to regress InSAR coherence from detected SAR images, bypassing coregistration, trained on Sentinel-1 data, achieving improved accuracy and generalization.",
+      "llm_tldr_cn": "针对传统InSAR相干性估计依赖精确配准且计算成本高的问题，本文提出一种基于残差U-Net的深度学习框架，直接从检测SAR图像回归相干性，无需精确配准。模型使用精密配准的Sentinel-1 SLC数据生成的相干性图进行训练，在多种数据集上验证，结果表明该方法能够生成高分辨率相干性图，精度优于现有强度基方法，且对不同辐射特性、几何和地理位置具有良好的泛化能力。该工作为InSAR智能处理提供了新的技术途径。",
+      "llm_tldr": "针对传统InSAR相干性估计依赖精确配准且计算成本高的问题，本文提出一种基于残差U-Net的深度学习框架，直接从检测SAR图像回归相干性，无需精确配准。模型使用精密配准的Sentinel-1 SLC数据生成的相干性图进行训练，在多种数据集上验证，结果表明该方法能够生成高分辨率相干性图，精度优于现有强度基方法，且对不同辐射特性、几何和地理位置具有良好的泛化能力。该工作为InSAR智能处理提供了新的技术途径。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "intelligent InSAR processing with automatic deformation interpretation",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

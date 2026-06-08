@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-08",
+  "date": "2026-06-08",
+  "generated_at": "2026-06-08T20:59:17",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/08/2606.07374v1-beyond-backscatter-insar-coherence-from-detected-sar-images",
+      "section": "quick",
+      "title_en": "Beyond Backscatter: InSAR coherence from detected SAR images",
+      "authors": "Francescopaolo Sica, Andrea Pulella, Michael Schmitt",
+      "date": "2026-06-05",
+      "pdf": "https://arxiv.org/pdf/2606.07374v1",
+      "score": "6.0",
+      "evidence": "提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关",
+      "tldr": "现有InSAR相干性估计依赖精确配准的SLC数据，计算复杂且限制大规模应用。本文提出Residual U-Net深度学习框架，从检测SAR图像直接回归相干性，无需配准。基于Sentinel-1数据训练，在多样化场景和不同时间基线中精度优于传统强度方法。使得全球分析就绪数据（如GEE）可用于相干性估计，拓展了InSAR在变化监测等任务中的适用性。",
+      "tags": "query:insar-deform",
+      "abstract_en": "In this work, we propose a deep learning framework for coherence regression directly from detected SAR images, without the need for accurate coregistration. A Residual U-Net is trained using coherence maps derived from precisely coregistered Sentinel-1 SLC data to learn the relationship between backscatter magnitudes and coherence. The model is trained on 12-day SLC pairs and evaluated across different datasets, including coregistered SLC products and open access analysis-ready data, covering diverse radiometric properties, geometries, and locations. Experimental results demonstrate that the proposed method achieves high-resolution coherence regression with improved accuracy compared to existing intensity-based approaches. The network generalizes well across diverse geographical locations and even across different temporal baselines that were never seen at training time. Additionally, the ability to operate on globally available analysis-ready data, such as ground range detected data, e.g., distributed through Google Earth Engine, enables its large-scale application in mission design, change monitoring, and diverse mapping tasks.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

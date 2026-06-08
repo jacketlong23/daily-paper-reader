@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-08 <!--dpr-date:20260608-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/08/2606.07374v1-beyond-backscatter-insar-coherence-from-detected-sar-images" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Backscatter: InSAR coherence from detected SAR images&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.07374v1-beyond-backscatter-insar-coherence-from-detected-sar-images&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关&quot;}">Beyond Backscatter: InSAR coherence from detected SAR images</a>
   * 2026-06-07 <!--dpr-date:20260607-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/07/2606.05700v1-t-sar-jepa-self-supervised-temporal-anomaly-detection-in-sar-amplitude-stacks-via-latent-prediction" data-sidebar-item="{&quot;title&quot;: &quot;T-SAR-JEPA: Self-Supervised Temporal Anomaly Detection in SAR Amplitude Stacks via Latent Prediction&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.05700v1-t-sar-jepa-self-supervised-temporal-anomaly-detection-in-sar-amplitude-stacks-via-latent-prediction&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;在SAR幅度堆栈中通过潜在预测进行自监督时间异常检测；与智能InSAR处理和自动形变解释相关&quot;}">T-SAR-JEPA: Self-Supervised Temporal Anomaly Detection in SAR Amplitude Stacks via Latent Prediction</a>
