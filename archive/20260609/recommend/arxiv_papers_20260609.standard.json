@@ -1,0 +1,57 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-09T22:00:50.029355+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.07725v1",
+      "source": "arxiv",
+      "title": "GNSS-FM: A Self-Supervised Foundation Model for Daily GNSS Displacement Time Series",
+      "abstract": "Displacement time series from Global Navigation Satellite Systems (GNSS) are essential for a wide range of applications, including monitoring tectonic crustal deformations and investigating the different stages of the earthquake cycle. Machine learning methods have proven promising for GNSS applications; however, most remain fully supervised. This creates a bottleneck as labeled data are scarce, even though large amounts of unlabeled GNSS data are freely available. We present GNSS-FM, a self-supervised foundation model for daily GNSS time series. The model uses a dual-stream input combining displacement and velocity-like increments, and is pretrained using a masked latent prediction objective with vector-quantized targets adapted from wav2vec 2.0, with several modifications for geodetic data. Pretrained on data from over 17,000 globally distributed GNSS stations, an analysis of the learned codebook suggests that the representations capture the main signal types in GNSS displacement data, including seismic offsets, tectonic drift, and seasonal patterns. The foundation model is later fine-tuned on two downstream tasks, namely 90-day displacement forecasting and seismic step localization, where it outperforms strong task-specific baselines in both cases. These results show that self-supervised pretraining is a promising approach for GNSS time series analysis.",
+      "authors": [
+        "Nick Teutschmann",
+        "Laura Crocetti",
+        "Fanny Lehmann",
+        "Leonardo Trentini",
+        "Benedikt Soja"
+      ],
+      "primary_category": "physics.geo-ph",
+      "categories": [
+        "physics.geo-ph",
+        "cs.LG"
+      ],
+      "published": "2026-06-05T16:39:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.07725v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-supervised foundation model for GNSS displacement time series, directly applicable to annual deformation rate estimation in geodetic context",
+      "llm_evidence_cn": "GNSS位移时间序列的自监督基础模型，直接适用于大地测量中的年形变速率估计",
+      "llm_evidence": "GNSS位移时间序列的自监督基础模型，直接适用于大地测量中的年形变速率估计",
+      "canonical_evidence": "GNSS位移时间序列的自监督基础模型，直接适用于大地测量中的年形变速率估计",
+      "llm_tldr_en": "GNSS-FM is a self-supervised foundation model for daily GNSS displacement time series, pretrained with masked latent prediction, enabling deformation analysis tasks like annual rate estimation.",
+      "llm_tldr_cn": "全球导航卫星系统（GNSS）位移时间序列对地壳形变监测至关重要，但监督学习方法受限于标签稀缺。本文提出GNSS-FM，一种针对日GNSS时间序列的自监督基础模型，采用双流输入（位移和速度增量），通过掩码潜在预测和向量量化目标进行预训练。该模型可迁移到各种形变分析任务，包括年形变速率估计。实验表明，预训练有效捕获时间序列特征，为形变监测提供了强大工具。尽管对象为GNSS，方法可启发InSAR时间序列处理。",
+      "llm_tldr": "全球导航卫星系统（GNSS）位移时间序列对地壳形变监测至关重要，但监督学习方法受限于标签稀缺。本文提出GNSS-FM，一种针对日GNSS时间序列的自监督基础模型，采用双流输入（位移和速度增量），通过掩码潜在预测和向量量化目标进行预训练。该模型可迁移到各种形变分析任务，包括年形变速率估计。实验表明，预训练有效捕获时间序列特征，为形变监测提供了强大工具。尽管对象为GNSS，方法可启发InSAR时间序列处理。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "annual deformation rate estimation using InSAR",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

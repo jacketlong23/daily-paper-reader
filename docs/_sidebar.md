@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-09 <!--dpr-date:20260609-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/09/2606.07725v1-gnss-fm-a-self-supervised-foundation-model-for-daily-gnss-displacement-time-series" data-sidebar-item="{&quot;title&quot;: &quot;GNSS-FM: A Self-Supervised Foundation Model for Daily GNSS Displacement Time Series&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.07725v1-gnss-fm-a-self-supervised-foundation-model-for-daily-gnss-displacement-time-series&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;GNSS位移时间序列的自监督基础模型，直接适用于大地测量中的年形变速率估计&quot;}">GNSS-FM: A Self-Supervised Foundation Model for Daily GNSS Displacement Time Series</a>
   * 2026-06-08 <!--dpr-date:20260608-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/08/2606.07374v1-beyond-backscatter-insar-coherence-from-detected-sar-images" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Backscatter: InSAR coherence from detected SAR images&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.07374v1-beyond-backscatter-insar-coherence-from-detected-sar-images&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;提出深度学习框架从检测SAR图像直接回归InSAR相干性，无需配准，与智能InSAR处理相关&quot;}">Beyond Backscatter: InSAR coherence from detected SAR images</a>

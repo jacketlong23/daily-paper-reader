@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-09",
+  "date": "2026-06-09",
+  "generated_at": "2026-06-09T22:02:11",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/09/2606.07725v1-gnss-fm-a-self-supervised-foundation-model-for-daily-gnss-displacement-time-series",
+      "section": "quick",
+      "title_en": "GNSS-FM: A Self-Supervised Foundation Model for Daily GNSS Displacement Time Series",
+      "authors": "Nick Teutschmann, Laura Crocetti, Fanny Lehmann, Leonardo Trentini, Benedikt Soja",
+      "date": "2026-06-05",
+      "pdf": "https://arxiv.org/pdf/2606.07725v1",
+      "score": "6.0",
+      "evidence": "GNSS位移时间序列的自监督基础模型，直接适用于大地测量中的年形变速率估计",
+      "tldr": "GNSS位移时间序列对研究地壳形变和地震周期至关重要，但监督学习受限于标注数据稀缺。本文提出GNSS-FM，一种自监督基础模型，采用双流输入和掩码潜在预测目标，在超过17000个全球站点上预训练。模型自动学习位移数据中的主要信号模式，在90天位移预测和地震步定位任务中优于强基线。结果表明自监督预训练为GNSS时间序列分析提供了有效途径。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Displacement time series from Global Navigation Satellite Systems (GNSS) are essential for a wide range of applications, including monitoring tectonic crustal deformations and investigating the different stages of the earthquake cycle. Machine learning methods have proven promising for GNSS applications; however, most remain fully supervised. This creates a bottleneck as labeled data are scarce, even though large amounts of unlabeled GNSS data are freely available. We present GNSS-FM, a self-supervised foundation model for daily GNSS time series. The model uses a dual-stream input combining displacement and velocity-like increments, and is pretrained using a masked latent prediction objective with vector-quantized targets adapted from wav2vec 2.0, with several modifications for geodetic data. Pretrained on data from over 17,000 globally distributed GNSS stations, an analysis of the learned codebook suggests that the representations capture the main signal types in GNSS displacement data, including seismic offsets, tectonic drift, and seasonal patterns. The foundation model is later fine-tuned on two downstream tasks, namely 90-day displacement forecasting and seismic step localization, where it outperforms strong task-specific baselines in both cases. These results show that self-supervised pretraining is a promising approach for GNSS time series analysis.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
