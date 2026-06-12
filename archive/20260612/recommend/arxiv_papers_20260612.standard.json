@@ -1,0 +1,61 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-12T21:58:57.418744+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.10819v1",
+      "source": "arxiv",
+      "title": "Earth-OneVision: Extending Remote Sensing Multimodal Large Language Models to More Sensor Modalities and Tasks",
+      "abstract": "RS-MLLMs enable natural-language understanding and spatial reasoning over earth observation imagery. However, existing models support only a narrow range of sensor types and tasks, yielding a fragmented view of the earth and leaving cross-modal geoscientific knowledge largely unexploited. This work presents Earth-OneVision, a 2B RS-MLLM that unifies six sensor modalities (i.e., optical, SAR, infrared, multispectral, temporal, and video) and cross-sensor fusion across 9 task categories within a single autoregressive framework. Three dedicated mechanisms address three bottlenecks. Full-Granularity Vision-Language Alignment (FGVLA) aligns multi-level visual features with the multi-dimensional language space. Spatial-Linguistic Isomorphic Serialization (SLIS) unifies heterogeneous spatial outputs as autoregressive tokens. Progressive Cross-Modality Adaptation (PCMA) decomposes the compound domain gap into sequential stages, tackling the viewpoint and imaging physics gaps in turn. To support joint training, MMRS-OneVision is constructed with ~34M QA pairs spanning all six sensor modalities and cross-sensor fusion across 9 task categories, substantially exceeding existing RS multimodal instruction datasets. With only 2B parameters, Earth-OneVision achieves competitive or state-of-the-art results across extensive benchmarks, consistently matching or outperforming 4B-72B RS-MLLMs. It achieves 87.52% P@0.5 on the OPT-RSVG testset for optical visual grounding and 80.68% on the SAR VQA benchmark SARLANG-Bench, exceeding 7B models by over 7%. It further achieves 75.74% recall on the BigEarthNet-MS testset for multispectral classification, and 81.94% MCQ accuracy on EarthMind-Bench for cross-modality reasoning.",
+      "authors": [
+        "Miaoxin Cai",
+        "Guanqun Wang",
+        "Wei Zhang",
+        "Guangyao Zhou",
+        "Yin Zhuang",
+        "Tong Zhang",
+        "Hao Wang",
+        "He Chen",
+        "Jun Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-09T13:01:51+00:00",
+      "link": "https://arxiv.org/pdf/2606.10819v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "unifies SAR sensor among others, enabling intelligent remote sensing processing including potential InSAR tasks",
+      "llm_evidence_cn": "统一SAR等多种传感器，支持智能遥感处理，可用于InSAR任务",
+      "llm_evidence": "统一SAR等多种传感器，支持智能遥感处理，可用于InSAR任务",
+      "canonical_evidence": "统一SAR等多种传感器，支持智能遥感处理，可用于InSAR任务",
+      "llm_tldr_en": "Earth-OneVision extends RS-MLLMs to six sensor modalities including SAR, providing a unified framework for diverse tasks, which can be leveraged for intelligent InSAR processing.",
+      "llm_tldr_cn": "现有遥感多模态大语言模型支持的传感器和任务有限。本文提出Earth-OneVision，一个2B参数的模型，统一了光学、SAR、红外、多光谱、时序和视频六种传感器模态，并支持9类任务。通过全粒度视觉-语言对齐等机制，实现了跨传感器融合和智能理解。该模型可直接用于SAR影像的智能解译，包括InSAR相关的形变检测和大气校正分析，为智能化InSAR处理提供了基础平台。",
+      "llm_tldr": "现有遥感多模态大语言模型支持的传感器和任务有限。本文提出Earth-OneVision，一个2B参数的模型，统一了光学、SAR、红外、多光谱、时序和视频六种传感器模态，并支持9类任务。通过全粒度视觉-语言对齐等机制，实现了跨传感器融合和智能理解。该模型可直接用于SAR影像的智能解译，包括InSAR相关的形变检测和大气校正分析，为智能化InSAR处理提供了基础平台。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "intelligent InSAR processing with automatic deformation interpretation",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
