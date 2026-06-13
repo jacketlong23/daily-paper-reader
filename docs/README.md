@@ -6,24 +6,24 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-12
-- 运行时间：2026-06-12 22:03:35 UTC
+- 最新运行日期：2026-06-13
+- 运行时间：2026-06-13 21:19:33 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日阅读一篇扩展遥感多模态大模型的论文，评分6.0/10。最值得关注的方向是多传感器融合与多任务泛化。对于普通读者，建议留意如何让大模型统一处理不同遥感数据源，以提升任务适应性。
-- 详情：[/202606/12/README](/202606/12/README)
+今日速读一篇远距离长波红外高光谱成像的大气补偿论文，采用基于集合的Transformer方法。该思路在高光谱遥感中具备应用潜力，值得关注Transformer与物理模型结合的进展。下一步可探究该方法在多场景下的鲁棒性及与现有算法对比。
+- 详情：[/202606/13/README](/202606/13/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Earth-OneVision: Extending Remote Sensing Multimodal Large Language Models to More Sensor Modalities and Tasks](/202606/12/2606.10819v1-earth-onevision-extending-remote-sensing-multimodal-large-language-models-to-more-sensor-modalities-and-tasks)  
-   标签：评分：6.0/10、query:insar-deform
-   evidence：统一SAR等多种传感器，支持智能遥感处理，可用于InSAR任务
+1. [Set-Based Transformer for Atmospheric Compensation in Standoff LWIR Hyperspectral Imaging](/202606/13/2606.08324v1-set-based-transformer-for-atmospheric-compensation-in-standoff-lwir-hyperspectral-imaging)  
+   标签：评分：7.0/10、query:insar-deform
+   evidence：深度学习用于大气补偿
 
 
 <div class="dpr-home-promo-card">

@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-13 <!--dpr-date:20260613-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/13/2606.08324v1-set-based-transformer-for-atmospheric-compensation-in-standoff-lwir-hyperspectral-imaging" data-sidebar-item="{&quot;title&quot;: &quot;Set-Based Transformer for Atmospheric Compensation in Standoff LWIR Hyperspectral Imaging&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.08324v1-set-based-transformer-for-atmospheric-compensation-in-standoff-lwir-hyperspectral-imaging&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;深度学习用于大气补偿&quot;}">Set-Based Transformer for Atmospheric Compensation in Standoff LWIR Hyperspectral Imaging</a>
   * 2026-06-12 <!--dpr-date:20260612-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/12/2606.10819v1-earth-onevision-extending-remote-sensing-multimodal-large-language-models-to-more-sensor-modalities-and-tasks" data-sidebar-item="{&quot;title&quot;: &quot;Earth-OneVision: Extending Remote Sensing Multimodal Large Language Models to More Sensor Modalities and Tasks&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.10819v1-earth-onevision-extending-remote-sensing-multimodal-large-language-models-to-more-sensor-modalities-and-tasks&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;统一SAR等多种传感器，支持智能遥感处理，可用于InSAR任务&quot;}">Earth-OneVision: Extending Remote Sensing Multimodal Large Language Models to More Sensor Modalities and Tasks</a>

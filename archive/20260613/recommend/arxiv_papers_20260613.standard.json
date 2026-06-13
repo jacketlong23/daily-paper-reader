@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-13T21:19:03.150916+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.08324v1",
+      "source": "arxiv",
+      "title": "Set-Based Transformer for Atmospheric Compensation in Standoff LWIR Hyperspectral Imaging",
+      "abstract": "Passive long-wave infrared (LWIR) hyperspectral imaging under a standoff geometry depends on atmospheric absorption and emission, as well as reflected radiance, thus making atmospheric compensation essential to get knowledge of a target of interest. Despite its importance, this compensation has been largely overlooked due to its practical and modeling difficulty. In this paper, we present a lightweight set-based deep learning framework that takes multiple radiance measurements, collected at different standoff ranges, as input and jointly estimates transmittance, atmospheric path radiance, and a shared downwelling spectrum. We analyze the learned representation with a sparse autoencoder and observe that several latent features do activate on geographically coherent subsets of the test data despite the absence of location supervision. Experiments on a MODTRAN generated standoff LWIR dataset demonstrate low spectral distortion across all estimated products. The dataset and code is publicly available at: https://factral.co/SAE-LWIR/",
+      "authors": [
+        "Fabian Perez",
+        "Nicolas Quintero",
+        "Jeferson Acevedo",
+        "Hoover Rueda-Chacon"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-06T20:25:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.08324v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "deep learning for atmospheric compensation",
+      "llm_evidence_cn": "深度学习用于大气补偿",
+      "llm_evidence": "深度学习用于大气补偿",
+      "canonical_evidence": "深度学习用于大气补偿",
+      "llm_tldr_en": "Proposes a set-based Transformer that jointly estimates transmittance, atmospheric path radiance, and downwelling spectrum from LWIR hyperspectral data, enabling accurate atmospheric compensation without explicit physics models.",
+      "llm_tldr_cn": "针对远程长波红外高光谱成像中大气补偿困难的问题，提出一种轻量级基于集合的深度学习框架。该框架以多个不同距离的辐射测量值为输入，联合估计大气透过率、路径辐射和下涌辐射。实验表明该方法能有效补偿大气效应，且无需复杂物理模型。本研究为其他遥感传感器的大气校正提供了可迁移的深度学习方法。",
+      "llm_tldr": "针对远程长波红外高光谱成像中大气补偿困难的问题，提出一种轻量级基于集合的深度学习框架。该框架以多个不同距离的辐射测量值为输入，联合估计大气透过率、路径辐射和下涌辐射。实验表明该方法能有效补偿大气效应，且无需复杂物理模型。本研究为其他遥感传感器的大气校正提供了可迁移的深度学习方法。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "deep learning for atmospheric error correction in InSAR",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

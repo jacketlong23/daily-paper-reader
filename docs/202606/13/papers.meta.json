@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-13",
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T21:19:38",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/13/2606.08324v1-set-based-transformer-for-atmospheric-compensation-in-standoff-lwir-hyperspectral-imaging",
+      "section": "quick",
+      "title_en": "Set-Based Transformer for Atmospheric Compensation in Standoff LWIR Hyperspectral Imaging",
+      "authors": "Fabian Perez, Nicolas Quintero, Jeferson Acevedo, Hoover Rueda-Chacon",
+      "date": "2026-06-06",
+      "pdf": "https://arxiv.org/pdf/2606.08324v1",
+      "score": "7.0",
+      "evidence": "深度学习用于大气补偿",
+      "tldr": "被动长波红外高光谱成像在远距离探测中受大气吸收和发射影响，大气补偿因建模困难而被忽视。本文提出轻量级基于集合的Transformer框架，以不同距离的辐射测量为输入，联合估计透射率、大气路径辐射和共享下向辐射。实验表明，该方法在MODTRAN生成的模拟数据集上实现了低光谱畸变，且稀疏自编码器的潜特征可激活地理一致子集。该工作公开了代码和数据集，推动了大气补偿的实际应用。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Passive long-wave infrared (LWIR) hyperspectral imaging under a standoff geometry depends on atmospheric absorption and emission, as well as reflected radiance, thus making atmospheric compensation essential to get knowledge of a target of interest. Despite its importance, this compensation has been largely overlooked due to its practical and modeling difficulty. In this paper, we present a lightweight set-based deep learning framework that takes multiple radiance measurements, collected at different standoff ranges, as input and jointly estimates transmittance, atmospheric path radiance, and a shared downwelling spectrum. We analyze the learned representation with a sparse autoencoder and observe that several latent features do activate on geographically coherent subsets of the test data despite the absence of location supervision. Experiments on a MODTRAN generated standoff LWIR dataset demonstrate low spectral distortion across all estimated products. The dataset and code is publicly available at: https://factral.co/SAE-LWIR/",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
