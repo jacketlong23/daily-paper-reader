@@ -1,0 +1,322 @@
+Title: WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms Validated by GNSS: Results at Laguna del Maule and Campi Flegrei Volcanoes
+
+URL Source: https://arxiv.org/pdf/2606.16795v1
+
+Published Time: Tue, 16 Jun 2026 02:45:26 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+> 1
+
+# WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms Validated by GNSS: Results at Laguna del Maule and Campi Flegrei Volcanoes 
+
+Robert Popescu , Juliet Biggs , Tianyuan Zhu , and Nantheera Anantrasirichai 
+
+Abstract —Interferometric Synthetic Aperture Radar (InSAR) enables effective monitoring of volcanic deformation; however, the observed signals are often corrupted by atmospheric phase delays, seasonal surface changes, and decorrelation effects. Exist-ing atmospheric correction methods, such as numerical weather model–based methods, can reduce these effects but do not consistently remove atmospheric artefacts and may introduce residual biases. To address these limitations, we propose anovel learning-based method for denoising unwrapped InSAR interferograms, using a hybrid training strategy that combines physically motivated synthetic deformation with real atmospheric noise. Specifically, we introduce WaveDINO , a wavelet-based multi-scale denoising framework conditioned on frozen DINOv3 foundation-model features and terrain information. Training uses synthetic magma-source deformation superimposed on short-term interferograms to expose the network to realistic atmo-spheric statistics while retaining known ground truth. Perfor-mance is evaluated on both controlled synthetic data and long-term real interferograms from Laguna del Maule (Chile) and Campi Flegrei (Italy), with independent GNSS measurements used for validation. WaveDINO consistently outperforms com-peting models, improving agreement with GNSS measurements, and reducing mean GNSS misfit by approximately 3% and 19% at two sites, respectively, while surpassing weather-model-based corrections. 
+
+Index Terms —InSAR, atmospheric phase screen, tropospheric delay, volcanic deformation, denoising, wavelet transform. 
+
+I. I NTRODUCTION 
+
+More than 8% of the world’s population lives within 100 km of a volcano with at least one significant eruption [1], underscoring the need for robust volcano monitoring and eruption forecasting [2], [3]. Spaceborne Interferometric Synthetic Aperture Radar (InSAR) enables wide-area, repeat observations of ground displacement by exploiting phase differences between repeated radar acquisitions to form in-terferograms. These measurements are critical for tracking volcanic deformation—changes in surface shape or elevation driven by subsurface magma movement or other geophysical processes—which often precede or accompany unrest and eruptions [4]–[6].                   
+
+> This work is supported by the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (MAST; Grant No. 101003173) and the NERC Centre for the Observation and Modelling of Earthquakes, Volcanoes, and Tectonics (COMET, http: //comet.nerc.ac.uk), a partnership between UK Universities and the British Geological Survey. R. Popescu, J. Biggs, T. Zhu and N. Anantrasirichai are with the University of Bristol, Bristol, U.K. (e-mail: zm18440@bristol.ac.uk; Juliet.Biggs@bristol.ac.uk; tianyuan.zhu@bristol.ac.uk; N.Anantrasirichai@bristol.ac.uk).
+
+However, interferograms encode not only deformation but also atmospheric path delays (e.g., stratified and turbulent tropospheric components), which can mimic, mask, or distort geophysical signals and degrade both automatic detection and geophysical inversions. Numerical weather model–based corrections, such as GACOS [7]–[9], can reduce atmospheric artefacts, yet they rely on dense spatiotemporal sampling and the fidelity of model fields; in practice, residuals can remain and, in some cases, spurious artefacts may be introduced [10], [11]. GNSS-based corrections offer an independent path-delay constraint but are limited by the sparse, uneven distribution of ground stations around many volcanoes [12]. Consequently, there is a pressing need for methods that selectively suppress atmospheric noise while preserving true deformation. Recent learning-based image restoration has achieved strong results across denoising and related low-level vision tasks, including U-Net–style encoder–decoders, residual networks, attention mechanisms, and, more recently, transformer-based models [13]–[31]. Yet most denoisers are trained on natural-image datasets and assume pixel-wise independent and iden-tically distributed random noise (e.g., Gaussian/Poisson), whereas InSAR atmospheric delay is spatially coherent, non-stationary, and mesoscale, often exhibiting smooth, low-wavenumber patterns that overlap spectrally with long-wavelength deformation. As a result, off-the-shelf denois-ers tend to oversmooth or remove true deformation, induce ringing near phase discontinuities, and fail under decorrela-tion, layover, and coherence loss typical of InSAR images. While several studies have retrained CNN-based models on synthetic atmospheric realisations for InSAR denoising [32]– [34], open questions persist regarding generalisation to real interferograms (sensor-, site-, and orbit-specific statistics), robustness to phase unwrapping errors (e.g., branch cuts, residue clustering) and topographic residuals (DEM errors), and validation against independent ground truth. Traditional corrections thus remain widely used [7]–[9], [35], [36], despite their limitations. To address this challenge, we propose a denoising frame-work guided by two complementary principles: (i) explicitly modelling the multi-scale spatial structure of atmospheric phase screens, and (ii) injecting global contextual information learned from large-scale self-supervised pretraining to improve robustness under real interferometric artefacts. Our backbone builds on a wavelet-based encoder–decoder design [37], where the input is decomposed into multi-resolution subbands so that broad, spatially coherent atmospheric components can 
+
+> arXiv:2606.16795v1 [cs.CV] 15 Jun 2026 2
+
+be modelled primarily in the low-frequency pathway while fine deformation-related structure is preserved through high-frequency skip connections. In addition, we condition the denoiser on dense fea-tures extracted from a frozen DINOv3 foundation backbone (ConvNeXt-Base; dinov3-convnext-base ) via cross-attention at multiple scales. DINOv3 provides high-quality dense representations that transfer well across tasks and data distributions without fine-tuning, making it a strong source of global context that complements the locality of convo-lutional processing [38]. In our setting, this global context helps disambiguate large-scale atmospheric patterns from true deformation and improves stability under decorrelation and spatially nonstationary noise. Our design targets three key gaps in current InSAR denois-ing practice: (1) supervised learning is limited by the lack of ground-truth deformation for real interferograms; (2) dominant nuisance terms are spatially correlated and nonstationary, violating the independent and identically distributed (i.i.d.) noise assumptions of many off-the-shelf denoisers; and (3) models trained on simplified synthetic noise often generalize poorly to real interferograms and are rarely validated against independent geodetic observations. We address these gaps by training with physically motivated synthetic deformation superimposed on real interferograms to expose the network to realistic atmospheric statistics, and by combining wavelet multi-scale processing with DINOv3 conditioning to better suppress atmospheric artefacts while preserving deformation structure, validated against GNSS at two contrasting volcanic systems. We refer to our method as WaveDINO , a wavelet multi-scale denoiser conditioned on pretrained DINOv3 ConvNeXt-Base features with DEM conditioning via Feature-wise Linear Mod-ulation (FiLM) [39] for InSAR atmospheric phase correction. Our main contributions are: 1) WaveDINO is a wavelet-based multi-scale denoising framework for unwrapped InSAR, conditioned on DINOv3 features and terrain information. It explicitly targets spatially coherent, nonstationary atmospheric artefacts while preserving deformation-related gradients and localised signals. 2) DINOv3 Cross-Attention (DCA) integrates DINOv3 features with model representations through cross-attention, enabling effective fusion of global semantic context with low-frequency structure. 3) Terrain Modulation Block (TMB) provides terrain-aware conditioning by aligning DEM-derived features with the network representation, improving robustness to terrain-dependent atmospheric variability. 4) Phase Ramp Head (PRH) models large-scale atmo-spheric artefacts as a global planar trend, enabling efficient removal of low-order biases and allowing the backbone to focus on residual structure. 5) Hybrid training strategy constructs training samples by superimposing physically motivated synthetic deformation onto short-duration real interferograms, enabling supervised learning without ground truth while exposing the model to realistic atmospheric statistics and improving robustness over purely synthetic training. Overall, our results indicate that learning-based denoising trained on hybrid (synthetic+real) data can effectively at-tenuate atmospheric artefacts while preserving deformation signatures, providing a complementary pathway to traditional atmospheric corrections and supporting more reliable volcano monitoring from InSAR. II. D ATASETS AND STUDY AREAS 
+
+The InSAR data used in this paper was acquired by the Sentinel-1 radar mission operated by the European Space Agency (ESA). The data was processed using LiCSAR [40], an automated InSAR processing system developed by the Centre for Observation and Modelling of Earthquakes, Vol-canoes, and Tectonics (COMET). We use reference areas for the interferograms obtained from the time series generated automatically by LICSBAS [41] for the COMET Volcano Portal (https://comet.nerc.ac.uk/comet-volcano-portal/). For our case studies, we selected two caldera volcanoes with ongoing deformation but contrasting atmospheric and environmental conditions. Laguna del Maule (Chile) is located in a high-altitude Andean setting with strong topographic relief and highly variable meteorological conditions [42], while Campi Flegrei (Italy) is a densely monitored caldera situated in a low-relief, coastal and urbanised environment [43]. Figure 1 illustrates the markedly different environmental set-tings of the two study areas. Laguna del Maule is characterised by rugged topography and seasonal snow cover, conditions that promote strong stratified tropospheric delays and coherence loss. In contrast, Campi Flegrei is influenced by coastal and urban boundary-layer processes, resulting in spatially hetero-geneous atmospheric artefacts. These contrasting environments provide a stringent test for atmospheric correction approaches and enable evaluation across distinct atmospheric regimes. 
+
+A. Sentinel-1 Acquisition and Processing 
+
+We use Sentinel-1 IW mode data processed automatically by the LiCSAR pipeline [40] and time-series referencing via LICSBAS [41]. No additional pre-processing beyond LiCSAR and LICSBAS defaults was performed. Two study areas are investigated in this study: (i) Laguna del Maule, which demon-strates large deformation signals; and (ii) Campi Flegrei, which represents the smaller-signal case. Specifically:  
+
+> •
+
+Laguna del Maule (LdM, 70 .492 ◦W , 36 .058 ◦S): tracks 18A 
+
+and 83D , 622 epochs from 06-10-2014 to 26-08-2024.  
+
+> •
+
+Campi Flegrei (CF, 14 .139 ◦E, 40 .827 ◦N ): tracks 22D , 44A ,and 124D , 1008 epochs from 07-10-2014 to 22-09-2025. LiCSAR handles precise orbits, co-registration, TOPS (Ter-rain Observation with Progressive Scans) burst stitching, in-terferogram formation, multilooking, and geocoding, while LICSBAS provides the time-series reference point used for offset removal in Section III-B. 1 We analyse a clipped region of interest of 50 ×50 km centred on each volcano, with an image size of 500 ×500 pixels at 50 m pixel spacing. We apply 
+
+> 1We follow the LiCSAR/LICSBAS defaults; detailed parameterisation (e.g., multilook factors, DEM source, and unwrapping options) can be retrieved from the LiCSAR metadata supplied with each frame. 3
+> Fig. 1. Optical satellite imagery illustrating the contrasting environmental and geological settings of the two study areas. Left: Laguna del Maule, Chile. Right: Campi Flegrei, Italy. Satellite imagery from Copernicus Sentinel-2 (ESA, 2025–2026), processed using Google Earth Engine.
+
+weather-model-based atmospheric corrections using GACOS [7] and test our models using both corrected and uncorrected interferograms. 
+
+1) Laguna del Maule: Laguna del Maule is a silicic volcanic system located in the southern Andes along the Chile–Argentina border and is one of the most rapidly and consistently deforming volcanoes in the world [42]. The system comprises a caldera complex surrounded by numerous rhyolitic domes and lava flows. Satellite geodetic observations over the past two decades have revealed persistent uplift at rates exceeding several centimetres per year, suggesting significant magma accumulation at shallow depths beneath the caldera [42], [44]. Despite the absence of recent eruptive ac-tivity, the magnitude and duration of deformation indicate that Laguna del Maule is an active magmatic system undergoing notable subsurface changes [42]. 
+
+2) Campi Flegrei: Campi Flegrei is a large caldera sys-tem located west of Naples, Italy, and is one of the most hazardous and densely populated volcanic regions globally. The caldera has experienced multiple eruptive phases over the last 40,000 years, including the Campanian Ignimbrite and Neapolitan Yellow Tuff eruptions [43]. Today, Campi Flegrei is characterised by persistent hydrothermal and magmatic unrest expressed through seismic activity, ground deforma-tion, and gas emissions, collectively known as bradyseism. Uplift episodes recorded since the mid-20th century have been interpreted as evidence of magma or gas pressurisation at shallow depths, prompting ongoing monitoring efforts to assess eruption potential and improve hazard forecasting [43]. 
+
+B. Synthetic data 
+
+Because ground-truth deformation fields are unavailable for real interferograms, supervised learning on purely observed data is not feasible. We therefore simulate deformation patterns using pressurising magma sources and use these as train-ing targets. To increase diversity and task complexity, each sample combines 1–4 sources with random translations to avoid overlap (see Figure 2). This multi-source setup exposes the network to a broader range of deformation morphologies and encourages more accurate reconstruction beyond simple single-lobe patterns.                
+
+> Fig. 2. Examples of synthetic deformation used during training. Each panel shows the superposition of 1 to 4 randomly shifted magma-source deformations. Rows differ only in deformation magnitude (top: ±30 rad, middle: ±20 rad, bottom: ±10 rad), as indicated by the colour bars; columns show different random realisations.
+
+We generated synthetic deformation ϕsyn using a point source model [45]. The simulation parameters were sampled as follows: 36 incidence angles ( ◦) from 0–90, 28 satellite heading angles (◦) from 4–350, 19 log 10 volume-change parameters log 10 ∆V from 5–7.9 (i.e., ∆V =10 log 10 ∆V m3), and 18 source depths from 1.5–8 km. To maintain physically plausible scaling, depth was coupled to volume such that smaller volumes were paired with shallower sources and larger volumes with deeper sources. The incidence and heading angles were sampled over a wide range to span diverse look geometries. To incorporate realistic atmospheric artefacts during training while preserving a known target, we form the network input by simple addition of synthetic deformation and short-duration interferograms: x = ϕsyn + ϕatm , where ϕatm represents real atmospheric and other nuisance phase contributions. We use short-duration interferograms ( ≤18 days) because deformation evolves slowly relative to these short baselines [42], [43], so such interferograms contain negligible deformation and can be treated as predominantly atmospheric and decorrelation noise. Long-term interferograms ( >18 days) are dominated by volcano deformation [46], [47], which is located roughly in the middle of the image, meaning that we can discard the middle and include the edges in the dataset. 
+
+C. Global Navigation Satellite System (GNSS) measurements 
+
+Ground-based GNSS instruments can track three-dimensional movements of the ground surface, typically providing millimetric precision at daily resolution. In this work, we use them to evaluate the geophysical consistency of the denoised results. We focus on long temporal baselines (>18 days), as deformation accumulates over time and 4PixelUnshuffle(2)   
+
+> Conv 1×1
+> PixelUnshuffle(4)
+> Conv 1×1
+> PixelUnshuffle(8)
+> Conv 1×1
+> Conv 3×3
+> DINOv3
+> Interpolate
+> WaveDINO
+> encoder
+> WaveDINO
+> encoder
+> WaveDINO
+> encoder
+> WaveDINO
+> decoder
+> WaveDINO
+> decoder
+> WaveDINO
+> decoder
+> Conv 3×3
+> PRH
+> DINO
+> x
+> DEM
+> Conv 3×3
+> x_D
+> LFSS
+> Concat
+> DCA
+> TMB
+> HFE
+> DWT
+> DINO
+> Cross-Attention
+> (DCA)
+> xDINO
+> GroupNorm GroupNorm
+> LayerNorm
+> Flatten Flatten
+> LayerNorm
+> Linear
+> Projection
+> Token Pool
+> Cross Attention
+> Attention
+> Weighting
+> Gated Residual
+> FiLM
+> Modulation
+> Low
+> Frequency
+> Map
+> Conv 3×3
+> AvgPool
+> WaveDINO
+> encoder
+> Input I mage
+> Output I mage
+> SKFF
+> Fig. 3. Diagram of the proposed WaveDINO framework for atmospheric phase estimation and removal in unwrapped InSAR. A wavelet-based encoder–decoder models multi-scale structure, enhanced by cross-attention with DINOv3 features and DEM-based FiLM conditioning. LFSS: Low-Frequency State Space; SKFF: Selective Kernel Feature Fusion; HFE: High-Frequency Enhancement.
+
+becomes more distinguishable relative to tropospheric variability, whereas short-term interferograms are typically dominated by atmospheric effects, giving a low signal-to-noise ratio [41]. For each station, we project the three-dimensional measurements into the satellite line-of-sight for each track. GNSS time series can be noisy, particularly in the vertical component; therefore, we apply a 1-D interpolation using 
+
+make_splrep from scipy . This creates a smoothing B-spline function with bounded error, minimising derivative jumps in the time series. For Laguna del Maule, we use 5 GNSS stations (COLO, LDMP, MAU2, NIEB, and PUEL) from the OV-DAS–SERNAGEOMIN deformation monitoring network, us-ing daily time series spanning 2014-01-01 to 2023-12-30. For Campi Flegrei, ground deformation is monitored by the Instituto Nazionale di Geofisica e Vulcanologia–Osservatorio Vesuviano (INGV-OV) continuous GNSS network. In this study, we use weekly time series from 21 GNSS stations spanning January 2000 to October 2023 [48], [49]; two stations (CMIS and NAMM) are excluded from the GNSS–InSAR comparison because the surrounding InSAR pixels are fre-quently decorrelated/masked (low coherence), preventing reli-able sampling. III. M ETHODOLOGY 
+
+A. Network Architecture 
+
+A diagram of the proposed framework is shown in Fig-ure 3. We introduce an InSAR-oriented adaptation of Wave-Mamba [37], exploiting its wavelet-based multi-scale rep-resentation and convolutional feature extraction to mitigate atmospheric phase artefacts. The architecture is further re-fined to better accommodate spatially correlated signals by incorporating complementary priors from a foundation model alongside terrain-related information. To improve feature expressiveness, we progressively in-crease the number of feature channels with depth. The encoder channels follow the progression: 32 → 64 → 128 , while the decoder mirrors this structure in reverse: 128 → 64 → 32 .This multi-scale design allows deeper layers to operate at lower spatial resolution but higher channel dimensionality, enabling the network to model large-scale spatial correlations that frequently characterise atmospheric artefacts. Shallower layers retain higher spatial resolution to preserve deformation-related spatial detail in the unwrapped phase field, such as sharp gradients, localised anomalies, and fine structural boundaries. The input is decomposed via a wavelet transform into multi-resolution subbands: low-frequency components that capture broad, smooth variations and higher-frequency components that encode fine-scale spatial detail. The model estimates the dominant atmospheric contribution primarily from the low-frequency pathway, while skip connections prop-agate higher-frequency features to reduce oversmoothing and improve preservation of deformation structure in the recon-structed output. The denoiser operates on a multi-channel input composed of the normalised unwrapped phase together with auxiliary conditioning channels (terrain and water-body descriptors), concatenated along the channel dimension. 
+
+B. Preprocessing 
+
+Interferograms often contain missing values, usually re-sulting from poor coherence, water bodies, or the end of acquisition frames. However, the deep learning methods used in this study rely on the spatial or sequential attributes of dense data for effective learning. Therefore, it is necessary to interpolate the data during preprocessing to resemble a dense image. Missing pixels are first filled using nearest-neighbour interpolation based on surrounding valid values, followed by Gaussian smoothing applied only to the interpolated regions. We use scipy’s griddata and gaussian_filter for interpolation and smoothing. For more details, we refer the reader to our previous work [50]. All interferograms used for training and evaluation are first unwrapped and subsequently normalised to a fixed numerical range to stabilise network training. Let ϕobs denote the un-wrapped interferometric phase. The phase values are scaled by a constant normalisation factor sϕobs such that 
+
+˜ϕobs = ϕobs 
+
+sϕobs 
+
+, (1) 5
+
+where ˜ϕobs denotes the normalised phase used as network input. The same normalisation is applied to the reference deformation and atmospheric components during training. This normalisation ensures that the dynamic range of the input phase remains bounded, improving numerical stability during optimisation and preventing large phase values from dominating the learning process. After inference, the predicted atmospheric phase is rescaled by the same factor to recover the physical phase units. This normalisation also stabilises the estimation of the global phase ramp parameters, whose magnitude depends on the absolute scale of the interferometric phase. After analysing the global dataset, we observe that values outside the range of [−100 , 100] rad are rare, so we choose sϕobs = 100 as our regularisation factor. We additionally derive a binary water mask m ∈ { 0, 1} (1 = land) from the valid-data mask using morphological cleaning, and compute a signed distance-to-water map 
+
+d(p) = EDT( m(p)) − EDT(1 − m(p)) , (2) where EDT( ·) denotes the Euclidean distance transform. We smooth d with a Gaussian kernel ( σ = 3 pixels) to suppress discretisation artefacts, clip to [−dmax , d max ], and normalise to [−1, 1] .The binary mask m provides a hard land/water constraint, while d encodes the distance to water boundaries, enabling the model to account for gradual decorrelation effects in coastal and water-adjacent regions. The network input is formed by concatenating the normalised phase with these two channels 
+
+[m, d ].To improve robustness to spatial scale and increase train-ing diversity, we adopt a multi-scale random cropping strategy. During training, we sample a crop size sc ∈{128 , 160 , 192 , 224 , 256 , 288 , 320 , 500 } pixels (with sc = 500 
+
+corresponding to the full 500 × 500 volcano crop), extract a random sc ×sc patch from the preprocessed interferogram, and then resize the patch to a fixed 128 ×128 input resolution using bilinear interpolation. The same crop and resizing operation is applied to the DEM conditioning inputs (elevation and its spatial gradients) to preserve pixel-wise alignment between the interferogram and terrain channels. This procedure acts as scale augmentation, allowing the model to learn from both localised and scene-wide atmospheric structure while maintaining a constant network input size for efficient training and inference. For synthetic-data evaluation, we apply the same sampling procedure to ensure consistency with the training distribution. For real-data evaluation on long-term interferograms, we instead resize the full 500 × 500 image to 128 × 128 to obtain a deterministic, full-scene estimation. Unwrapped interferograms are relative measurements, meaning that the background of the image is not set at zero. To fix this, we take the mean value of a stable reference area and subtract that from the entire image. We use as a reference area an 11 × 11 square around the reference point chosen by the time series generated by LICSBAS [41]. 
+
+C. DINOv3 Cross-Attention (DCA) Conditioning 
+
+To improve the modelling of large-scale spatial dependen-cies, we incorporate features extracted from a frozen pretrained DINOv3 vision transformer. These features provide hierarchi-cal representations with strong global context, complementing the local modelling capabilities of convolutional networks. At each WaveDINO encoder, let x ∈ RB×C×H×W denote the current feature map and f ∈ RB×Cd×Hd×Wd the cor-responding DINO feature map. Both feature maps are first normalised using Group Normalisation and then reshaped into token representations 
+
+x → X ∈ RB×N ×C , f → F ∈ RB×M ×Cd .
+
+The input x is transformed into the wavelet domain, where its low-frequency component is concatenated with a directly downsampled version of x obtained via PixelUnshuffle, de-noted as xD . The LFSS (Low-Frequency State Space) module captures their long-range dependencies via state-space mod-elling, following a similar design to WaveMamba. To incorporate f -conditioning, we introduce a DINO cross-attention block (see Fig. 3), where the DINO tokens are pro-jected into the model feature space and reduced through token pooling to limit computational complexity. Cross-attention is then computed using the model tokens as queries and the DINO tokens as keys and values. To emphasise atmospheric structures, a low-frequency at-tention bias is introduced by computing a smoothed version of the feature map via average pooling, producing a spatial weighting map w that modulates the attention output 
+
+Attn ′ = Attn · (1 + w). (3) A learnable channel-wise gate regulates the contribution of the attention output before it is added through a residual connection. Finally, the attention-enhanced features are mod-ulated using a FiLM layer [39] conditioned on the pooled DINO tokens, allowing the transformer features to influence the global statistics of the feature representation. 
+
+D. Terrain-Aware Atmospheric Conditioning 
+
+Atmospheric phase delay in InSAR observations is often correlated with terrain elevation due to stratified tropospheric effects. Variations in elevation influence atmospheric pressure, temperature, and water vapour concentration, producing phase delays that are correlated with topography. To incorporate this physical prior, we introduce a terrain conditioning module that modulates intermediate feature representations using informa-tion derived from a digital elevation model (DEM). The proposed Terrain Modulation block (TMB) is presented in Figure 4. In addition to the DEM, we incorporate its spatial gradients ( ∂d ∂x , ∂d ∂y ) to better capture terrain-driven atmospheric processes. These gradients encode local slope information that is particularly relevant for orographic atmospheric effects. The terrain input, therefore, consists of three channels: elevation and its horizontal and vertical gradients. Given the feature map 
+
+x from the low-frequency branch and terrain input d (DEM), the module applies feature-wise modulation: 
+
+x′ = γ(d) ⊙ x + β(d), (4) where γ(d) and β(d) are spatially varying scaling and bias terms learned from d.6Encoder      
+
+> Conv 3×3
+> Conv 3×3
+> Interpolate
+> x * γ + β
+> Gate
+> x
+> [DEM, ,]
+> Terrain Modulation
+> Block  (TMB)
+> x
+> Adaptive AvgPool
+> Line ar
+> Line ar
+> Generate
+> Spatial Grid
+> Phase Ramp Head (PRH)
+> Compute Polynomial Ramp:
+> Line ar
+> Line ar Line ar
+> Line ar
+> Fig. 4. Diagrams of the terrain modulation block (TMB) and the phase ramp head (PRH). TMB conditions feature maps using DEM-derived elevation and gradients, while PRH models global first-order phase ramps from pooled features.
+
+Because atmospheric delay is not always correlated with terrain, particularly in coastal or low-relief regions where tur-bulence dominates, the terrain conditioning module employs a convolutional gating mechanism to adaptively modulate terrain influence. After incorporating DEM conditioning, the output is fused with the SKFF (Selective Kernel Feature Fusion) output via the HFE (High-Frequency Enhancement) module. The SKFF module adaptively fuses multi-branch high-frequency features through channel-wise attention guided by global context. The HFE module further enhances high-frequency features using cross-attention and feed-forward modulation conditioned on the low-frequency context (i.e., the output of LFSS). Further details on SKFF and HFE can be found in WaveMamba. Our decoder blocks follow the design of WaveMamba, where low-frequency components (output of LFSS) are merged with enhanced high-frequency components, followed by an inverse wavelet transform. 
+
+E. Phase Ramp Head (PRH) 
+
+Large-scale atmospheric artefacts in unwrapped InSAR fre-quently contain smooth, low-order spatial components. For the 50 km crops used in this work, these components are often sufficiently described by an approximately linear trend (a first-order 2D planar ramp) [51], although larger scenes may exhibit higher-order curvature and multi-scale structure [51], [52]. Since convolutional backbones primarily model local interactions, they can be inefficient at capturing global, low-order biases. We therefore introduce a lightweight Phase Ramp Head (PRH), as shown in Figure 4, which predicts a first-order spatial trend from globally pooled decoder features, providing an explicit mechanism to remove dominant ramps while encouraging the remainder of the network to focus on residual structure: 
+
+ϕramp (x, y ) = sramp 
+
+ a x + b y + c, (5) where x, y ∈ [−1, 1] are the normalised horizontal and vertical image coordinates (i.e., (x, y ) ∈ [−1, 1] × [−1, 1] ), 
+
+(a, b, c ) ∈ R3 are bounded coefficients, and sramp ∈
+
+[−sramp ,max , s ramp ,max ] is a learned global scale that controls the overall ramp magnitude. The final atmospheric estimate adds this parametric compo-nent to the convolutional output ϕConv3 ×3 as follows. 
+
+ϕatm = ϕConv3 ×3 + ϕramp . (6) In practice, we stabilise training by constraining (a, b, c ) and 
+
+sramp via squashing nonlinearities and fixed maxima, which reduces overfitting and prevents the head from absorbing gen-uine deformation signals. By restricting the parametric head to first-order trends and explicitly constraining its amplitude, the model captures dominant scene-wide atmospheric structure while reducing the risk of removing genuine long-wavelength deformation. 
+
+F. Loss function 
+
+Unless otherwise stated, all phase quantities in this section are in the normalised domain (i.e., ˜ϕ = ϕ/s ϕobs ); for brevity, we omit the tilde. 
+
+1) Atmospheric Estimation Formulation: The observed un-wrapped interferometric phase can be expressed as 
+
+ϕobs = ϕdef + ϕatm + ϵ, (7) where ϕdef denotes the deformation signal, ϕatm the atmo-spheric delay, and ϵ residual noise and modelling errors. The network predicts an estimate of the atmospheric compo-nent ˆϕatm . The corrected deformation phase is then obtained by subtracting the predicted atmosphere from the observed interferogram: ˆϕdef = ϕobs − ˆϕatm .
+
+Training minimises the discrepancy between the corrected deformation ˆϕdef and the synthetic deformation target ϕdef us-ing a masked, reweighted combination of robust and quadratic terms: 
+
+e = ˆϕdef − ϕdef , Ldef = ρ(e) ω m + e2 ω m, (8) where ρ(·) is the Charbonnier penalty and ⟨X⟩m =  
+
+> PmX Pm+ϵ0
+
+denotes a masked mean over land pixels (water masking the loss). The adaptive weight is 
+
+ω = (1 + |ϕdef |)3  (1 + |e|)2 − 1 + ϵ0. (9) which emphasises larger deformation magnitudes and harder-to-fit residuals. Predicting the atmospheric component instead of the defor-mation signal offers several advantages. Atmospheric phase fields tend to exhibit more consistent spatial statistics across geographic regions, whereas deformation patterns are highly site-specific. Learning the atmospheric component, therefore, improves generalisation across different volcanoes and tec-tonic environments. Furthermore, this formulation follows the residual-learning paradigm commonly used in image denois-ing, where the model predicts the noise component rather than the clean signal. Because atmospheric delay typically manifests as a smoother and lower-frequency signal than the deformation signal, directly predicting the atmospheric phase simplifies the learning problem while preserving physical interpretability. 7                                                                                                         
+
+> TABLE I IMAGE QUALITY METRICS ON SYNTHETIC DATA COMPUTED OVER THE FULL IMAGE . M ETRICS INCLUDE MEAN SQUARED ERROR (MSE, MM 2), LEARNED PERCEPTUAL IMAGE PATCH SIMILARITY (LPIPS), S TRUCTURAL SIMILARITY INDEX (SSIM), L3NORM (MM ), AND MEAN ABSOLUTE
+> ERROR (ABS, MM ). T HE BEST ,SECOND -BEST ,AND THIRD -BEST RESULTS IN EACH COLUMN ARE HIGHLIGHTED IN RED ,ORANGE ,AND YELLOW ,
+> RESPECTIVELY .Methods Laguna del Maule Campi Flegrei MSE ↓LPIPS ↓SSIM ↑L3↓ABS ↓MSE ↓LPIPS ↓SSIM ↑L3↓ABS ↓
+> Unet 54.89 0.25 0.84 0.0109 4.99 35.30 0.29 0.73 0.0088 3.37 Diffusion 93.64 0.47 0.71 0.0140 6.58 66.52 0.51 0.62 0.0117 4.48 SwinIR 69.11 0.34 0.79 0.0125 5.74 40.53 0.35 0.72 0.0097 3.83 Restormer 33.77 0.27 0.85 0.0090 3.95 30.42 0.46 0.64 0.0081 3.34 WaveMamba 44.13 0.16 0.88 0.0099 4.55 46.29 0.25 0.76 0.0094 3.70 WaveDINO (Ours) 30.12 0.12 0.91 0.0080 3.81 26.44 0.09 0.92 0.0063 2.87
+
+2) Ramp Smoothness Regularization: To ensure that the ramp head models only large-scale atmospheric structure, we introduce a smoothness regularisation term based on the discrete Laplacian of the predicted ramp 
+
+∇2r(x, y ) = r(x + 1 , y ) + r(x − 1, y )+ r(x, y + 1) + r(x, y − 1) − 4r(x, y ). (10) The corresponding loss term penalises large curvature values 
+
+Llap = 1
+
+N
+
+X(∇2r)2. (11) 
+
+3) Final loss: To preserve deformation structure, we add gradient and local-maxima consistency, a spectral term, and the ramp smoothness regulariser: 
+
+L = Ldef +λ∇L∇ +λmax Lmax +λFFT LFFT +λlap Llap . (12) Here, L∇ matches finite-difference gradients of ˆϕdef and 
+
+ϕdef , Lmax matches 9 × 9 max-pooled responses to preserve local extrema, and LFFT encourages agreement of large-scale spectral content. In all experiments we use fixed weights 
+
+λ∇ = 1 , λmax = 1 , λlap = 0 .05 , while λFFT is increased during training from 0.01 to 0.1 for stability. These values were chosen empirically on the validation set and then kept fixed. IV. E XPERIMENTAL RESULTS AND DISCUSSION 
+
+A. Experimental Setup 
+
+For training, models are trained per volcano using the mixed real atmosphere + synthetic deformation approach, as described in subsection II-B. We use 38 000 synthetic defor-mation maps, 1647 Laguna del Maule (LdM) interferograms, and 3594 Campi Flegrei (CF) interferograms for training, 5588 synthetic maps, 235 LdM and 513 CF interferograms for validation, and 5620 synthetic maps, 470 LdM and 1026 CF interferograms for testing on synthetic data. For testing on real data, we use 2375 Laguna del Maule and 4428 Campi Flegrei interferograms. We compare our proposed method with (i) unwrapped interferograms, and (ii) GACOS-corrected products, along-side several learned denoisers (UNet, DDPM [53], SwinIR [54], Restormer [55], and Wave-Mamba [37]) and our model. The state-of-the-art deep learning methods were cho-sen as representative denoising models covering diverse ar-chitectural paradigms, including generative diffusion mod-els, Transformer-based attention mechanisms, and state-space frequency-aware designs. Training and synthetic-data testing use a multi-scale random crop-and-resize scheme (bilinear resize to 128 ×128), whereas real-data testing resizes the full 500 ×500 interferogram (and corresponding DEM channels) directly to 128 ×128 to produce a deterministic full-scene estimation per interferogram. 
+
+B. Synthetic Deformation Results 
+
+We used two complementary evaluation approaches. First, we compute standard full-image quality metrics, including Mean Squared Error (MSE), Learned Perceptual Image Patch Similarity (LPIPS), Structural Similarity Index (SSIM), L3
+
+norm (L3), and Mean Absolute Error (ABS). However, full-image metrics may be misleading in this setting for two reasons: (i) large regions of the ground-truth deformation are close to zero, which can dominate global error measures (e.g., MSE) and mask performance on the deforming areas; and (ii) evaluating over the entire frame primarily quantifies atmospheric removal, without directly testing whether the de-formation signal is preserved. Therefore, our second approach focuses explicitly on deformation preservation by sampling 100 pixels per image and binning them by the ground-truth deformation magnitude ( < 10 mm, 10–20 mm, 20–30 mm, and 
+
+> 30 mm), after which we compute MSE within each bin. This stratified evaluation also provides an additional benefit: it reveals magnitude-dependent behaviour (e.g., different per-formance on subtle versus large deformation), which may be obscured by a single global score. Table I reports the whole-image quality metrics on the held-out synthetic test set, where synthetic deformation is added on real interferograms that exhibited stable ground. These metrics quantify overall restoration fidelity, but they are dominated by large regions with near-zero deformation and therefore primarily reflect the ability to suppress atmospheric structure rather than preserve deformation. Under this setting, WaveDINO achieves the best (or second-best) perceptual and structural scores across both volcanoes (lowest LPIPS and highest SSIM), indicating improved atmospheric attenuation without excessive smoothing. 8
+
+TABLE II PERFORMANCE COMPARISON IN TERMS OF MEAN SQUARED ERROR ON SYNTHETIC DATA (TOP ) AND REAL DATA (BOTTOM ), EVALUATED ON BINNED 
+
+REAL DEFORMATION . L OWER VALUES INDICATE BETTER PERFORMANCE . T HE BEST , SECOND -BEST , AND THIRD -BEST RESULTS IN EACH COLUMN ARE HIGHLIGHTED IN RED , ORANGE , AND YELLOW , RESPECTIVELY .Mean squared error on Synthetic deformation in mm Methods Laguna del Maule Campi Flegrei Deformation < 10 10–20 20–30 > 30 Mean < 10 10–20 20–30 > 30 Mean Unet 27.76 64.39 86.76 120.02 74.73 29.92 58.57 73.39 112.79 68.67 Diffusion 39.94 89.13 138.63 247.14 128.71 63.22 103.25 132.91 204.29 125.92 SwinIR 28.31 71.76 108.32 169.38 94.44 36.02 61.29 79.05 105.56 70.48 Restormer 17.81 35.66 46.48 66.82 41.69 22.98 51.29 73.05 99.41 61.68 WaveMamba 22.27 49.03 64.47 86.39 55.54 20.88 41.51 56.30 79.91 49.65 WaveDINO (Ours) 19.10 35.55 41.80 54.12 37.64 15.62 26.77 37.61 55.29 33.82 
+
+Mean squared error on Real interferograms compared to GNSS data in mm Methods Laguna del Maule Campi Flegrei Deformation < 10 10–20 20–30 > 30 Mean < 10 10–20 20–30 > 30 Mean Unwrapped Interf 270 384 404 1484 636 167 125 143 448 221 GACOS 393 523 839 3667 1355 191 143 165 464 241 Unet 47 188 359 3188 946 136 189 212 640 294 Diffusion 44 182 423 3169 955 110 206 338 1495 537 SwinIR 37 205 419 3360 1005 113 162 158 425 215 Restormer 38 189 397 3312 984 90 147 182 437 214 Wavemamba 43 193 365 2812 853 104 178 175 487 236 WaveDINO (Ours) 48 194 355 2720 829 42 98 157 417 173 
+
+Fig. 5. Qualitative comparison on held-out synthetic deformation tests with real atmospheric noise as described in Section II-B. Columns show the input, ground truth, and outputs from WaveDINO (ours), Restormer, SwinIR, and DDPM. Top: Laguna del Maule example; bottom: Campi Flegrei example. The white regions indicate masked/low-coherence areas. 
+
+To directly evaluate deformation preservation, we compute MSE within bins of ground-truth deformation magnitude (Table II top). This stratified analysis reveals magnitude-dependent behaviour that is obscured by global metrics. At Campi Flegrei, WaveDINO yields the lowest error across all deformation bins and achieves the best mean error, demonstrat-ing improved recovery of subtle signals ( < 10 mm) as well as larger displacement. At Laguna del Maule, performance varies by bins: transformer-based baselines perform well for small deformation, whereas WaveDINO remains competitive and improves robustness at larger deformation magnitudes, supporting its ability to preserve deformation structure while suppressing realistic atmospheric contamination. Figure 5 illustrates representative synthetic test cases. Com-pared to diffusion and SwinIR, WaveDINO better preserves the spatial footprint and gradients of the deformation signal while reducing broad atmospheric structure. Restormer often preserves deformation morphology but can leave residual low-frequency artefacts in some cases, consistent with its mixed quantitative performance across the two sites. 
+
+C. Real Deformation Results 
+
+We evaluate deformation accuracy on real images against GNSS by reporting the MSE (in mm ) binned by deformation magnitude, matching the GNSS time window to the SAR acquisition dates. The results are averaged across all available GNSS stations in each study area (five at Laguna del Maule and 19 at Campi Flegrei after quality filtering). To ensure a comprehensive and unbiased evaluation, we use a large set of long-term interferograms (up to 5,000 per volcano), 9
+
+avoiding subjective selection and including intervals with weak deformation. This provides a realistic assessment of both deformation recovery and false-positive behaviour. Table II (bottom) compares the results against GNSS by matching the GNSS displacement window to each interfero-gram’s acquisition dates, projecting to the same LOS compo-nent, and computing binned MSE by deformation magnitude. The results show that learned denoising substantially improves agreement with independent GNSS compared with raw un-wrapped interferograms and those corrected by GACOS. At Campi Flegrei, WaveDINO achieves the lowest mean MSE among all the methods, whereas GACOS can produce large errors in some intervals, reflecting sensitivity to atmospheric conditions and model limitations. At Laguna del Maule, most learning-based methods improve over the uncorrected inter-ferograms for deformation values below 30mm. WaveDINO yields the best mean error out of all the learning-based models and reduces error, particularly in the highest deformation bin relative to other learning-based baselines, indicating improved preservation of large-amplitude deformation while suppressing atmospheric structure. Figure 6 highlights the behaviour of the different meth-ods across two contrasting volcanic environments. At Campi Flegrei, atmospheric artefacts are spatially heterogeneous and influenced by coastal and urban atmospheric variability, while at Laguna del Maule, they are dominated by smooth, large-scale phase delays correlated with strong topographic relief and high-altitude meteorological conditions. GACOS reduces some broad-scale structure at both sites but leaves substantial residual artefacts, particularly at Laguna del Maule. Both learning-based methods suppress atmospheric contamination more effectively; however, WaveDINO more consistently re-moves scene-wide gradients while preserving coherent, lo-calised deformation signals across both volcanoes, yielding deformation patterns that align more closely with independent GNSS observations. The remaining discrepancies are dominated by factors that are not purely atmospheric: coherence loss (e.g., seasonal snow at Laguna del Maule) introduces missing-data regions that must be inpainted and can bias both learned and model-based corrections. GNSS time series also contain gaps and noise, resulting in interpolation that introduces uncertainty into the reference values used for evaluation. Despite these limitations, the GNSS comparison indicates that hybrid training (synthetic deformation + real atmospheric noise) produces models that better preserve deformation than weather-model corrections in these case studies, supporting their use as a complementary tool for operational volcano monitoring. 
+
+D. Ablation Study 
+
+Table III shows that removing any component degrades performance. DEM conditioning is most influential (V2: MSE 37.57 vs. 30.12), followed by ramp removal (V3: 34.08), water-feature removal (V1: 34.51) and DINO removal (V4: 32.39). The full model performs best (MSE 30.12), indicating complementary benefits from terrain, water-aware inputs, ramp modelling, and DINO features.                                            
+
+> Fig. 6. Qualitative comparison on long-term interferograms from Campi Flegrei ( 40 .827 ◦N, 14 .139 ◦E; first two columns) and Laguna del Maule (36 .058 ◦S, 70 .492 ◦W; last two columns). Rows show (top to bottom) the unwrapped interferogram, GACOS correction, WaveDINO (ours), and Restormer. GNSS stations are overlaid, coloured by accumulated LOS dis-placement (mm) with white outlines for visibility. Each panel is approximately 50 km across. TABLE III ABLATION STUDY OF THE PROPOSED FRAMEWORK ON LAGUNA DEL
+> MAULE ON SYNTHETIC DATA .Variant Water DEM Ramp DINO MSE ↓
+> V1 ×✓✓✓33.51 V2 ✓×✓✓37.57 V3 ✓✓×✓34.08 V4 ✓✓✓×32.39 Ours ✓✓✓✓30.12
+
+V. C ONCLUSION 
+
+In this study, we introduced WaveDINO for learning-based atmospheric correction of unwrapped InSAR interferograms, designed to suppress tropospheric artefacts while preserv-ing volcanic deformation. Across synthetic tests and long-term interferograms at Laguna del Maule and Campi Flegrei, WaveDINO reduces atmospheric structure and improves agree-ment with independent GNSS compared with uncorrected and weather-model-based corrections. Future work will extend the approach to larger spatial domains and incorporate temporal context to further improve generalisation. DATA AND CODE AVAILABILITY 
+
+The LiCSAR Sentinel-1 interferograms for Laguna del Maule and Campi Flegrei are discoverable via the COMET Volcano Portal and LiCSAR archives at http: //comet.nerc.ac.uk . The synthetic deformation generator is available at https://github.com/pui-nantheera/Synthetic 10 
+
+InSAR image . Code for preprocessing, training, infer-ence, and experiment configurations will be released upon acceptance at https://github.com/robertpop99/WaveDINO .We use a frozen DINOv3 ConvNeXt-Base checkpoint (dinov3-convnext-base-pretrain-lvd1689m ). ACKNOWLEDGMENT 
+
+The authors thank L. C´ ordova and the Observatorio Vol-canol´ ogico de los Andes del Sur (OVDAS), SERNAGEOMIN (Temuco, Chile), for providing daily GNSS time series from Laguna del Maule (stations COLO, LDMP, MAU2, NIEB, and PUEL) covering 2014-01-01 to 2023-12-30. REFERENCES [1] S. Freire, A. J. Florczyk, M. Pesaresi, and R. Sliuzas, “An improved global analysis of population distribution in proximity to active vol-canoes, 1975–2015,” ISPRS International Journal of Geo-Information ,vol. 8, no. 8, 2019. [2] M. P. Poland, T. Lopez, R. Wright, and M. J. Pavolonis, “Forecasting, detecting, and tracking volcanic eruptions from space,” Remote Sensing in Earth Systems Sciences , vol. 3, no. 1, pp. 55–94, Jun 2020. [3] R. S. J. Sparks, J. Biggs, and J. Neuberg, “Monitoring volcanoes,” 
+
+Science , vol. 335, no. 6074, pp. 1310–1311, 2012. [4] J. Biggs, S. Ebmeier, W. Aspinall, and et al., “Global link between deformation and volcanic eruption quantified by satellite imagery,” 
+
+Nature Communications , vol. 5, p. 3471, 2014. [5] M. E. Pritchard, M. Poland, K. Reath, B. Andrews, M. Bagnardi et al. ,“Optimizing satellite resources for the global assessment and mitigation of volcanic hazards—suggestions from the usgs powell center volcano remote sensing working group,” U.S. Geological Survey, Reston, VA, Tech. Rep., 2022, report. [6] J. Biggs, N. Anantrasirichai, K. R. Anderson, V. Cayol et al. , “Advances in volcano monitoring driven by the first decade of sentinel-1 observa-tions,” Remote Sensing of Environment , vol. 339, p. 115377, 2026. [7] C. Yu, Z. Li, N. T. Penna, and P. Crippa, “Generic atmospheric correction model for interferometric synthetic aperture radar observations,” Journal of Geophysical Research: Solid Earth , vol. 123, no. 10, pp. 9202–9222, 2018. [8] C. Yu, Z. Li, and N. T. Penna, “Interferometric synthetic aperture radar atmospheric correction using a gps-based iterative tropospheric decomposition model,” Remote Sensing of Environment , vol. 204, pp. 109–121, 2018. [9] C. Yu, N. T. Penna, and Z. Li, “Generation of real-time mode high-resolution water vapor fields from gps observations,” Journal of Geo-physical Research: Atmospheres , vol. 122, no. 3, pp. 2008–2025, 2017. [10] F. Albino, J. Biggs, C. Yu, and Z. Li, “Automated methods for detecting volcanic deformation using sentinel-1 insar time series illustrated by the 2017–2018 unrest at agung, indonesia,” Journal of Geophysical Research: Solid Earth , vol. 125, no. 2, p. e2019JB017908, 2020. [11] K. J. Stephens, C. Wauthier, R. C. Bussard, M. Higgins, and P. C. LaFemina, “Assessment of mitigation strategies for tropospheric phase contributions to insar time-series datasets over two nicaraguan volcanoes,” Remote Sensing , vol. 12, no. 5, 2020. [Online]. Available: https://www.mdpi.com/2072-4292/12/5/782 [12] F. Albino, S. Gremion, V. Pinel, P. Bouygues, A. Peltier et al. , “Benefits of GNSS local observations compared to global weather-based models for insar tropospheric corrections over tropical volcanoes: Case studies of piton de la fournaise and merapi,” Journal of Geophysical Research: Solid Earth , vol. 130, no. 4, p. e2024JB028898, 2025. [13] Y. Zhang, K. Li, K. Li, L. Wang, B. Zhong et al. , “Image super-resolution using very deep residual channel attention networks,” in 
+
+European Conference on Computer Vision , 2018, pp. 294–310. [14] A. Dudhane, S. W. Zamir, S. Khan, F. S. Khan, and M.-H. Yang, “Burst image restoration and enhancement,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , 2022, pp. 5759–5768. [15] S. W. Zamir, A. Arora, S. Khan, M. Hayat, F. S. Khan et al. , “Learning enriched features for real image restoration and enhancement,” in 
+
+European Conference on Computer Vision , 2020. [16] ——, “Multi-stage progressive image restoration,” in IEEE/CVF Con-ference on Computer Vision and Pattern Recognition (CVPR) , 2021, pp. 14 816–14 826. [17] Y. Zhang, Y. Tian, Y. Kong, B. Zhong, and Y. Fu, “Residual dense network for image super-resolution,” in CVPR , 2018. [18] ——, “Residual dense network for image restoration,” IEEE Transac-tions on Pattern Analysis & Machine Intelligence , vol. 43, no. 07, pp. 2480–2495, Jul. 2021. [19] X. Wang, K. Zhao, R. Zhang, S. Ding, Y. Wang, and W. Shen, “Contrast-mask: Contrastive learning to segment every thing,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , June 2022, pp. 11 604–11 613. [20] Z. Yue, Q. Zhao, L. Zhang, and D. Meng, “Dual adversarial network: Toward real-world noise removal and noise generation,” in European Conference on Computer Vision , August 2020. [21] K. Zhang, Y. Li, W. Zuo, L. Zhang, L. Gool et al. , “Plug-and-play image restoration with deep denoiser prior,” IEEE Transactions on Pattern Analysis and Machine Intelligence , vol. PP, pp. 1–1, 06 2021. [22] S.-J. Cho, S. Ji, J.-P. Hong, S. Jung, and S.-J. Ko, “Rethinking coarse-to-fine approach in single image deblurring,” in IEEE/CVF International Conference on Computer Vision (ICCV) , 2021, pp. 4621–4630. [23] A. Abuolaim and M. S. Brown, “Defocus deblurring using dual-pixel data,” in European Conference on Computer Vision , 2020, p. 111–126. [24] J. Kim, J. K. Lee, and K. M. Lee, “Accurate image super-resolution using very deep convolutional networks,” in IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2016, pp. 1646–1654. [25] L. Cavigelli, P. Hager, and L. Benini, “Cas-cnn: A deep convolutional neural network for image compression artifact suppression,” in 2017 International Joint Conference on Neural Networks (IJCNN) , 2017, pp. 752–759. [26] X. Liu, M. Suganuma, Z. Sun, and T. Okatani, “Dual residual networks leveraging the potential of paired operations for image restoration,” in 
+
+IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2019, pp. 7000–7009. [27] S. Gu, Y. Li, L. Van Gool, and R. Timofte, “Self-guided network for fast image denoising,” in IEEE/CVF International Conference on Computer Vision (ICCV) , 2019, pp. 2511–2520. [28] B. Niu, W. Wen, W. Ren, X. Zhang, L. Yang et al. , “Single image super-resolution via a holistic attention network,” in European Conference on Computer Vision , A. Vedaldi, H. Bischof, T. Brox, and J.-M. Frahm, Eds., 2020, pp. 191–207. [29] H. Chen, Y. Wang, T. Guo, C. Xu, Y. Deng, Z. Liu, S. Ma, C. Xu, C. Xu, and W. Gao, “Pre-trained image processing transformer,” in 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2021, pp. 12 294–12 305. [30] J. Cao, Y. Li, K. Zhang, and L. Van Gool, “Video super-resolution transformer,” arXiv , 2021. [31] F. Yang, H. Yang, J. Fu, H. Lu, and B. Guo, “Learning texture transformer network for image super-resolution,” in CVPR , June 2020. [32] S. Vijay Kumar, X. Sun, Z. Wang, R. Goldsbury, and I. Cheng, “A u-net approach for insar phase unwrapping and denoising,” Remote Sensing ,vol. 15, no. 21, 2023. [33] G. Brencher, S. T. Henderson, and D. E. Shean, “Removing atmospheric noise from insar interferograms in mountainous regions with a convolu-tional neural network,” Computers & Geosciences , vol. 194, p. 105771, 2025. [34] X. Zhang, N. Li, J. Li, T. Dai, Y. Jiang et al. , “Unsupervised surface anomaly detection with diffusion probabilistic model,” in IEEE/CVF International Conference on Computer Vision (ICCV) , 2023, pp. 6759– 6768. [35] R. Jolivet, R. Grandin, C. Lasserre, M.-P. Doin, and G. Peltzer, “Systematic insar tropospheric phase delay corrections from global meteorological reanalysis data,” Geophysical Research Letters , vol. 38, no. 17, 2011. [36] H. Zebker, “Accuracy of a model-free algorithm for temporal insar tropospheric correction,” Remote Sensing , vol. 13, no. 3, 2021. [37] W. Zou, H. Gao, W. Yang, and T. Liu, “Wave-mamba: Wavelet state space model for ultra-high-definition low-light image enhancement,” in 
+
+ACM Multimedia 2024 , 2024. [38] O. Sim´ eoni, H. V. Vo, M. Seitzer, F. Baldassarre, M. Oquab, C. Jose, V. Khalidov, M. Szafraniec, S. Yi, M. Ramamonjisoa, F. Massa, D. Haziza, L. Wehrstedt, J. Wang, T. Darcet, T. Moutakanni, L. Sentana, C. Roberts, A. Vedaldi, J. Tolan, J. Brandt, C. Couprie, J. Mairal, H. J´ egou, P. Labatut, and P. Bojanowski, “DINOv3,” 2025. [Online]. Available: https://arxiv.org/abs/2508.10104 [39] E. Perez, F. Strub, H. de Vries, V. Dumoulin, and A. C. Courville, “Film: Visual reasoning with a general conditioning layer,” in AAAI , 2018. [40] M. Lazeck´ y, K. Spaans, P. J. Gonz´ alez, Y. Maghsoudi, Y. Morishita 
+
+et al. , “Licsar: An automatic insar tool for measuring and monitoring tectonic and volcanic activity,” Remote Sensing , vol. 12, no. 15, 2020. 11 
+
+[41] Y. Morishita, M. Lazecky, T. J. Wright, J. R. Weiss, J. R. Elliott et al. ,“Licsbas: An open-source insar time series analysis package integrated with the licsar automated sentinel-1 insar processor,” Remote Sensing ,vol. 12, no. 3, 2020. [42] K. L. Feigl, H. Le M´ evel, S. Tabrez Ali, L. C´ ordova, N. L. Andersen 
+
+et al. , “Rapid uplift in laguna del maule volcanic field of the andean southern volcanic zone (chile) 2007–2012,” Geophysical Journal Inter-national , vol. 196, no. 2, pp. 885–901, 12 2013. [43] A. Bevilacqua, A. Neri, P. De Martino, F. Giudicepietro, G. Macedonio 
+
+et al. , “Accelerating upper crustal deformation and seismicity of campi flegrei caldera (italy), during the 2000–2023 unrest,” Communications Earth & Environment , vol. 5, no. 1, p. 742, Dec 2024. [44] H. Le M´ evel, K. L. Feigl, L. C´ ordova, C. DeMets, and P. Lundgren, “Evolution of unrest at laguna del maule volcanic field (chile) from insar and gps measurements, 2003 to 2014,” Geophysical Research Letters ,vol. 42, no. 16, pp. 6590–6598, 2015. [45] K. Mogi, “Relations between the eruptions of various volcanoes and the deformations of the ground surfaces around them,” Bulletin of the Earthquake Research Institute, University of Tokyo , vol. 36, pp. 99–134, 1958. [46] H. Le M´ evel, L. C´ ordova, C. Cardona, and K. L. Feigl, “Unrest at the laguna del maule volcanic field 2005–2020: renewed acceleration of deformation,” Bulletin of Volcanology , vol. 83, no. 6, p. 39, May 2021. [47] M. Polcari, S. Borgstrom, C. Del Gaudio, P. De Martino, C. Ricco et al. ,“Thirty years of volcano geodesy from space at campi flegrei caldera (italy),” Scientific Data , vol. 9, no. 1, p. 728, Nov 2022. [48] P. De Martino, M. Dolce, G. Brandi, G. Scarpato, and U. Tammaro, “The ground deformation history of the neapolitan volcanic area (campi flegrei caldera, somma–vesuvius volcano, and ischia island) from 20 years of continuous gps observations (2000–2019),” Remote Sensing ,vol. 13, no. 14, 2021. [49] P. De Martino, M. Dolce, G. Brandi, and G. Scarpato, “Campi flegrei cgps weekly positions time series,” 2023. [50] R. Popescu, N. Anantrasirichai, and J. Biggs, “Unsupervised anomaly detection for volcanic deformation in insar imagery,” Earth and Space Science , vol. 12, no. 6, p. e2024EA003892, 2025. [51] K. D. Murray, R. B. Lohman, and D. P. S. Bekaert, “Cluster-based empirical tropospheric corrections applied to insar time series analysis,” 
+
+IEEE Transactions on Geoscience and Remote Sensing , vol. 59, no. 3, pp. 2204–2212, 2021. [52] M. Haghshenas Haghighi and M. Motagh, “Treating tropospheric phase delay in large-scale sentinel-1 stacks to analyze land subsidence,” PFG – Journal of Photogrammetry, Remote Sensing and Geoinformation Science , vol. 92, no. 5, pp. 593–607, Oct 2024. [53] H. Jiang, A. Luo, H. Fan, S. Han, and S. Liu, “Low-light image enhancement with wavelet-based diffusion models,” ACM Transactions on Graphics (TOG) , vol. 42, no. 6, pp. 1–14, 2023. [54] J. Liang, J. Cao, G. Sun, K. Zhang, L. Van Gool, and R. Timofte, “Swinir: Image restoration using swin transformer,” in 2021 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW) ,2021, pp. 1833–1844. [55] S. W. Zamir, A. Arora, S. Khan, M. Hayat, F. S. Khan et al. , “Restormer: Efficient transformer for high-resolution image restoration,” in Proceed-ings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , June 2022, pp. 5728–5739.

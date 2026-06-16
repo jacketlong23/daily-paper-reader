@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-16",
+  "date": "2026-06-16",
+  "generated_at": "2026-06-16T21:38:27",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/16/2606.16795v1-wavedino-learning-based-atmospheric-correction-of-unwrapped-insar-interferograms-validated-by-gnss-results-at-laguna-del-maule-and-campi-flegrei-volcanoes",
+      "section": "deep",
+      "title_en": "WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms Validated by GNSS: Results at Laguna del Maule and Campi Flegrei Volcanoes",
+      "authors": "Robert Popescu, Juliet Biggs, Tianyuan Zhu, Nantheera Anantrasirichai",
+      "date": "2026-06-15",
+      "pdf": "https://arxiv.org/pdf/2606.16795v1",
+      "score": "9.0",
+      "evidence": "基于学习的InSAR干涉图大气校正",
+      "tldr": "InSAR火山形变观测受大气相位延迟影响，现有数值天气模型校正不稳定。提出WaveDINO，一种基于小波的多尺度去噪框架，结合DINOv2特征与地形信息，使用合成形变叠加真实大气噪声训练。在Laguna del Maule和Campi Flegrei火山验证，与GNSS对比均方根误差分别降低约3%和19%，优于天气模型方法。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Interferometric Synthetic Aperture Radar (InSAR) enables effective monitoring of volcanic deformation; however, the observed signals are often corrupted by atmospheric phase delays, seasonal surface changes, and decorrelation effects. Existing atmospheric correction methods, such as numerical weather model-based methods, can reduce these effects but do not consistently remove atmospheric artefacts and may introduce residual biases. To address these limitations, we propose a novel learning-based method for denoising unwrapped InSAR interferograms, using a hybrid training strategy that combines physically motivated synthetic deformation with real atmospheric noise. Specifically, we introduce WaveDINO, a wavelet-based multi-scale denoising framework conditioned on frozen DINOv3 foundation-model features and terrain information. Training uses synthetic magma-source deformation superimposed on short-term interferograms to expose the network to realistic atmospheric statistics while retaining known ground truth. Performance is evaluated on both controlled synthetic data and long-term real interferograms from Laguna del Maule (Chile) and Campi Flegrei (Italy), with independent GNSS measurements used for validation. WaveDINO consistently outperforms competing models, improving agreement with GNSS measurements, and reducing mean GNSS misfit by approximately 3% and 19% at two sites, respectively, while surpassing weather-model-based corrections.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

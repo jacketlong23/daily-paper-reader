@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-16T21:36:53.006296+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.16795v1",
+      "source": "arxiv",
+      "title": "WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms Validated by GNSS: Results at Laguna del Maule and Campi Flegrei Volcanoes",
+      "abstract": "Interferometric Synthetic Aperture Radar (InSAR) enables effective monitoring of volcanic deformation; however, the observed signals are often corrupted by atmospheric phase delays, seasonal surface changes, and decorrelation effects. Existing atmospheric correction methods, such as numerical weather model-based methods, can reduce these effects but do not consistently remove atmospheric artefacts and may introduce residual biases. To address these limitations, we propose a novel learning-based method for denoising unwrapped InSAR interferograms, using a hybrid training strategy that combines physically motivated synthetic deformation with real atmospheric noise. Specifically, we introduce WaveDINO, a wavelet-based multi-scale denoising framework conditioned on frozen DINOv3 foundation-model features and terrain information. Training uses synthetic magma-source deformation superimposed on short-term interferograms to expose the network to realistic atmospheric statistics while retaining known ground truth. Performance is evaluated on both controlled synthetic data and long-term real interferograms from Laguna del Maule (Chile) and Campi Flegrei (Italy), with independent GNSS measurements used for validation. WaveDINO consistently outperforms competing models, improving agreement with GNSS measurements, and reducing mean GNSS misfit by approximately 3% and 19% at two sites, respectively, while surpassing weather-model-based corrections.",
+      "authors": [
+        "Robert Popescu",
+        "Juliet Biggs",
+        "Tianyuan Zhu",
+        "Nantheera Anantrasirichai"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-15T14:38:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.16795v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "learning-based atmospheric correction of InSAR interferograms",
+      "llm_evidence_cn": "基于学习的InSAR干涉图大气校正",
+      "llm_evidence": "基于学习的InSAR干涉图大气校正",
+      "canonical_evidence": "基于学习的InSAR干涉图大气校正",
+      "llm_tldr_en": "WaveDINO proposes a learning-based method to denoise unwrapped InSAR interferograms by combining synthetic deformation with real atmospheric noise, validated with GNSS at two volcanoes.",
+      "llm_tldr_cn": "针对InSAR形变监测中大气相位延迟等噪声干扰问题，本文提出一种基于学习的解缠干涉图去噪方法WaveDINO。该方法采用混合训练策略，结合物理模拟的形变信号与真实大气噪声，有效去除大气伪影。在拉古纳德尔莫尔和坎皮弗莱格雷两个火山区域的GNSS验证结果显示，该方法优于传统数值天气模型校正，显著提升了形变观测精度。该工作为InSAR大气校正提供了一种高效的学习框架。",
+      "llm_tldr": "针对InSAR形变监测中大气相位延迟等噪声干扰问题，本文提出一种基于学习的解缠干涉图去噪方法WaveDINO。该方法采用混合训练策略，结合物理模拟的形变信号与真实大气噪声，有效去除大气伪影。在拉古纳德尔莫尔和坎皮弗莱格雷两个火山区域的GNSS验证结果显示，该方法优于传统数值天气模型校正，显著提升了形变观测精度。该工作为InSAR大气校正提供了一种高效的学习框架。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "deep learning for atmospheric error correction in InSAR",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
