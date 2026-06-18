@@ -1,0 +1,57 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-18T22:21:03.262810+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.19065v1",
+      "source": "arxiv",
+      "title": "Regularized covariance estimation from partially observed interferometric data",
+      "abstract": "The Small BAseline Subset technique provides remote measurements of ground displacement with high spatial resolution, making it a key tool for monitoring geophysical processes in hazard-prone areas. An effective analysis of this type of data requires reliable estimation of their second-order structure, which is difficult to achieve because the measurements are systematically missing over relatively large portions of the investigated areas. We tackle the problem from a functional data analysis perspective and treat the observations as partially observed functional data with two-dimensional domain. To properly characterize the data, we introduce the fragmented regime of partial observation, where parts of the curves are systematically missing across replicates. For this regime, we propose a novel method for covariance estimation, formulating the task as a matrix completion problem with Laplacian regularization. The estimator is nonparametric and free from stationarity or isotropy assumptions. Extensive simulations show that our method achieves consistently low estimation error across a range of covariance structures. Application to ground displacement data relative to the Phlegraean Fields demonstrates its ability to recover meaningful spatial dependence patterns, highlighting its potential for environmental risk assessment and monitoring.",
+      "authors": [
+        "Teresa Bortolotti",
+        "Roberta Troilo",
+        "Francesco Casu",
+        "Simone Vantini",
+        "Alessandra Menafoglio"
+      ],
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "published": "2026-06-17T13:40:02+00:00",
+      "link": "https://arxiv.org/pdf/2606.19065v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "directly addresses InSAR displacement data covariance estimation for deformation analysis",
+      "llm_evidence_cn": "直接处理InSAR位移数据协方差估计以用于形变分析",
+      "llm_evidence": "直接处理InSAR位移数据协方差估计以用于形变分析",
+      "canonical_evidence": "直接处理InSAR位移数据协方差估计以用于形变分析",
+      "llm_tldr_en": "Proposes regularized covariance estimation for partially observed InSAR time series, enabling robust second-order structure analysis for ground displacement monitoring.",
+      "llm_tldr_cn": "针对InSAR小基线集技术中数据部分缺失导致二阶结构估计困难的问题，从函数数据分析角度将观测视为二维部分缺失函数数据，提出正则化协方差估计方法。实验表明该方法能有效处理系统缺失，提升协方差估计可靠性，为InSAR形变时间序列分析提供了稳健的统计工具。",
+      "llm_tldr": "针对InSAR小基线集技术中数据部分缺失导致二阶结构估计困难的问题，从函数数据分析角度将观测视为二维部分缺失函数数据，提出正则化协方差估计方法。实验表明该方法能有效处理系统缺失，提升协方差估计可靠性，为InSAR形变时间序列分析提供了稳健的统计工具。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "annual deformation rate estimation using InSAR",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

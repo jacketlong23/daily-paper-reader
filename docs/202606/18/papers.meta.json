@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-18",
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T22:22:31",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/18/2606.19065v1-regularized-covariance-estimation-from-partially-observed-interferometric-data",
+      "section": "quick",
+      "title_en": "Regularized covariance estimation from partially observed interferometric data",
+      "authors": "Teresa Bortolotti, Roberta Troilo, Francesco Casu, Simone Vantini, Alessandra Menafoglio",
+      "date": "2026-06-17",
+      "pdf": "https://arxiv.org/pdf/2606.19065v1",
+      "score": "7.0",
+      "evidence": "直接处理InSAR位移数据协方差估计以用于形变分析",
+      "tldr": "干涉雷达数据存在大面积系统性缺失，传统方法难以准确估计协方差结构。本研究从函数数据分析角度，提出碎片化缺失机制，并采用拉普拉斯正则化矩阵补全方法进行协方差估计。模拟实验表明该方法在各种协方差结构下均保持低误差。应用于Phlegraean Fields地面位移数据，成功恢复了有意义的空间依赖模式，为环境风险监测提供了新工具。",
+      "tags": "query:insar-deform",
+      "abstract_en": "The Small BAseline Subset technique provides remote measurements of ground displacement with high spatial resolution, making it a key tool for monitoring geophysical processes in hazard-prone areas. An effective analysis of this type of data requires reliable estimation of their second-order structure, which is difficult to achieve because the measurements are systematically missing over relatively large portions of the investigated areas. We tackle the problem from a functional data analysis perspective and treat the observations as partially observed functional data with two-dimensional domain. To properly characterize the data, we introduce the fragmented regime of partial observation, where parts of the curves are systematically missing across replicates. For this regime, we propose a novel method for covariance estimation, formulating the task as a matrix completion problem with Laplacian regularization. The estimator is nonparametric and free from stationarity or isotropy assumptions. Extensive simulations show that our method achieves consistently low estimation error across a range of covariance structures. Application to ground displacement data relative to the Phlegraean Fields demonstrates its ability to recover meaningful spatial dependence patterns, highlighting its potential for environmental risk assessment and monitoring.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
