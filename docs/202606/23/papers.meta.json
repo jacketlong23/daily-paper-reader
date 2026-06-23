@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-23",
+  "date": "2026-06-23",
+  "generated_at": "2026-06-23T21:29:35",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/23/2606.22200v1-neural-conjugate-aggregation-identifiable-unsupervised-multi-sensor-regression-under-heterogeneous-sensor-bias",
+      "section": "quick",
+      "title_en": "Neural Conjugate Aggregation: Identifiable Unsupervised Multi-Sensor Regression under Heterogeneous Sensor Bias",
+      "authors": "Muhammed Faruk Aytin, Zehra Demir, Alper Ünal, Julian Marshall, Gözde Ünal",
+      "date": "2026-06-20",
+      "pdf": "https://arxiv.org/pdf/2606.22200v1",
+      "score": "6.0",
+      "evidence": "无监督多传感器融合神经网络与贝叶斯偏差校正",
+      "tldr": "针对多传感器回归中缺乏真值且存在异质偏差的难题，提出神经共轭聚合模型(NCAM)，将神经网络与共轭高斯推理结合，学习传感器偏差和可靠性，得到可解析后验并分解认知与偶然不确定性。通过传感器锚定和方差正则化解决非可识别性，并集成局部自适应蒙特卡洛共形预测以提供有覆盖保证的异方差预测区间。在合成和真实空气质量数据集上，NCAM的预测精度和不确定性校准显著优于均值聚合、概率PCA和卡尔曼滤波等无监督基线。",
+      "tags": "query:insar-deform",
+      "abstract_en": "We study regression-based data fusion under uncertainty, where multiple noisy and biased measurement sources are available but ground-truth labels are absent during training. This setting arises in sensor networks, simulation ensembles, and scientific monitoring systems where supervision is costly or infeasible. We propose the Neural Conjugate Aggregation Model (NCAM), a hierarchical Bayesian framework that combines neural networks with conjugate Gaussian inference for unsupervised multi-source fusion. NCAM learns source-specific bias and reliability conditioned on contextual covariates, yielding an analytically tractable posterior over a latent target variable with decomposed epistemic and aleatoric uncertainty. Structural non-identifiability is resolved through sensor anchoring and variance regularization, enabling stable and interpretable posterior aggregation. To complement Bayesian uncertainty with finite-sample guarantees, we integrate locally adaptive Monte Carlo conformal prediction, producing heteroscedastic prediction intervals with coverage guarantees under exchangeability assumptions. Experiments on synthetic and real-world air-quality datasets demonstrate improved predictive accuracy and well-calibrated uncertainty compared to unsupervised baselines, including mean aggregation, probabilistic PCA, and Kalman filtering.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/23/2606.22628v1-robust-expectation-maximization-for-covariance-estimation-in-sirv-models-with-missing-data-application-to-insar-time-series",
+      "section": "quick",
+      "title_en": "Robust Expectation-Maximization for Covariance Estimation in SIRV Models with Missing Data: Application to InSAR Time Series",
+      "authors": "M. Cherifi, M. N. El Korso, A. Hippert-Ferrer, Y. Yan",
+      "date": "2026-06-21",
+      "pdf": "https://arxiv.org/pdf/2606.22628v1",
+      "score": "6.0",
+      "evidence": "InSAR时间序列的稳健协方差估计",
+      "tldr": "InSAR时间序列中SIRV模型的协方差估计面临缺失数据和异常值挑战。本文提出鲁棒EM算法，采用逆伽马先验将观测模型转化为多元t分布，实现闭式E步和M步更新，并融入计算复用、正则化矩阵求逆与Hermite正定约束等数值稳定技术。在合成数据和Sentinel-1干涉图上，该方法在MCAR和MNAR缺失机制下均有效重建缺失值并抑制噪声，为复杂缺失场景下的鲁棒协方差估计提供了实用框架。",
+      "tags": "query:insar-deform",
+      "abstract_en": "This paper presents a robust Expectation-Maximization framework for covariance estimation in Scale-Invariant Random Vector (SIRV) models with missing data under ignorable missingness mechanisms. By adopting an inverse-gamma prior on the scale variables, the resulting observation model leads to a complex multivariate Student-t distribution and allows closed-form E-step and M-step updates. The proposed algorithm incorporates numerical robustness techniques such as computation reuse for common observation patterns, regularized matrix inversions, and explicit enforcement of Hermitian positive semidefinite structure. Experiments on synthetic data and Sentinel-1 interferograms show effective missing value reconstruction and denoising performance under both MCAR and MNAR scenarios.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

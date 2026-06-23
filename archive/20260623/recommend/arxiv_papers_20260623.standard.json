@@ -1,0 +1,96 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-23T21:28:13.942786+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.22200v1",
+      "source": "arxiv",
+      "title": "Neural Conjugate Aggregation: Identifiable Unsupervised Multi-Sensor Regression under Heterogeneous Sensor Bias",
+      "abstract": "We study regression-based data fusion under uncertainty, where multiple noisy and biased measurement sources are available but ground-truth labels are absent during training. This setting arises in sensor networks, simulation ensembles, and scientific monitoring systems where supervision is costly or infeasible. We propose the Neural Conjugate Aggregation Model (NCAM), a hierarchical Bayesian framework that combines neural networks with conjugate Gaussian inference for unsupervised multi-source fusion. NCAM learns source-specific bias and reliability conditioned on contextual covariates, yielding an analytically tractable posterior over a latent target variable with decomposed epistemic and aleatoric uncertainty. Structural non-identifiability is resolved through sensor anchoring and variance regularization, enabling stable and interpretable posterior aggregation. To complement Bayesian uncertainty with finite-sample guarantees, we integrate locally adaptive Monte Carlo conformal prediction, producing heteroscedastic prediction intervals with coverage guarantees under exchangeability assumptions. Experiments on synthetic and real-world air-quality datasets demonstrate improved predictive accuracy and well-calibrated uncertainty compared to unsupervised baselines, including mean aggregation, probabilistic PCA, and Kalman filtering.",
+      "authors": [
+        "Muhammed Faruk Aytin",
+        "Zehra Demir",
+        "Alper Ünal",
+        "Julian Marshall",
+        "Gözde Ünal"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-20T19:30:21+00:00",
+      "link": "https://arxiv.org/pdf/2606.22200v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "unsupervised multi-sensor fusion with neural networks and Bayesian bias correction",
+      "llm_evidence_cn": "无监督多传感器融合神经网络与贝叶斯偏差校正",
+      "llm_evidence": "无监督多传感器融合神经网络与贝叶斯偏差校正",
+      "canonical_evidence": "无监督多传感器融合神经网络与贝叶斯偏差校正",
+      "llm_tldr_en": "Proposes Neural Conjugate Aggregation Model (NCAM) for unsupervised multi-sensor regression that learns source-specific biases, applicable to InSAR atmospheric correction where multiple biased measurements are fused.",
+      "llm_tldr_cn": "该论文提出神经共轭聚合模型（NCAM），一种无监督多传感器融合的层次贝叶斯框架，结合神经网络与共轭高斯推理，学习每个传感器的偏差和可靠性。该方法无需真实标签，适用于诸如InSAR大气校正等需要融合多个有偏观测的场景。实验表明，NCAM能有效分解认知不确定性和偶然不确定性，为多源数据融合提供稳健的解决方案。该研究为InSAR智能处理中的大气误差校正提供了通用的方法学工具。",
+      "llm_tldr": "该论文提出神经共轭聚合模型（NCAM），一种无监督多传感器融合的层次贝叶斯框架，结合神经网络与共轭高斯推理，学习每个传感器的偏差和可靠性。该方法无需真实标签，适用于诸如InSAR大气校正等需要融合多个有偏观测的场景。实验表明，NCAM能有效分解认知不确定性和偶然不确定性，为多源数据融合提供稳健的解决方案。该研究为InSAR智能处理中的大气误差校正提供了通用的方法学工具。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "Search for methods combining deep learning and robust estimation for InSAR atmospheric correction",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.22628v1",
+      "source": "arxiv",
+      "title": "Robust Expectation-Maximization for Covariance Estimation in SIRV Models with Missing Data: Application to InSAR Time Series",
+      "abstract": "This paper presents a robust Expectation-Maximization framework for covariance estimation in Scale-Invariant Random Vector (SIRV) models with missing data under ignorable missingness mechanisms. By adopting an inverse-gamma prior on the scale variables, the resulting observation model leads to a complex multivariate Student-t distribution and allows closed-form E-step and M-step updates. The proposed algorithm incorporates numerical robustness techniques such as computation reuse for common observation patterns, regularized matrix inversions, and explicit enforcement of Hermitian positive semidefinite structure. Experiments on synthetic data and Sentinel-1 interferograms show effective missing value reconstruction and denoising performance under both MCAR and MNAR scenarios.",
+      "authors": [
+        "M. Cherifi",
+        "M. N. El Korso",
+        "A. Hippert-Ferrer",
+        "Y. Yan"
+      ],
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "eess.SP"
+      ],
+      "published": "2026-06-21T18:31:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.22628v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "InSAR time series, robust EM for covariance estimation",
+      "llm_evidence_cn": "InSAR时间序列的稳健协方差估计",
+      "llm_evidence": "InSAR时间序列的稳健协方差估计",
+      "canonical_evidence": "InSAR时间序列的稳健协方差估计",
+      "llm_tldr_en": "Proposes a robust EM framework for covariance estimation in SIRV models with missing data, applied to InSAR time series, enabling reliable deformation analysis.",
+      "llm_tldr_cn": "针对InSAR时间序列中的缺失数据问题，提出了一种基于期望最大化（EM）的稳健协方差估计框架，采用逆伽马先验建模尺度变量，得到复数多变量学生t分布，并实现了闭式E步和M步更新。在合成数据和Sentinel-1干涉图上的实验表明，该方法能有效处理缺失值，为后续形变速率估计提供了可靠的协方差矩阵估计，有助于提升InSAR形变监测的精度和鲁棒性。",
+      "llm_tldr": "针对InSAR时间序列中的缺失数据问题，提出了一种基于期望最大化（EM）的稳健协方差估计框架，采用逆伽马先验建模尺度变量，得到复数多变量学生t分布，并实现了闭式E步和M步更新。在合成数据和Sentinel-1干涉图上的实验表明，该方法能有效处理缺失值，为后续形变速率估计提供了可靠的协方差矩阵估计，有助于提升InSAR形变监测的精度和鲁棒性。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "annual deformation rate estimation using InSAR",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
