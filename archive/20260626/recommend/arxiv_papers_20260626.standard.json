@@ -1,0 +1,90 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-26T20:37:51.932204+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.20428v1",
+      "source": "arxiv",
+      "title": "ARC: Adaptive Robust Joint State and Covariance Estimation",
+      "abstract": "Sensor measurements are frequently corrupted by outliers and non-Gaussian noise. These imperfections in the sensor data can cause classical state estimators to generate biased and unreliable state and uncertainty estimates. Robust estimators reject or downweight outliers but do not perform measurement covariance estimation, whereas joint state and covariance estimators assume Gaussian residuals and fixed loss shape parameters. Integrating these two capabilities into a single framework is an opportunity to simultaneously estimate both state and covariance in the presence of outliers. This paper proposes a unified Block-Coordinate Descent framework that combines a norm-aware adaptive robust loss, an Iteratively Reweighted Least-Squares state update, and a Minimum Weighted Covariance Determinant covariance estimator, yielding a self-tuning joint state and covariance estimator. The framework is evaluated in a Monte-Carlo simulation and on real-world ultra-wideband localization experiments in cluttered non-line-of-sight environments. Results show that the proposed estimator consistently recovers the true inlier measurement covariance and matches or exceeds the state estimation accuracy of all baselines, without requiring any manual parameter tuning.",
+      "authors": [
+        "Alexandre Hadji-Thomas",
+        "Andrew Stirling",
+        "James R. Forbes"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-18T16:09:50+00:00",
+      "link": "https://arxiv.org/pdf/2606.20428v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "adaptive robust joint state and covariance estimation method for outlier handling",
+      "llm_evidence_cn": "自适应鲁棒联合状态与协方差估计方法，适用于异常值处理",
+      "llm_evidence": "自适应鲁棒联合状态与协方差估计方法，适用于异常值处理",
+      "canonical_evidence": "自适应鲁棒联合状态与协方差估计方法，适用于异常值处理",
+      "llm_tldr_en": "Proposes ARC, a unified robust estimation framework combining adaptive robust loss, IRLS, and minimum covariance determinant, enabling joint state and covariance estimation under outliers.",
+      "llm_tldr_cn": "针对传感器数据中异常值和非高斯噪声导致状态估计偏差的问题，提出ARC框架，将自适应鲁棒损失、迭代重加权最小二乘和最小协方差行列式统一为块坐标下降算法，同时估计状态和协方差。在InSAR大气校正中，该方法可用于联合校正电离层和对流层延迟中的异常值，提升形变反演鲁棒性。实验验证了其在多种噪声场景下的优越性能。",
+      "llm_tldr": "针对传感器数据中异常值和非高斯噪声导致状态估计偏差的问题，提出ARC框架，将自适应鲁棒损失、迭代重加权最小二乘和最小协方差行列式统一为块坐标下降算法，同时估计状态和协方差。在InSAR大气校正中，该方法可用于联合校正电离层和对流层延迟中的异常值，提升形变反演鲁棒性。实验验证了其在多种噪声场景下的优越性能。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "Search for methods combining deep learning and robust estimation for InSAR atmospheric correction",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.21932v1",
+      "source": "arxiv",
+      "title": "CoSA: Correlation-Guided Change Attention with Learnable Residual Gating for Remote Sensing Change Detection",
+      "abstract": "Remote sensing change detection (CD) from bi-temporal imagery is critical for applications such as urban monitoring, disaster assessment, and environmental management, yet robust localization remains challenging under sparse changes, noisy labels, and appearance variations. In this paper, we propose Context Sampling Attention (CoSA), a lightweight decoder-side refinement module that explicitly leverages bi-temporal feature correlation as a control signal for adaptive change-aware feature enhancement. This differs from conventional attention mechanisms that rely on implicit feature weighting without explicit temporal control. In the implemented FC-Siam setting, CoSA computes normalized same-location cross-correlation between paired decoder features, converts low correlation into a change gate, and injects the resulting gated residual at native 1/8 and 1/16 feature scales through learnable residual scaling. This design enables effective discrimination between stable and ambiguous regions without relying on computationally expensive global attention. Extensive experiments on four benchmark datasets (LEVIR-CD, S2Looking, DSIFN, and CLCD) demonstrate consistent improvements over strong baselines, achieving 1.5-2.6% gains in changed-class F1 while introducing negligible parameter overhead. Ablation studies confirm that multiscale placement and learnable residual gating are both important for peak performance. These results indicate that CoSA establishes a practical and effective refinement paradigm for enhancing temporal discriminability in Siamese change detection frameworks.",
+      "authors": [
+        "Abdirashid Omar",
+        "Jonghyuk Park"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-20T07:56:09+00:00",
+      "link": "https://arxiv.org/pdf/2606.21932v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "change detection attention mechanism adaptable to InSAR deformation interpretation",
+      "llm_evidence_cn": "变化检测注意力机制可迁移至InSAR形变解释",
+      "llm_evidence": "变化检测注意力机制可迁移至InSAR形变解释",
+      "canonical_evidence": "变化检测注意力机制可迁移至InSAR形变解释",
+      "llm_tldr_en": "Proposes CoSA, a correlation-guided change attention module that enhances bi-temporal features for robust change detection, applicable to InSAR time-series analysis.",
+      "llm_tldr_cn": "针对遥感变化检测中稀疏变化、噪声标签和外观变化下的稳健定位难题，提出上下文采样注意力（CoSA），利用双时相特征相关性作为控制信号进行自适应增强。该方法轻量且即插即用，在FC-Siam结构上实现高性能。该注意力机制可迁移至InSAR时间序列形变检测，自动突出形变区域，提升智能化处理能力。",
+      "llm_tldr": "针对遥感变化检测中稀疏变化、噪声标签和外观变化下的稳健定位难题，提出上下文采样注意力（CoSA），利用双时相特征相关性作为控制信号进行自适应增强。该方法轻量且即插即用，在FC-Siam结构上实现高性能。该注意力机制可迁移至InSAR时间序列形变检测，自动突出形变区域，提升智能化处理能力。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "intelligent InSAR processing with automatic deformation interpretation",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
