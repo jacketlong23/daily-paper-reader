@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-30",
+  "date": "2026-06-30",
+  "generated_at": "2026-06-30T21:23:33",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/30/2606.29644v1-t-step-an-interpretable-model-for-total-electron-content-predictions-and-irregularities-estimations",
+      "section": "quick",
+      "title_en": "t-STEP: An interpretable model for Total Electron Content predictions and irregularities estimations",
+      "authors": "Stephen Tete, Carl Shneider, Maxime Cordy, Claudio Cesaroni, Andreas Hein, Vasily Petrov",
+      "date": "2026-06-28",
+      "pdf": "https://arxiv.org/pdf/2606.29644v1",
+      "score": "7.0",
+      "evidence": "电离层总电子含量预测模型",
+      "tldr": "现有模型预测电离层总电子含量（TEC）时间分辨率低，难以捕捉小尺度不规则性。本文提出可解释的机器学习模型t-STEP，以30秒分辨率预测TEC并估计不规则性，利用GPS观测数据训练。30秒预测准确率达91%，均方误差4.38 TECU；每小时模型比IRI-2020精度提升35%。该框架可扩展监测不规则性，无需为瞬态事件单独建模。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Earth system infrastructures relying on satellite-based technologies, such as Global Positioning System (GPS) communications, are affected by ionospheric Total Electron Content (TEC) gradients. Modeling these gradients under physical constraints remains challenging due to their dynamic and transient nature. While existing machine learning (ML) models can predict hourly TEC variations, it remains unclear whether their temporal resolution is sufficient to preserve small-scale TEC irregularities within predicted signals. To address this gap, we introduce an interpretable ML-based model, t-STEP, designed to predict TEC at a 30-second resolution and estimate irregularity signatures from the modeled signals. This high cadence enables the derivation of Rate of TEC changes (ROT) and the ROT Index (ROTI) as diagnostic indicators of ionospheric variability. The model is developed using GPS observations from solar cycle 24 at a station located at 5.49°S, 47.49°W. A multi-metric evaluation framework, including dynamic time warping, is used for robustness assessment, while SHAP (SHapley Additive exPlanations) provides insight into feature contributions. The 30-second TEC predictions achieve 91% accuracy with a mean absolute error (MAE) of 4.38 TECU during high solar activity (2015). Compared with the International Reference Ionosphere (IRI-2020), the hourly model improves accuracy by 35%, reduces absolute errors by 57%, and increases prediction skill by 54%. More importantly, the 30-second model captures TEC irregularity dynamics and morphologies during geomagnetic storms of different intensities, outperforming an attention-based Long Short-Term Memory model under the same experimental conditions. This study demonstrates the potential of a single TEC prediction framework for scalable irregularity monitoring without requiring separate models for individual transient events.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

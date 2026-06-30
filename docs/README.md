@@ -6,22 +6,24 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-29
-- 运行时间：2026-06-29 20:47:44 UTC
+- 最新运行日期：2026-06-30
+- 运行时间：2026-06-30 21:23:26 UTC
 - 运行状态：成功
-- 本次总论文数：0
+- 本次总论文数：1
 - 精读区：0
-- 速读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202606/29/README](/202606/29/README)
+今天速读了一篇关于电离层总电子含量预测的可解释模型论文。文章提出t-STEP模型，可同时预测TEC并估计异常，且具有内置可解释性。建议关注该模型的可解释机制，可能有助于空间天气预警或导航定位优化。
+- 详情：[/202606/30/README](/202606/30/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [t-STEP: An interpretable model for Total Electron Content predictions and irregularities estimations](/202606/30/2606.29644v1-t-step-an-interpretable-model-for-total-electron-content-predictions-and-irregularities-estimations)  
+   标签：评分：7.0/10、query:insar-deform
+   evidence：电离层总电子含量预测模型
 
 
 <div class="dpr-home-promo-card">
