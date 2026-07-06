@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-06 <!--dpr-date:20260706-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/06/2607.01045v1-studying-ionosphere-using-ska-low-and-ska-mid" data-sidebar-item="{&quot;title&quot;: &quot;Studying Ionosphere Using SKA-Low and SKA-Mid&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.01045v1-studying-ionosphere-using-ska-low-and-ska-mid&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;利用射电干涉仪研究电离层，与InSAR电离层延迟相关&quot;}">Studying Ionosphere Using SKA-Low and SKA-Mid</a>
   * 2026-06-30 <!--dpr-date:20260630-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/30/2606.29644v1-t-step-an-interpretable-model-for-total-electron-content-predictions-and-irregularities-estimations" data-sidebar-item="{&quot;title&quot;: &quot;t-STEP: An interpretable model for Total Electron Content predictions and irregularities estimations&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.29644v1-t-step-an-interpretable-model-for-total-electron-content-predictions-and-irregularities-estimations&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;电离层总电子含量预测模型&quot;}">t-STEP: An interpretable model for Total Electron Content predictions and irregularities estimations</a>

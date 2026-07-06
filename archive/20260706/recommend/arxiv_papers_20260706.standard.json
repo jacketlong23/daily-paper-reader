@@ -1,0 +1,58 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-06T20:40:30.593007+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.01045v1",
+      "source": "arxiv",
+      "title": "Studying Ionosphere Using SKA-Low and SKA-Mid",
+      "abstract": "The Earth's ionosphere introduces systematic effects that limit the performance of radio interferometers operating at low frequencies ($\\lesssim 1$\\,GHz). These ionospheric effects intensify during periods of heightened geomagnetic activity or for observations with extended baseline configurations. As each Pathfinder telescope operates at a different magnetic latitude, they experience distinct ionospheric regimes, offering complementary insights into ionospheric behaviour. In this work, we present a comparative study of ionospheric disturbances using observations from the uGMRT, VLA, MWA, and LOFAR, spanning a wide range of geographic and geomagnetic conditions. We present both antenna-based and field-based analyses to quantify phase fluctuations, positional offsets, and scintillation effects across these arrays. The measured total electron content (TEC) gradients reveal variations in spatial and temporal ionospheric structures with sensitivities that exceed those achievable with Global Navigation Satellite System (GNSS) measurements. By combining multi-telescope results, we assess the impact of ionospheric turbulence on calibration and imaging fidelity, and use these findings to forecast the expected ionospheric effects on observations with SKA-Low and SKA-Mid.",
+      "authors": [
+        "Abhirup Datta",
+        "Samit Kumar Pal",
+        "Sarvesh Mangla",
+        "Bhuvnesh Brawar",
+        "Sumanjit Chakraborty",
+        "Sudipta Sasmal",
+        "Anshuman Tripathi"
+      ],
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-01T15:07:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.01045v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "studying ionosphere using radio interferometers; relevant to ionospheric delay in InSAR",
+      "llm_evidence_cn": "利用射电干涉仪研究电离层，与InSAR电离层延迟相关",
+      "llm_evidence": "利用射电干涉仪研究电离层，与InSAR电离层延迟相关",
+      "canonical_evidence": "利用射电干涉仪研究电离层，与InSAR电离层延迟相关",
+      "llm_tldr_en": "This paper studies ionospheric disturbances using SKA-Low and SKA-Mid, providing insights into phase fluctuations and scintillation that can inform ionospheric correction models for InSAR.",
+      "llm_tldr_cn": "该工作利用SKA-Low和SKA-Mid望远镜研究地球电离层对低频射电干涉测量的影响，通过比较uGMRT、VLA、MWA和LOFAR的观测，量化了相位波动和位置偏移。研究结果有助于理解电离层行为，可为InSAR时间序列中的电离层延迟校正提供物理基础和方法参考。",
+      "llm_tldr": "该工作利用SKA-Low和SKA-Mid望远镜研究地球电离层对低频射电干涉测量的影响，通过比较uGMRT、VLA、MWA和LOFAR的观测，量化了相位波动和位置偏移。研究结果有助于理解电离层行为，可为InSAR时间序列中的电离层延迟校正提供物理基础和方法参考。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "ionospheric delay correction for InSAR time series",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

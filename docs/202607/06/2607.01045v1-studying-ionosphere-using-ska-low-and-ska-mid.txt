@@ -1,0 +1,532 @@
+Title: Studying Ionosphere Using SKA-Low and SKA-Mid
+
+URL Source: https://arxiv.org/pdf/2607.01045v1
+
+Published Time: Thu, 02 Jul 2026 01:26:29 GMT
+
+Number of Pages: 27
+
+Markdown Content:
+> Chapter in Advancing Astrophysics with the SKA – II
+
+# Studying Ionosphere Using SKA-Low and SKA-Mid 
+
+Abhirup Datta ,1,∗ Samit Kumar Pal ,1 Sarvesh Mangla ,2 Bhuvnesh Brawar ,1
+
+Sumanjit Chakraborty ,3 Sudipta Sasmal 4 and Anshuman Tripathi 1
+
+> 1Department of Astronomy, Astrophysics and Space Engineering, Indian Institute of Technology Indore, Indore 453552, India
+> 2University Observatory, Faculty of Physics, Ludwig-Maximilians-Universität, Scheinerstr. 1, 81679, Munich, Germany
+> 3Indian Institute of Geomagnetism, Navi Mumbai, India
+> 4Space and Atmospheric Science, Institute of Astronomy Space and Earth Science, Kolkata, 700054, India
+
+E-mail: abhirup.datta@iiti.ac.in 
+
+The Earth’s ionosphere introduces systematic effects that limit the performance of radio interferometers operating at low frequencies ( ≲ 1 GHz). These ionospheric effects intensify during periods of heightened geomagnetic activity or for obser-vations with extended baseline configurations. As each Pathfinder telescope oper-ates at a different magnetic latitude, they experience distinct ionospheric regimes, offering complementary insights into ionospheric behaviour. In this work, we present a comparative study of ionospheric disturbances using observations from the uGMRT, VLA, MWA, and LOFAR, spanning a wide range of geographic and geomagnetic conditions. We present both antenna-based and field-based analyses to quantify phase fluctuations, positional offsets, and scintillation effects across these arrays. The measured total electron content (TEC) gradients reveal varia-tions in spatial and temporal ionospheric structures with sensitivities that exceed those achievable with Global Navigation Satellite System (GNSS) measurements. By combining multi-telescope results, we assess the impact of ionospheric turbu-lence on calibration and imaging fidelity, and use these findings to forecast the expected ionospheric effects on observations with SKA-Low and SKA-Mid.   
+
+> ©The Authors https://skao.int/
+> arXiv:2607.01045v1 [astro-ph.IM] 1 Jul 2026
+
+Ionosphere with the SKA Datta et al. 
+
+1 Introduction 
+
+Radio signals arriving from beyond Earth’s atmosphere are distorted by the ionosphere at centime-tre and meter wavelengths, which makes low-frequency radio astronomy, especially at ≲ 1 GHz, particularly challenging. The three-dimensional structure of the ionosphere introduces phase er-rors into incoming cosmic signals recorded by ground-based radio telescopes. To obtain sensitive observations at these frequencies, it is critical to calibrate and remove ionospheric corruption from the measured data. The ionosphere is a partially ionized plasma layer extending from about 50 km to beyond 1000 km altitude, primarily ionized by solar X-ray and extreme ultraviolet (EUV) radiation. While cosmic rays contribute to ionization, their contribution is significantly smaller than that of solar radiation. At nighttime, due to the recombination process, the number of electron-ion pairs decreases. Since there is no solar radiation to offset this loss through new ionization, the plasma density drops sig-nificantly, particularly in the lower regions. As a result, the electron density peak lies at an altitude of about 250 – 500 km (see Mannucci et al., 1998). Radio interferometers are especially sensitive to ionosphere-induced path length differences. For effective calibration, the required antenna-based, time- and direction-dependent phase corrections typically must be determined with high precision using self-calibration or field-based techniques ap-plied directly to interferometric observations. At frequencies around 200 MHz, this often demands ionospheric calibration at high temporal resolution, on the order of ten seconds. The configuration of interferometric arrays, along with the spread of calibrator sources across the sky, provides dense instantaneous sampling of the ionosphere’s spatially varying electron density. This sampling can be far finer than what is achievable even with dense grids of GPS receivers. As a result, radio interferometers offer a powerful synergy: they not only allow removal of ionospheric distortion from astronomical data but also contribute valuable information to ionospheric science at spatial scales smaller than those accessible through GNSS alone. Radio interferometers are also significantly more sensitive to electron density changes than modern GNSS receivers. Even assuming a phase stability of about ten degrees for instruments such as the Square Kilometre Array (SKA), their sensitivity between 70 and 1420 MHz corresponds to roughly 1 to 10 mTEC. This represents an improvement of about an order of magnitude over GPS-based experiments, and interferometric studies have even led to the discovery of new classes of travelling ionospheric disturbances (TIDs). For single-dish radiometers, ionospheric effects appear through refraction, absorption, and emis-sion, which can corrupt all-sky averaged cosmological signals at low frequencies. Ionospheric electron density fluctuations are strongly influenced by solar activity at various timescales, and solar phenomena, including radio bursts and sunspot variations, that exhibit flicker-noise ( 1 
+
+> 𝑓
+
+) be-haviour. These fluctuations impose additional corruption on single-antenna measurements, making high time resolution ionospheric calibration essential and placing stringent requirements on signal-to-noise ratios for successful calibration (see Datta and Chakraborty, 2017, and references therein). Over the past decade, ionospheric characterization and mitigation techniques have been developed using current radio interferometers. The Very Large Array (VLA) pioneered direction-dependent calibration at 74 MHz, while the Low-Frequency Array (LOFAR) demonstrated sub-kilometre-scale ionospheric imaging with TEC measurements approximately ten times more accurate than GNSS 2Ionosphere with the SKA Datta et al. 
+
+(Intema et al., 2009; Helmboldt et al., 2012a,b). The Murchison Widefield Array (MWA) Phase II characterized ionospheric turbulence with 1–10 mTEC sensitivity, revealing ∼ 50% of ionospheric screens exhibit significant non-linear structures at sub-kilometre scales (Loi et al., 2015; Rioja et al., 2018; Rioja and Dodson, 2022). The upgraded Giant Metrewave Radio Telescope (uGMRT) enabled multi-frequency observations (Mangla et al., 2023; Banerjee et al., 2026) to characterize both ionospheric structures and TIDs. However, current instruments face fundamental limitations in collecting area, baseline distribution, and temporal resolution. The upcoming SKA (see Dewdney et al., 2009; Braun et al., 2019), now under construction at two strategic sites: Australia and South Africa, represents a transformative leap in ionospheric obser-vation and calibration. The lower-frequency part, SKA-Low, located in Western Australia, consists of phased dipole arrays operating between 50 and 350 MHz. This array will initially comprise AA ∗ (307 stations), expanding to the full AA 4 configuration of 512 stations. Its design features a dense ∼ 1 − 2 km core containing 50% of its stations. The remaining stations are distributed logarithmically along three spiral arms, extending to a maximum baseline of 74 km. On the other side, SKA-Mid, located in South Africa, utilizes parabolic dishes optimized for higher-frequency observations, spanning 350 MHz to 14 GHz across multiple bands. The initial AA ∗ configura-tion consists of 144 dishes (integrating 64 MeerKAT dishes), growing to the AA 4 design of 197 dishes, extending to a maximum baseline of 150 km. The SKA requires precise calibration tech-niques to calibrate both instrumental and atmospheric propagation contributions as functions of time, frequency, and position, to meet its ambitious scientific goals. The development of advanced calibration algorithms is an active field of research, with the efforts focused on characterising the spatial and temporal scales of ionospheric structures. This complementary dual-array architecture is revolutionary for ionospheric studies. The SKA-Low telescope, with its heightened sensitivity at lower frequencies where ionospheric effects are most significant, allows for the detection and de-tailed analysis of ionospheric structures with exceptional accuracy. Meanwhile, SKA-Mid operates at higher frequencies with enhanced angular resolution, facilitating the validation of ionospheric models and the characterization of disturbances at multiple scales. Together, these instruments offer comprehensive, multi-frequency data collection of electron density over extensive baselines, providing an unparalleled ability to study ionospheric physics. Next, we review the current state of ionospheric studies using first-generation telescopes. In Section 2, we present the ionospheric effects on electromagnetic radiation at low radio frequencies and their impact on radio-interferometric data. We then describe antenna-based (Section 3) and field-based (Section 4) reconstruction methods, followed by scintillation effects (Section 5). In Section 6 we discuss simulations of ionospheric-corrupted SKA data, and in Section 7 we forecast calibration challenges for SKA-Low and SKA-Mid. We conclude in Section 8. 
+
+2 Effect of the ionosphere on radio interferometers 
+
+A radio interferometer measures the spatial coherence function by cross-correlating signals from pairs of antennas observing the sky (see Cornwell and Fomalont, 1999). This cross-correlation, known as the visibility, encodes information about both the far-field radiation pattern and the sky’s intensity distribution. The sky brightness distribution (i.e., the radio image) can be reconstructed 3Ionosphere with the SKA Datta et al. 
+
+by performing a Fourier inversion of the measured visibilities. Specifically, the observed visibility (𝑉 𝑖 𝑗 ) for an antenna pair (baseline 𝑖, 𝑗 ) is defined by the van Cittert-Zernike theorem: 
+
+𝑉 𝑖 𝑗 = 𝐺 𝑖 
+
+∬ 
+
+> 𝑙𝑚
+
+1
+
+𝑛 ®𝐸 𝑖 B ®𝐸 𝐻 𝑗 𝑒 −2 𝜋𝑖 (𝑢 𝑖 𝑗 𝑙 +𝑣 𝑖 𝑗 𝑚 +𝑤 𝑖 𝑗 (𝑛 −1) ) 𝑑𝑙 𝑑𝑚 
+
+
+
+𝐺 𝐻 𝑗 (1) Here, 𝐵 is the intrinsic source brightness matrix, 𝐺 𝑖 represents the direction-independent ef-fects (DIEs) or the 𝑢𝑣 -Jones terms, and 𝐸 𝑖 is the direction-dependent effects (DDEs) or sky-Jones terms. 
+
+Figure 1: Schematic overview of four calibration regimes discussed by Lonsdale (2005) for low-frequency arrays. The quantities A, S, and V are the array size on the ground, the ionospheric irregularities scale size, and the FoV at projected ionospheric altitude, respectively. For isoplanatic conditions (V << S; Regime 1 and 2), the ionospheric phase rotation does not vary much within the FoV of each antenna. For non-isoplanatic conditions (V ≳S; Regime 3 and 4), the ionospheric phase rotation per antenna varies over the FoV. Adapted from Mangla et al. (2023). 
+
+The highly dynamic nature of the ionosphere presents a significant challenge in determining its 4Ionosphere with the SKA Datta et al. 
+
+effects on low-frequency arrays. Calibrating for this continuously varying medium is consider-ably more complex than correcting for slowly changing instrumental gain. Effective ionospheric calibration requires that the parameters describing the ionosphere above the array be sufficiently constrained so that the interferometric phase can be accurately measured and corrected. This correction must account for the phase as a delay on all baselines, across the entire field of view (FoV), and throughout the observation duration. To address this, Lonsdale (2005) established a framework based on the relationships between three critical length scales: (a) the physical scale size of ionospheric fluctuations (S) that induce noticeable phase delays, (b) the physical scale of the array (A) on the ground, and (c) the projected size of the FoV (V) of a single antenna at a typical ionospheric altitude. This yields four calibration regimes (see Fig. 1): 
+
+• In Regimes 1 (A << S; V << S) and 2 (A >> S; V << S), the relatively narrow beam patterns ensure that the TEC is approximately ‘constant’ across FoV. Since phase rotation is direction-independent, ionospheric effects can be effectively mitigated via self-calibration with sufficient temporal resolution. 
+
+• Regime 3 (A << S; V ≳ S), wide FoVs induce significant TEC variations across the FoV. In compact arrays, TEC variation across antennas forms an approximate linear gradient, causing time- and direction-dependent source position shifts without shape deformation. Calibration here is simplified, requiring few parameters because all antennas share the same FoV region. 
+
+• Regime 4 (A >> S; V ≳ S), wide FoVs also induce significant TEC variations across across the FoV. For extended arrays, TEC variation becomes highly complex and non-linear, deviating substantially from a simple gradient. The lines of sight (LoS) of different antennas to the same source diverge significantly, resulting in both source position shifts and deformations. This scenario requires a robust, direction-dependent calibration framework capable of modeling a full three-dimensional ionospheric phase structure. The primary systematic effect introduced by the ionosphere in radio interferometry is the propagation delay, which stems from the varying refractive index ( 𝑛 ) of the ionospheric plasma along the wave’s path. The total propagation delay integrated along the LoS at a given frequency 𝜈 is expressed as a phase rotation: 
+
+𝜙 ion = − 2𝜋𝜈 𝑐 
+
+∫
+
+(𝑛 − 1) 𝑑𝑥 (2) Assuming a refractive index ( 𝑛 ) that is constant throughout space and time, the ionosphere would introduce only a constant phase offset. This would manifest as a uniform spatial shift of the observed sources relative to the true sky. By assuming a cold, collisionless, magnetized plasma, which is the typical characteristics of the Earth’s ionosphere, one can calculate an exact expression for the refractive index 𝑛 (Davies, 1990). In the high-frequency limit, where the observing frequency 𝜈 is significantly greater than the plasma frequency 𝜈 𝑝 (which is approximately ∼ 10 MHz ), this expression can be simplified. Following the approach of Datta-Barua et al. (2008), a third-order Taylor expansion allows the refractive index to 5Ionosphere with the SKA Datta et al. 
+
+be approximated by retaining terms up to 𝜈 −4:
+
+𝑛 ≈ 1 − 𝑞 2
+
+8𝜋 2𝑚 𝑒 𝜖 0
+
+· 𝑛 𝑒 
+
+𝜈 2 ± 𝑞 3
+
+16 𝜋 3𝑚 2
+
+> 𝑒
+
+𝜖 0
+
+· 𝑛 𝑒 𝐵 cos 𝜃 𝜈 3 − 𝑞 4
+
+128 𝜋 4𝑚 2
+
+> 𝑒
+
+𝜖 20
+
+16 · 𝑛 2
+
+> 𝑒
+
+𝜈 4 − 𝑞 4
+
+64 𝜋 4𝑚 3
+
+> 𝑒
+
+𝜖 0
+
+· 𝑛 𝑒 𝐵 2 (1 + cos 2 𝜃 )
+
+𝜈 4
+
+(3) where 𝑞 is the electron charge, 𝑚 𝑒 is the electron mass, 𝜖 0 is the electric permittivity in vacuum, 
+
+𝑛 𝑒 is the number density of free electrons, the magnetic field strength is denoted by 𝐵 , and 𝜃 is the angle between 𝐵 and the propagation direction of an electromagnetic wave. The first term is the dominant factor, responsible for the dispersive delay proportional to the TEC along the LoS. For signal frequencies exceeding a few hundred MHz, the subsequent higher-order terms can typically be neglected. The second term describes the effect of Faraday rotation, where the sign convention distinguishes between left-hand and right-hand polarized signals. While the last two terms are usually ignored in general radio astronomy, they become essential for accurately modeling the ionosphere at very low observing frequencies, specifically below 40 MHz (see Hoque and Jakowski, 2008). Uncorrected ionospheric phase errors severely impact image quality. This causes an apparent shift in source positions, and when higher-order terms are significant, it leads to distortion or even the suppression of sources. Precise ionospheric phase calibration is therefore essential for accurately localising and characterising astrophysical sources. Moreover, the measured phase provides a powerful diagnostic for studying the ionosphere’s dynamics, provided calibration is performed with adequate temporal, spatial, and directional precision—most effectively achieved through self-calibration or field-based techniques. Modern radio interferometers, thanks to their array geometry and calibrator distribution, offer a much finer and more densely sampled map of the spatially variable ionospheric electron density than GNSS receiver grids, enabling simultaneous advances in interferometric imaging and ionospheric research (see Kassim et al., 2010). A key advantage of radio interferometers over GNSS receivers is their superior sensitivity to subtle ionospheric electron density fluctuations. These fluctuations are primarily driven by solar radiation, with electron density variations linked to diverse solar disturbances that exhibit flicker-noise (1/f) characteristics over different timescales (Datta et al., 2016). This dynamic ionospheric corruption in raw antenna signals necessitates ionospheric calibration at high temporal resolution. Meeting this demand requires a high signal-to-noise ratio (SNR) for successful and accurate phase correction, essential to mitigate atmospheric effects in low-frequency radio astronomy. 
+
+3 Exploring ionospheric structures using Antenna-based Method 
+
+In the antenna-based method, ionosphere measurements are derived in such a way that a single bright source is observed at the phase centre, and the time-dependent phase variation is measured on every baseline (the separation between a pair of antennas). The electromagnetic signals from radio sources are perturbed as they propagate through the ionosphere. The dominant, first-order phase term ( Φ1𝑠𝑡 ), approximated using Equations 2 and 3, is given by: 
+
+𝜙 ion = 84 .36 
+
+ 𝜈 
+
+> 100 MHz
+
+ −1  TEC 1 TECU 
+
+
+
+radians (4) Equation 4 establishes a direct proportionality: the measured ionospheric phase is proportional to the difference in TEC ( ΔTEC) along the LoS between the two antennas. This technique is 6Ionosphere with the SKA Datta et al.    
+
+> Figure 2: The differential TEC ( 𝛿 TEC ) variations are plotted as a function of time for multiple antennas located in the Central Square and along the arms of the GMRT. The 𝛿 TEC values were computed along each antenna’s line of sight relative to the line of sight of the designated reference antenna (see Mangla et al., 2023)
+
+formally designated as the antenna-based method, and it is specifically designed to investigate the temporal variation in differential TEC corresponding to the array’s footprint in the ionosphere. This methodology has been successfully employed in numerous studies dedicated to ionospheric probing. The high sensitivity of the VLA was leveraged by Helmboldt et al. (2012c) through the observation of a single bright source (Cygnus A). This work demonstrated the ability to detect TEC variations with amplitudes below 10 −3 TECU and to measure TEC gradients with an accuracy of approximately 0.2 mTECU km −1. Following this, the complementary work by Helmboldt et al. (2012b) focused on the spectral analysis of these TEC gradient measurements and detected and classified MSTIDs. LOFAR observations of the bright quasar 3C 196 enabled Mevius et al. (2016) to probe ionospheric structure with high precision ( 10 −3 TECU). Their analysis of long-range baseline data, collected during winter nights (2012–2013), revealed anisotropic TEC irregularities and a power-law spec-trum consistent with Kolmogorov turbulence in the ionosphere. Building on this, de Gasperin, F. et al. (2018) quantified the impact of scintillation, showing that it significantly corrupts visibility amplitudes at ultra-low frequencies, resulting in an average of 30% data loss during the night relative to the day. Consequently, this study emphasized the need for daytime observations, particularly for projects like the LOFAR Epoch of Reionisation (EoR) experiment. Further research involving a combined analysis of data from LOFAR, GNSS, and ionosondes (see Fallows et al., 2020) uncovered a mechanism for structure evolution: when large-scale and small-scale TIDs travel orthogonally, they generate instabilities that facilitate the breakdown of large-scale structures into smaller com-ponents. As one of the antenna-based observations, Figure 2 represents GMRT observations of the 7Ionosphere with the SKA Datta et al. 
+
+astronomical source 3C 68.2 at 235 MHz, recorded on August 6, 2012, covering the time from local midnight to post-sunrise. The dataset was pre-processed, flagged, and calibrated using the Common Astronomy Software Applications ( CASA 1), following the detailed procedure presented in Mangla and Datta (2022). The complex antenna gain solutions contain both the ionospheric phase term and instrumental noise. To isolate the ionospheric component, we employed the continuum subtraction method (see Mangla and Datta, 2022; Helmboldt et al., 2012c). The resulting ionospheric phase was then converted to differential Total Electron Content ( ΔTEC) using Equation 4, with the time series for four antennas baselines shown in Figure 2. To quantify the precision of our measurement, the uncertainty was estimated using the Median Absolute Deviation (MAD) of the ΔTEC time series at each step. This MAD computation included four adjacent time steps to ensure higher accuracy. The resulting uncertainty in ΔTEC is approximately 1×10 −3 TECU, and these MAD values are also plotted to illustrate the relative accuracy achieved. Analysis of the arm antennas reveals a critical dependence: the ΔTEC along each arm, when normalised by the baseline length (with respect to reference antenna ’C06’), is proportional to the baseline length. Crucially, the observation of distinct patterns along the three arms confirms that the ionosphere varies significantly in both space and time. This spatial and temporal variability suggests the propagation of multiple waves or a dominant wave accompanied by smaller, differently directed components. Spectral analysis of these patterns, following the methodologies of Helmboldt et al. (2012b) allows for the extraction of the speed, direction, and physical size of the dominant ionospheric structure(s) across the full array. Due to GMRT’s sensitivity to the differential TEC ( ΔTEC) between antenna pairs, measuring the resulting TEC gradient is essential for a complete understanding of iono-spheric fluctuations. To transition from the measured slant ΔTEC to the desired vertical ΔTEC, a geometric correction is first performed based on the thin-shell approximation of the ionosphere, located at a single ’peak height’. This peak height is determined using the International Reference Ionosphere (IRI) Plas model 2 (Gulyaeva and Bilitza, 2012), which leverages the GMRT’s location and observation time. Notably, the IRI Plas model is preferred because, over the Indian longitude sector, it provides the most accurate estimation of electron density and TEC under disturbed con-ditions compared to other models, owing to its inclusion of electron density distribution up to the plasmasphere (see Chakraborty et al., 2020b, and references therein). After this well-documented correction (see Mangla and Datta, 2022, Appendix A) is applied to the ΔTEC time series for every antenna, the TEC gradient across the full GMRT array is calculated. The two-dimensional TEC surface over the array can be computed using the second-order two-dimensional Taylor series (max-imum baseline for the array is smaller than transient ionospheric waves), which has the following form: TEC = 𝑝 0 𝑥 + 𝑝 1 𝑦 + 𝑝 2 𝑥 2 + 𝑝 3 𝑦 2 + 𝑝 4 𝑥 𝑦 + 𝑝 5 (5) where x and y are antenna positions along with north-south and east-west directions. p0 to p5 are the polynomial coefficients. By calculating the difference of 𝛿 TEC between antenna pairs (120 base-lines) at each time step, one can increase the accuracy of these polynomial coefficients/parameters.   
+
+> 1CASA is a python-based software application package for Radio Interferometer data processing Team et al. (2022);
+> https://casa.nrao.edu/
+> 2IRI extended to Plasmasphere http://www.ionolab.org/iriplasonline/
+
+8Ionosphere with the SKA Datta et al. 
+
+Figure 3: The fitted coefficients ( p0 to p4) along the observation. These coefficients are fitted using the second-order polynomial equation independently for each time step using each of the antenna pairs. The estimated error for each coefficient is also mentioned in the respective panel. Adapted from Mangla et al. (2023) 
+
+Thus, equation 5 transforms into the following form: 
+
+𝛿 TEC 𝑖 − 𝛿 TEC 𝑗 = 𝑝 0 (𝑥 𝑖 − 𝑥 𝑗 ) + 𝑝 1 (𝑦 𝑖 − 𝑦 𝑗 )+ 𝑝 2 (𝑥 2 
+
+> 𝑖
+
+− 𝑥 2 
+
+> 𝑗
+
+) + 𝑝 3 (𝑦 2 
+
+> 𝑖
+
+− 𝑦 2 
+
+> 𝑗
+
+)+ 𝑝 4 (𝑥 𝑖 𝑦 𝑖 − 𝑥 𝑗 𝑦 𝑗 ) (6) where subscripts 𝑖 and 𝑗 correspond to different antenna pairs (where 𝑖 ≠ 𝑗 ). It is important to note that the fitting is done independently at each time step, thus conserving the temporal and spatial TEC variation over the array. The obtained polynomial coefficients are shown in Fig. 3 along 9Ionosphere with the SKA Datta et al. 
+
+with the standard error for each coefficient. One can easily notice that the amplitude for the p1
+
+coefficient (along the east-west direction) is significantly high during the local nighttime. The same phenomenon is observed for p0 coefficient (along north-south direction) during the sunrise hour (around 6:00 AM), which is a known behaviour of MSTIDs, commonly detected around sunrise and sunset time (see Hernández-Pajares et al., 2006). Variations in higher-order coefficients ( p2 to 
+
+p4) are more significant during the nighttime, suggesting unanticipated ionospheric changes in and around the EIA region during these local times. 
+
+3.1 Extending Antenna-Based Measurements to Map Ionospheric Phase Screen 
+
+In extension to the above, the Ionospheric Phase Screen ( 𝑍 ) was reconstructed by utilising the 
+
+grad2surf algorithm by Harker and O’Leary (2015). That algorithm is primarily designed to reconstruct a 3D surface of an image with a gradient field that is measured with Photometric Stereo (Woodham, 1980). grad2surf algorithm requires the gradient fields ˆ𝑍 𝑥 and ˆ𝑍 𝑦 , respectively measured in 𝑥 and 𝑦 direction. 
+
+𝜕𝑍 𝜕𝑥 = 𝑍 𝐷 𝑇 𝑥 ≈ ˆ𝑍 𝑥 (7) 
+
+𝜕𝑍 𝜕𝑦 = 𝐷 𝑦 𝑍 ≈ ˆ𝑍 𝑦 (8) Here, 𝑍 is the actual matrix of unknown surface (phase screen) with unknowns 𝑧 𝑖 𝑗 , 𝐷 𝑥 and 𝐷 𝑦 are differential matrices and provide the theoretical/numerical gradient field of the surface, whereas terms after ≈, ˆ𝑍 𝑥 and ˆ𝑍 𝑦 provide the measured gradient field. Thus, the matrix Frobenius norm can be used to express the global least squares cost function for reconstructing a surface from its gradient field as follows: 
+
+𝜖 𝑍 = 𝑍 𝐷 𝑇 𝑥 − ˆ𝑍 𝑥  
+
+> 2
+> 𝐹
+
++ 𝐷 𝑦 𝑍 − ˆ𝑍 𝑦  
+
+> 2
+> 𝐹
+
+, (9) This is the Euclidean distance between the gradient field of an unknown surface 𝑍 and the measured gradient field. From a mathematical perspective, this cost function is a function of the unknown function (surface) 𝑍 and can be seen as a discrete function with respect to the calculus of variations. The effective normal equations of the least-squares problem are obtained by differentiating with respect to the matrix 𝑍 to determine the minimum of the cost function. 
+
+𝐷 𝑇 𝑦 𝐷 𝑦 𝑍 + 𝑍 𝐷 𝑇 𝑥 𝐷 𝑥 − 𝐷 𝑇 𝑦 ˆ𝑍 𝑦 − ˆ𝑍 𝑥 𝐷 𝑥 = 0 (10) This matrix equation is a set of linear equations in the unknowns 𝑧 𝑖 𝑗 and is known as a Sylvester Equation. This algorithm has been utilised to recreate a phase-screen map over GMRT by replacing 
+
+ˆ𝑍 𝑥 and ˆ𝑍 𝑦 with polynomial-interpolated directional TEC gradients, respectively in 𝑥 and 𝑦 direction, and 𝑍 represents the TEC map 𝑇 𝐸𝐶 (𝑥, 𝑦 ). We use the methodology described in Helmboldt et al. (2012c) to estimate the extra phase produced as a result of the radio signal travelling through the Earth’s ionosphere. To obtain the ionospheric information, several procedures are carried out on the phase data once the phase terms from Common Astronomy Software Application ( CASA ) have been calculated. The ionospheric contribution, which is greatest in low-frequency regimes, is included in the phase terms along with additional effects. 10 Ionosphere with the SKA Datta et al. 
+
+The phase difference between the two antenna elements (Intema et al., 2009; Helmboldt et al., 2012c) is given by 
+
+Δ𝜙 = Δ 𝜙 ion + Δ𝜙 other (11) where Δ𝜙 ion represents the difference in the ionospheric phases of the two antennas along the line of sight given by equation (4), Δ𝜙 other denotes the combined differences in the instrumental effects between the two antennas, 2𝜋 ambiguities and the phase difference from the observed source structure. The Δ𝜙 other phase delay effect is removed or reduced as the method mentioned in Mangla and Datta (2022). From equation 4, one can infer that the difference in TEC along the LoS to the two antennas is directly proportional to the measured ionospheric induced phase. This method will be referred to as the antenna-based method , which can study the temporal variation in differential TEC ( 𝛿 TEC) corresponding to the projected array onto the ionosphere. Several studies have used this method to probe the ionosphere. The resulting 𝛿 TEC values are plotted for different antennas in the array with respect to reference antenna ‘C06’ in Fig. 2. Mangla and Datta (2022) proves the remarkable ability of the GMRT to detect small fluctuations while measuring TEC. These results suggest that the variation in 𝛿 TEC for the southern arm is more than the other two arms and the central square configuration. Taking the GMRT antenna ‘C06’ as the reference antenna, similar TEC gradients with all the active antennae were calculated along with time. The gradient field is then mapped over the GMRT area of 50 km × 50 km using a 3rd order polynomial fit onto a 100 × 100 pixel (for more see Mangla and Datta, 2022). Then ˆ𝑍 𝑥 and ˆ𝑍 𝑦 in Figure 4 represent the gradient measured in x and y direction with an interpolation polynomial fit.          
+
+> Figure 4: Figure shows measured TEC gradients ˆ𝑍 𝑥 and ˆ𝑍 𝑦 in 𝑥 and 𝑦 directions respectively (Adapted from Brawar et al., 2025).
+
+Using these TEC gradients ˆ𝑍 𝑥 and ˆ𝑍 𝑦 with grad2surf provides a TEC map with a mean value of zero, so to get a near true TEC measurement, we need to provide boundary conditions or an integral constant. grad2surf relies on the mathematical principle of integration ( ∫ 𝑓 (𝑥 ) 𝑑𝑥 ), and obtaining the correct result requires specifying the integration constant ( 𝐶 ). For this purpose, we used IRI-2016 products for the GMRT location as input for boundary conditions. The following figure 5 provides a comparison of the IRI-2016 generated TEC map with respect to the TEC map reconstructed from gradients. 11 Ionosphere with the SKA Datta et al.  
+
+> Figure 5: TEC map profile over the GMRT from (a)IRI-2016 and (b)Reconstruction from gradients during the observation period. Histograms provide the TEC fluctuation values within the area (Adapted from Brawar et al., 2025).
+
+4 Exploring ionospheric structures using Field Based Method 
+
+Unlike the antenna-based approach, wide-field radio interferometers are capable of simultaneously observing many celestial sources, resulting in a large collection of isotropically distributed iono-spheric pierce points (see Cohen and Röttgering, 2009; Jordan et al., 2017). This mandates the use of the field-based calibration (FBC), where the phase is determined by quantifying the shifts in apparent source position instead of antenna-based solutions. The core principle of FBC is that the observed position shift of a source is directly proportional to the components of the TEC gradient along the LoS, averaged over the array and the snapshot time. Since the instrument measures differential phase between antenna pairs, the phase delay between the signal paths for a given pair translates into an apparent positional shift ( Δ𝜃 ) in the source’s actual location, defined by the angle: 
+
+𝜃 = 𝜆 𝐿 
+
+Δ𝜙 
+
+2𝜋 (12) where 𝜆 is the observational wavelength, 𝐿 is the baseline length, and Δ𝜙 is the difference in ionospheric phase delays between pairs of antennas. If the ionospheric phase delay changes linearly across an array, all baselines “observe” the same position shift for a given source, and the image of 12 Ionosphere with the SKA Datta et al. 
+
+a celestial source is merely moved from its true sky position. Using equations 4 and 12, the TEC gradient along a direction 𝑟 on the ground to the observed angular shift in the same direction 𝜃 𝑟 , is given by (see Cohen and Röttgering, 2009; Helmboldt and Hurley-Walker, 2020): 
+
+𝑑 𝑑𝑟 TEC = 1.2 × 10 −4  𝜈 
+
+100MHz 
+
+2  𝜃 𝑟 
+
+1′′ 
+
+
+
+TECU km −1 (13) If the ionospheric phase delay deviates from linearity across the array, and higher-order terms such as curvature become significant, the effect is two-fold: the apparent sky position will be shifted, and the image itself will become distorted. The field-based method has been extensively utilized to probe ionospheric dynamics. For instance, Helmboldt et al. (2012a) conducted a spectral analysis on the apparent positional shifts of 29 bright radio sources within a single VLA FoV at 74 MHz. This technique successfully detected wavelike ionospheric disturbances. Building on this approach, Loi et al. (2015) investigated the ionosphere by studying the power spectrum of ionospheric TEC variations using the MWA, which were derived directly from radio source positional offsets. Their analysis clearly revealed the characteristic signatures of TIDs. The technique of imaging ionospheric structure was utilized by Helmboldt and Hurley-Walker (2020); they analysed 200 hours of data from the MWA’s GLEAM survey (see Wayth et al., 2015). Through spectral analysis of these resultant ionospheric images, the study uncovered key characteristics of nighttime activity, establishing a clear link: the generation of MSTIDs is associated with the formation of Sporadic E-layers. The MWA employs advanced calibration techniques to mitigate ionospheric distortions, which are crucial for achieving its scientific goals, such as detecting the redshifted cosmological 21-cm signal from neutral hydrogen during the EoR (Chege et al., 2022, 2021). The Real-Time System (RTS) calibration, for instance, provides high spatial and temporal resolution information about the ionosphere, allowing for the classification of ionospheric activity into four distinct types and the development of metrics for data quality assessment (Jordan et al., 2017). Recent studies with MWA have reported unusually strong ionospheric activity, including duct-like structures (roughly 
+
+50 km × > 100 km), during magnetic storms, demonstrating its capability to capture ionospheric structures smaller than 100 km (Yoshiura et al., 2025). 
+
+5 Estimation of Amplitude Scintillation 
+
+While the previous sections detailed the impact of phase errors, this section addresses ionospheric effects on the amplitude of radio interferometric visibilities. When radio waves from compact sources pass through an ionized medium, they can be strongly affected by small-scale density struc-tures in the electron density. This diffraction of the wavefront caused by small-scale irregularities leads to variations in the intensity of the wavefront as a function of distance from the scattering medium. This well-known phenomenon is scintillation. Combined with phase measurements dis-cussed previously, scintillation observations reveal the spatial and temporal structure of ionospheric turbulence across scales from tens of meters to kilometres. The wide operational bandwidth of 13 Ionosphere with the SKA Datta et al. 
+
+SKA precursor and pathfinder facilities, such as LOFAR, MWA, VLA, and uGMRT, is critical for accurately characterising the scattering regime (weak or strong) and developing methodologies for real-time ionospheric monitoring. The current and future radio interferometers are used to map the complex spatial, temporal, and frequency dependencies of ionospheric turbulence. This comparative analysis demonstrates how different array configurations and locations prioritise the study of distinct scale structures within the ionosphere. Fallows et al. (2020), using LOFAR, observed ionospheric scintillation on the strong radio source Cassiopeia A at mid-latitudes across an observing bandwidth of 10–80 MHz. Their work demon-strates LOFAR’s capability to characterise two simultaneous TIDs at different altitudes and propa-gating in different directions. Using delay-Doppler spectra (the 2-D FFT of the dynamic spectrum) analysis, they show two distinct parabolic arcs, indicative of scattering from two separate iono-spheric layers: an F-region layer ( ∼ 200 − 700 km), consistent with a large-scale TID potentially driven by high-latitude geomagnetic substorms, moving northwest to southeast, and another a D-region layer ( ∼ 60 − 70 km), indicative of a smaller-scale disturbance likely caused by atmospheric gravity waves moving northeast to southwest. Complementary data from GNSS and ionosonde measurements confirmed the presence and behaviour of these TIDs. The spatial scales and veloci-ties of plasma irregularities causing scintillation were estimated, highlighting the ability of LOFAR to probe small- to medium-scale ionospheric structures simultaneously at multiple altitudes. This simultaneous detection of two distinct scattering phenomena originating from different altitudes represents a crucial step in understanding ionospheric propagation. It demonstrates that the com-mon assumption of a single, thin phase screen often fails to capture the true complexity of the ionosphere. The ionosphere must frequently be treated as a multi-layered or volumetric turbulent medium, where radio waves undergo complex ray tracing and refraction through superimposed disturbances. Using MWA data, Waszewski et al. (2022) studied small-scale ionospheric structures by analysing weak amplitude scintillation measurements at 154 MHz, focusing on mid-latitude ionosphere. Their work demonstrated MWA is sensitive to study small-scale ionospheric structures from Fresnel-scale structure on scales ∼ 300 meters up to a few kilometres. Their methods, adapted from interplanetary scintillation studies (IPS; Morgan et al., 2018), effectively characterize fine plasma irregularities. The study found a strong correlation between scintillation indices and refractive ionospheric shifts, confirming that amplitude scintillation is a useful proxy for small-scale ionospheric turbulence. This approach extends the capability to probe ionospheric irregularities much smaller than those typically resolved by GNSS total electron content measurements, providing a detailed view of turbu-lent ionospheric conditions that impact low-frequency radio observations. Recent MWA extended baseline observations at the SKA-Low site revealed that 50% of ionospheric screens show sig-nificant non-linear structures at scales exceeding 0.6 km, with 1% exhibiting sub-minute temporal variations; non-linear corrections are mandatory at 88 MHz during normal observations and at 154 MHz during poor conditions (Rioja and Dodson, 2022). The VLA’s VHF system achieves high-precision measurements of ionospheric TEC gradients with a differential TEC precision of 3 × 10 −4 TECU, spanning a much wider range of spatial scales (1–10 km) than GNSS measurements. VLA observations provide TEC fluctuation spectra inac-cessible to other techniques and have characterized ionospheric structure function properties for 14 Ionosphere with the SKA Datta et al. 
+
+calibration algorithm development. Helmboldt et al. (2012c,a) detected and characterised medium-scale TIDs and identified quasi-periodic echo signatures linked to sporadic E-layer coupling mech-anisms. VLA operates primarily at 74 MHz and has limited epochs; it lacks continuous survey capability and multi-latitude systematic characterisation. The uGMRT occupies a unique geomagnetic location between the equatorial ionization anomaly (EIA) northern crest and the magnetic equator, making it exceptionally sensitive to ionospheric disturbances. At 235 MHz, uGMRT measures TEC gradients with an order of magnitude higher sensitivity than GNSS, directly detecting ionospheric irregularities on scales from ∼ 100 meters to kilometers (Mangla and Datta, 2022; Mangla et al., 2023). Combined uGMRT, VLA, LOFAR, and MWA observations have been used to characterize ionospheric disturbances across multiple magnetic latitudes and provide forecasts for SKA performance. In essence, SKA-Low AA* & AA4 and SKA-Mid AA* & AA4 will transform ionospheric scintil-lation studies from regional, limited-sensitivity snapshots into continuous, local, and high-fidelity observations, opening new frontiers in space weather research, plasma physics, and atmospheric-ionosphere coupling. This enables precision 21-cm cosmology by providing exquisite correction for ionospheric amplitude and phase corruption across unprecedented scales and frequencies. 
+
+6 Simulation of Ionospheric effects 
+
+To construct a physically motivated and realistic model of the ionosphere, several characteristic properties must be taken into account. The scale and structure of the electron content should be consistent with observations, and the electron distribution should evolve in a manner that is coherent in both space and time. Ionospheric irregularities often occur at the equator and high latitudes, whereas mid-latitude locations such as SKA-Low experience lower activity levels (Fejer and Kelley, 1980). Although the ionosphere is a dynamic, three-dimensional medium, it is often represented using a simplified two-dimensional thin-layer model (Ratcliffe, 1956). This approach approximates the ionosphere as a discrete spherical shell situated at a fixed altitude, ℎion , above the Earth’s surface. This approximation is motivated by the ionosphere’s vertical structure, in which most free electrons reside in the F region, between 200 km and 450 km in altitude. Collapsing the full three-dimensional electron distribution onto a two-dimensional shell substantially simplifies modeling, while preserving essential behaviour such as large-scale spatial coherence and, to some extent, the elevation dependence of the projected electron content (Martin et al., 2016, see). In the thin-layer approximation, the ionosphere is described by a two-dimensional field of vertical total electron content (vTEC). For a given line of sight, the relevant TEC value is evaluated at the ionospheric pierce point (IPP), which is the location where the source direction vector intersects the TEC screen. A substantial fraction of ionospheric inhomogeneity is attributed to turbulent processes (Materassi et al., 2019; Giannattasio et al., 2018). Such turbulence is commonly interpreted as a cascade in which energy is injected at large spatial scales and transferred progressively to smaller scales (Thompson et al., 2017). Following this statistical framework, Pal et al. (2025) implemented a time-evolving phase screen based on the Kolmogorov turbulence statistics. To simulate the temporal evolution of the medium, a "frozen" 2D phase screen is generated for a given epoch 𝑡 , incorporating 15 Ionosphere with the SKA Datta et al. 0 20 40 60 80 100 
+
+# X (km) 
+
+# 0
+
+# 20 
+
+# 40 
+
+# 60 
+
+# 80 
+
+# 100 
+
+> Y (km)
+
+TEC Screen 
+
+# 0.20 
+
+# 0.15 
+
+# 0.10 
+
+# 0.05 
+
+# 0.00 
+
+# 0.05 
+
+# 0.10  
+
+> TEC (TECU)
+> Figure 6: Simulated Kolmogorov’s turbulence TEC screen was generated using the FFT algorithm. Adapted from Pal et al. (2025).
+
+both the inner ( 𝑙 0) and outer ( 𝐿 0) scales of the turbulence. The power spectrum of the spatial phase fluctuations, Φ( ® 𝑘 ), is defined by: 
+
+Φ( ® 𝑘 ) 2
+
+∝
+
+"
+
+𝑘 2 +
+
+ 1
+
+𝐿 0
+
+2# −𝛽 /2
+
+exp − 𝑘 2
+
+2/𝑙 20
+
+!
+
+; 1 /𝐿 0 ≪ 𝑘 ≪ 1/𝑙 0 (14) where ®𝑘 is the spatial frequency. In the case of pure Kolmogorov turbulence, the spectral index 
+
+𝛽 = 11 /3. At the LOFAR site, Mevius et al. (2016) reported a slightly steeper spectrum of 
+
+𝛽 = 3.89 ± 0.1. To anchor the model in observational reality, we estimate the characteristic scale structure using empirical ionospheric measurements from the SKA-Low site, based on MWA Phase-II extended baseline observations. Nevertheless, a more comprehensive characterization of the finite inner and outer scales at the Murchison Radio-astronomy Observatory (MRO) remains necessary. Observations from GLEAM indicate that the dominant ionospheric structures correspond to spatial scales of order hundreds of kilometres (Helmboldt and Hurley-Walker, 2020). Figure 6 presents an example of the simulated phase screen based on Kolmogorov statistics. There are several simulation tools available for modeling the physics of ionospheric turbulence, such as the ARatmospy package (Srinath et al., 2015). The ARatmospy (Auto-Regressive Atmo-16 Ionosphere with the SKA Datta et al. 
+
+sphere Generator) framework is capable of reproducing realistic ionospheric conditions by gener-ating a time-evolving phase screen above the telescope site. This framework supports multi-layer phase-screen models at plausible elevations, each characterised by distinct propagation speeds and directions, while evolving smoothly in time to mimic the slowly varying nature of the ionosphere. This phase-screen model, integrated with the OSKAR simulator package, introduces direction-dependent calibration errors into the simulated visibilities. This OSKAR (Dulwich, 2020) is the GPU–accelerated radio telescope simulator that was developed for its use in SKA since 2009. This simulation framework can be extended for tropospheric turbulence modeling to introduce direction-dependent calibration errors into the simulated visibilities relevant for the SKA-Mid. Such end-to-end simulations are essential for evaluating system performance, such as sensitivity and image fidelity, under realistic observing conditions. This also plays a key role in optimising survey strategies and identifying potential systematic effects in advance. 
+
+7 Forecast for SKA 
+
+In this section, we have used the radio interferometric observations to estimate the ionospheric effects, which are dependent on the differential TEC values. Based on the observations and existing literature, we forecast the phase errors that SKA-Mid and SKA-Low will be susceptible, as a function of observing frequencies. We have also translated them into the possible dynamic range limit in imaging. At ultra-low frequencies, differential Faraday rotation (second term in equation 3 and higher-order terms) will also become essential and cannot be ignored. Using LOFAR, de Gasperin, F. et al. (2018) showed that higher-order ionospheric effects are only prominent for observations below ∼40 MHz with a maximum baseline of ∼50 km. As SKA-Low observational frequency starts from 50 MHz, higher-order terms (third-order onwards) can be ignored for core antennas, but their effects cannot be ignored for longer baselines. By substituting equation 3 into equation 2, one can estimate the effects caused by first and second order terms (see Petit and Luzum, 2010, Chapter 9) associated with dispersive delay and Faraday rotation, respectively: 
+
+𝛿 Φ1 = −4840 
+
+ 𝜈 
+
+100 MHz 
+
+ −1  dTEC 1 TECU 
+
+
+
+[deg ], (15) 
+
+𝛿 Φ2 = ±38 
+
+ 𝜈 
+
+100 MHz 
+
+ −2  dTEC 1 TECU 
+
+
+
++
+
+ TEC 1 TECU 
+
+  d𝐵 
+
+40 𝜇 T
+
+ 
+
+[deg ]. (16) where we assumed magnetic field 𝐵 = 40 𝜇 T with 𝜃 = 45 ◦. Under quiet-time ionospheric conditions, total TEC might change from ∼1 TECU (during the nighttime) to ∼20 TECU (during the daytime), affecting the second-order term. For example, consider a value for 𝛿 TEC ∼0.3 TECU, which is reasonable for a baseline of about ∼50 km and observational frequency of 60 MHz. The first-order term generates phase variations of several times of 2 𝜋 . The second-order term, or the term due to Faraday rotation, produces an effect of around ± 50 ◦/75 ◦ assuming d 𝐵 =1% at night/daytime. This effect will not be negligible for SKA-Low and needs to be addressed carefully (see Table 1 for more detailed information). SKA-Mid observational starts from 350 MHz, second-order will be negligible compared to the dominating dispersive delay (first-order). As the maximum baseline 17 Ionosphere with the SKA Datta et al. 
+
+length for SKA-Mid is 150 km, 𝛿 TEC values will be around 1.5 TECU, which is considerably large and needs to be corrected (see Table 2 for detailed information).                                  
+
+> Table 1: Typical ionospheric phase errors (in degrees) for SKA-Low
+> 50 MHz 100 MHz 250 MHz
+> ΔTEC (TECU) I order II order (day/night) I order II order (day/night) I order II order (day/night) 1.0 (remote st., bad iono.) 9680 181/153 4840 45/38 1936 7/6 0.4 (remote st., good iono.) 3872 91/62 1936 23/15 774 4/2 0.05 (across FOV) 484 38/9 242 9/2 97 2/ <10.02 (Core St.) 194 33/5 97 8/1 39 1/ <1
+
+When observing a celestial radio source, most low-frequency telescopes work in low signal-to-noise ratio due to low antenna sensitivity and high sky temperature. A typical way to handle this is to average the data in longer time bins or frequency intervals when solving complex antenna gains. This is a trade-off between the signal-to-noise ratio and the decorrelation for finding a good solution. The ionosphere varies rapidly, and averaging over more than 5-10 sec time typically makes it difficult to trace these variations. Additionally, merging too many frequency channels is not a good idea, as shown in Fig. 7, between the edges of a five SKA-Low sub-band ( 1SB ≃ 0.006 MHz) centered around 60 MHz and considering 𝛿 TEC value of 1.0 TECU, there is a differential phase of 10 ◦. For core antennas (baselines less than a few kilometers, with 𝛿 TEC ≲ 0.4 TECU), this constraint can be relaxed, and one can average 10-20 sub-bands easily and still obtain good complex gain solutions. The same is shown for SKA-Mid ( 1SB ≃ 0.01375 MHz) in Fig. 8, where averaging over a high number of sub-bands will provide good complex antenna gain solutions as ionospheric induced phase errors are negligible at frequencies above 1 GHz. In short, for accurate calibration for all baselines and different ionospheric conditions, antenna gain solutions must be calculated at high time and frequency resolution. Also, the left panel of Figures. 7 and 8 can be used to estimate the maximum of frequency channels, averaging to compute the complex antenna solutions. Perley (1999) estimated the limitation of dynamic range ( 𝐷 𝑅 ) due to time-independent phase error (𝜙 𝑒𝑟𝑟 in radians) in all baselines, which will be introduced because of a point source data. The dynamic range of the image is given by the following: 
+
+𝐷 𝑅 ≃ 1
+
+𝜙 𝑒𝑟𝑟 √︂ 
+
+𝑁 (𝑁 − 1)
+
+2 (17) where 𝑁 is the number of interferometer antenna elements. We estimated the 𝐷 𝑅 for SKA-Low and SKA-Mid as a function of frequency for 𝛿 TEC ∼ 0.7 and 1.4 TECU, respectively, for sub bands (1, 5, and 10). From the right panel of Figures 7 and 8, one can notice that 𝐷 𝑅 increases as a function of frequency, but at the same time, averaging over too many sub bands will decrease it. It is important to note that the 𝐷 𝑅 was estimated in view of a point source in the field. But, by considering the sensitivity of SKA, the 𝐷 𝑅 estimates will be lower than mentioned in the right panel of Figures 7 and 8, because many sources will be present in the FoV. Datta et al. (2009) showed using simulations that the phase calibration error of 0.1 ◦ for 𝑁 = 512 elements array at 158 MHz will yield a 𝐷 𝑅 of ∼ 10 5 whereas the desired 𝐷 𝑅 is ∼ 10 8 to detect the H i 21-cm signal from reionization. 18 Ionosphere with the SKA Datta et al. 100 200 300 
+
+> Frequency (MHz)
+
+10 1
+
+10 0
+
+10 1
+
+10 2
+
+> Ionosphere induced phase error (deg)
+> SKA-Low AA4
+> dTEC=0.4 ; SB=1
+> dTEC=0.7 ; SB=1
+> dTEC=1.0 ; SB=1
+> dTEC=0.4 ; SB=5
+> dTEC=0.7 ; SB=5
+> dTEC=1.0 ; SB=5
+> dTEC=0.4 ; SB=10
+> dTEC=0.7 ; SB=10
+> dTEC=1.0 ; SB=10
+
+100 200 300 
+
+> Frequency (MHz)
+
+10 2
+
+10 3
+
+10 4
+
+> Dynamic Range
+> SKA-Low AA4
+> SB=1
+> SB=5
+> SB=10
+
+Figure 7: Left: Ionospheric-induced phase variations between the beginning and end of a band of 1, 5, and 10 SKA-Low AA4 sub bands ( 1SB ≃ 0.006 MHz). Assumed 𝛿 TEC is 0.4, 0.7, 1.0 TECU. These values were considered for baseline lengths of a few tens of kilometers. SKA-Low frequency bandwidth is 50-350 MHz. 
+
+Right: Dynamic range ( 𝐷 𝑅 ) as a function of frequency for sub bands 1, 5, and 10 ( 1SB ≃ 0.006 MHz). The phase error of these sub bands was estimated at 𝛿 TEC = 0.4 TECU. The number of stations ( 𝑁 ) is taken to be 512. 
+
+Table 2: Typical ionospheric phase errors (in degrees) for SKA-Mid 
+
+# Frequency 
+
+# ΔTEC (TECU) First order First order First order First order 0.77 GHz 1.4 GHz 6.7 GHz 12.5 GHz 2.0 (remote st., bad iono.) 1257 691 144 77 1.2 (remote st., good iono.) 754 415 87 46 0.7 (across FOV) 440 242 51 27 
+
+7.1 Beam apodization to recover the ionospheric structure 
+
+For the MWA, ionospheric monitoring is comparatively straightforward at the MRO location be-cause its wide FoV ( ∼ 30 ◦) is larger than the characteristic spatial scales of many ionospheric irregularities ( ∼ 10 − 100 km). At typical ionospheric altitudes of 300 − 400 km (Jordan et al., 2017), these correspond to angular scales of ∼ 10 ◦(Helmboldt and Hurley-Walker, 2020). In con-trast, the planned FoV for SKA-Low will be 3 − 5 deg, depending on the frequency of interest (Braun et al., 2019), owing to the larger station size, considerably smaller than the characteristic size of many ionospheric structures. As a result, large-scale coherent ionospheric patterns that move smoothly across the sky within the MWA’s wide FoV may instead appear as more rapid, and seemingly stochastic, direction-dependent phase variations within SKA-Low’s more limited instantaneous view. 19 Ionosphere with the SKA Datta et al. 0.0 2.5 5.0 7.5 10.0 12.5 15.0           
+
+> Frequency (GHz)
+> 10 4
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> Ionosphere induced phase error (degree)
+> SKA-MID AA4
+> dTEC=0.8 ; SB=1
+> dTEC=1.4 ; SB=1
+> dTEC=2.0 ; SB=1
+> dTEC=0.8 ; SB=5
+> dTEC=1.4 ; SB=5
+> dTEC=2.0 ; SB=5
+> dTEC=0.8 ; SB=10
+> dTEC=1.4 ; SB=10
+> dTEC=2.0 ; SB=10
+> 0.0 2.5 5.0 7.5 10.0 12.5 15.0
+> Frequency (GHz)
+> 10 2
+> 10 3
+> 10 4
+> 10 5
+> 10 6
+> Dynamic Range
+> SKA-MID
+> SB=1
+> SB=5
+> SB=10
+
+Figure 8: Left: Ionospheric-induced phase variations between the beginning and end of a band of 1, 5, and 10 SKA-Mid AA4 sub bands ( 1SB ≃ 0.01375 MHz). Assumed 𝛿 TEC is 0.8, 1.4, 2.0 TECU. SKA-Mid frequency bandwidths are 0.350-1.05 GHz (Band 1; violet), 0.95-1.76 GHz (Band 2; red), and 4.6-15.3 GHz (Band 5; yellow). Right: Dynamic range ( 𝐷 𝑅 ) as a function of frequency for sub bands 1, 5, and 10 (1SB ≃ 0.01375 MHz). The phase error of these sub bands was estimated at 𝛿 TEC = 0.4 TECU. The number of antennas ( 𝑁 ) is taken to be 197. 
+
+To effectively probe such large-scale ionospheric structures with SKA-Low, beam apodization (Mort et al., 2017) and sub-station beam formation (Trott et al., 2024) are expected to play an important role in observing and calibration strategies. Beam apodization 3 applies a spatial weighting function across station elements to shape the primary beam, typically by tapering the outer elements to suppress sidelobes and stabilize the beam response (Peng et al., 2024). This trade-off between sidelobes suppression and modest main beam broadening is well established in array signal pro-cessing, where taper functions such as Gaussian, Tukey, Kaiser, Hann and Chebyshev offer different balances between spatial resolution and directivity. Because SKA-Low is a digital interferometric instrument, this technique can be dynamically implemented to modify the effective primary beam shape and to adjust to the desired sensitivity-FoV trade-off. Additionally, selected antennas can be excluded from the station configuration to temporarily reduce the effective station diameter, thereby enlarging the FoV at the cost of sensitivity. This flexibility will allow SKA-Low to better cap-ture and characterize large-scale ionospheric structures that would otherwise appear as small-scale fluctuations in a restricted FoV (Helmboldt and Hurley-Walker, 2020). 
+
+7.2 Ionospheric Faraday Rotation and Polarimetric Calibration 
+
+Although dispersive delay dominates the overall ionospheric phase corruption, ionospheric Faraday rotation (FR) introduces an additional frequency-dependent effect that is particularly important for polarimetric observations. As a linearly polarised radio wave propagates through the magnetised ionospheric plasma, the plane of polarisation undergoes a rotation given by 
+
+> 3
+
+https://www.skao.int/en/science-users/ska-tools/low-station-beam-simulator 
+
+20 Ionosphere with the SKA Datta et al. 
+
+ΔΩ FR = RM ion 𝜆 2 (18) where the ionospheric rotation measure is defined as 
+
+RM ion = 𝑒 3
+
+8𝜋 2𝜀 0𝑚 2
+
+> 𝑒
+
+𝑐 3
+
+∫
+
+𝑛 𝑒 (𝑙 )𝐵 ∥ (𝑙 ) d𝑙. (19) Here, 𝑛 𝑒 is the electron density and 𝐵 ∥ = 𝐵 cos 𝜃 is the magnetic-field component along the line of sight. Because ΔΩ FR ∝ 𝜆 2, the effect dominates below ∼ 80 MHz and on baselines ≳ 10 km, where spatial variations in 𝑛 𝑒 and 𝐵 produce differential FR between stations (Mevius, 2018a). Ionospheric FR has several observationally significant effects on polarized emission beyond the scalar amplitude and phase corruptions discussed above. The most direct effect is a frequency- and time-dependent rotation of the observed electric vector position angle (EVPA). As the EVPA rotates, it continuously mixes the linear Stokes parameters 𝑄 and 𝑈 (Hamaker et al., 1996). If this rotation is left uncorrected, averaging the data over a finite frequency channel (bandwidth depolarization) or a finite integration time (time smearing) will artificially wash out the intrinsic polarized signal of the astrophysical source (Burn, 1966; Sokoloff et al., 1998). Furthermore, uncorrected differential FR across the array introduces amplitude and phase decorrelation of the observed polarized visibilities (Perley et al., 2026). In combination with instrumental polarisation, these effects can exacerbate polarisation leakage caused by imperfect calibration and distort RM-synthesis spectra (Brentjens and de Bruyn, 2005). Even for the sensitive 21-cm cosmology experiments, these effects are particularly problematic because spectrally varying polarized foregrounds can leak into Stokes 𝐼 
+
+via instrumental polarization, introducing strong frequency-dependent structure, which can mimic or obscure the cosmological signal (Jelić et al., 2010; Moore et al., 2013; Nunhokee et al., 2017; Spinelli et al., 2019). Achieving high-fidelity polarimetry, therefore, requires accurate correction of the ionospheric ro-tation measure. For current low-frequency radio telescopes, calibration to sub-rad m −2 precision is necessary. LOFAR observations of bright pulsars have demonstrated that, after removing diurnal trends, ionospheric RM corrections can reach an accuracy of ∼ 0.06 –0.07 rad m −2 (Porayko et al., 2019). To achieve this, tools such as the publicly available code ionFR 4 (Sotomayor-Beltran et al., 2013) and RMextract (Mevius, 2018b) compute RM ion using GPS-derived total electron content maps in combination with geomagnetic field models (e.g., IGRF), enabling the precision required for pulsar RM and Galactic magnetism studies. While ionFR is no longer actively maintained, 
+
+RMextract has recently been superseded by spinifex 5 (Mevius et al., 2025), which is under development for next-generation low-frequency arrays such as LOFAR and SKA-Low. At higher frequencies, interferometers such as the VLA and MeerKAT require RM accuracies of ≲ 0.1 rad m −2
+
+at metre wavelengths to constrain the EVPA to within ∼ 5◦ (Perley et al., 2026). Even after applying TEC-based corrections, residual ionospheric RM fluctuations at the level of ∼ 0.1–0.5 rad m −2
+
+can persist on short timescales (Porayko et al., 2019; de Gasperin, F. et al., 2018); these can be further mitigated by self-calibration strategies that solve for direction-dependent RM corrections using sufficiently bright polarised calibrators within the field of view (Intema et al., 2009). 
+
+> 4https://github.com/csobey/ionFR
+> 5https://git.astron.nl/RD/spinifex
+
+21 Ionosphere with the SKA Datta et al. 
+
+In the SKA era, these lessons will be combined. spinifex -type modeling will provide the deter-ministic correction for wide-field polarization imaging. However, stochastic temporal variability – identified in HERA 21 cm experiments as a depolarization mechanism – must be treated statistically to avoid biasing deep cosmological measurements (Martinot et al., 2018). This unified approach, bridging deterministic calibration and statistical mitigation, will preserve polarimetric fidelity for both SKA-Low and SKA-Mid science cases. Ignoring this effect would undermine key SKA sci-ence objectives, including studies of cosmic magnetism, pulsar emission, and tests of fundamental physics. 
+
+7.3 Implications for SKA 
+
+The diverse ionospheric techniques developed on precursor and pathfinder instruments worldwide for SKA - antenna-based phase/TEC tracking, field-based astrometric (positional-shift) measure-ments, and amplitude scintillation analysis - are expected to converge in the SKA era, providing a more comprehensive and self-consistent view of ionospheric structure and dynamics. By overcom-ing current geographical and instrumental limitations, the complementary capabilities of SKA-Low and SKA-Mid will enable ionospheric science across a wide range of scales, spanning spatial scales from sub-kilometre plasma irregularities to global space-weather dynamics. 
+
+Micro-scale precision: resolving small-scale phase structure. At the smallest scales, the SKA-Low, with its unprecedented sensitivity, frequency coverage, large collecting area, and compact core configuration, will significantly improve upon antenna-based differential TEC measurements with precision significantly below the 10 −3 TECU level achieved with current instruments such as uGMRT, LOFAR and VLA. The dense sampling of baselines will enable high-fidelity modeling of the TEC surface across the array (e.g., third- and fourth-order polynomial fitting), thereby enabling the reconstruction of increasingly complex, non-linear ionospheric structures. This improved sensitivity and baseline density may allow access to sub-kilometre plasma fluctuations. Recent empirical studies utilizing MWA Phase-II extended baselines demonstrate that non-linear structures larger than 0.6 km aggressively dominate the phase screen at baselines extending beyond 2 km (Rioja and Dodson, 2022). Combined with advanced direction-dependent calibration algorithms such as Low frequency Excision of Atmosphere in Parallel (LEAP), these measurements provide a pathway toward more realistic three-dimensional defocusing effects, pushing low-frequency interferometry beyond the flat-screen approximation (Rioja et al., 2018; Rioja and Dodson, 2022). 
+
+Macro-scale dynamics: wide-field mapping and TIDs. On larger spatial scales, the wide field of view of SKA-Low allows field-based calibration using the expected density of compact background sources, about 3 × 10 4 in number (see Table 3 of Braun et al., 2019), exceeding 1.5 mJy in apparent flux density (leveraging catalogues like TRECS; Bonaldi et al. 2019). This generates a highly dense, isotropic grid of ionospheric pierce points across the primary beam. Instead of merely measuring linear gradients, the SKA will map non-linear ionospheric distortions (e.g., curvature and wave-like structure) with high cadence. Such capability is well-suited to tracking the propagation of TIDs and related wave-like structures, including medium-scale TIDs potentially associated with sporadic-E layers. In this sense, SKA-Low can function as a high-fidelity, wide-field ionospheric monitor. In parallel, SKA-Mid, with its multi-band receivers and longer baselines, will enhance sensitivity to 22 Ionosphere with the SKA Datta et al. 
+
+small residual phase errors and enable cross-frequency validation through the expected 𝜈 −1 scaling of ionospheric phase shifts in the cold-plasma limit. 
+
+Amplitude Scintillation: beyond phase delays. The SKA will probe fine-scale plasma irregu-larities through amplitude scintillation. The broad frequency coverage of SKA-Low is expected to provide sensitivity to multi-layer scattering effects, potentially revealing deviations from the standard thin-screen approximation. Furthermore, MWA measurements have shown that amplitude scintillation probing Fresnel scales of ∼ 300 m is highly correlated with larger-scale refractive shifts (Waszewski et al., 2022). This correlation means SKA-Low will be able to construct a unified empir-ical model of the ionospheric turbulence cascade, linking macroscopic wave generation directly to sub-kilometre dissipation scales. Therefore, combined high-resolution TEC and scintillation maps estimated from SKA observations have the potential to provide new constraints for space-weather forecasting. When incorporated into larger-scale models, these datasets will significantly improve characterization of ionospheric disturbances (e.g., severe geomagnetic storms and plasma bubble dynamics) relevant to navigation and communication systems. 
+
+Magnetospheric Coupling and Fundamental Physics: Finally, the combination of precise TEC estimation with polarimetric calibration opens new avenues for fundamental physics. While re-fractive shifts constrain the electron content, measurements of differential Faraday rotation provide sensitivity to the line-of-sight magnetic field weighted by electron density. To achieve this, the SKA will utilize a dense grid of bright, polarized pulsars to track FR variations across the sky, effectively separating cosmic magnetism from atmospheric corruption with the requisite sub-rad m −2 preci-sion (Sotomayor-Beltran et al., 2013). As demonstrated by tools such as spinifex (Mevius et al., 2025) and uGMRT observations (e.g., Mangla and Datta, 2023), accurate calibration of this effect is essential for separating astrophysical signals from ionospheric contamination. Furthermore, the wide-band capabilities of SKA-Mid will allow us to test the frequency-dependent validation of the theoretical scaling of ionospheric TEC and FR effects, providing a valuable experimental platform for ionospheric plasma physics. 
+
+8 Conclusion 
+
+The effects of the ionosphere present a primary limiting factor on the quality of low-frequency radio interferometric observations. The ionosphere’s ionized plasma has a refractive index that changes over time and space. This variability causes a dispersive delay in the signal, which is dependent on the direction of observation. Ultimately, this directional-dependent delay directly impacts the visibility phase measured by any radio interferometer. The SKA’s unique geophysical location can be used to better comprehend and characterise the ionosphere. With the SKA now in its construction phase, there is a timely opportunity to advance calibration strategies and data analysis techniques aimed at detecting and correcting ionospheric phase errors. These approaches will ultimately enable precise mitigation of ionospheric effects from low-frequency interferometric data. SKA-Low’s unprecedented sensitivity and wide bandwidth at low frequencies will transform ionospheric scintillation from an observational nuisance requiring data rejection into a rich scientific opportunity for space weather science. SKA-Mid multi-frequency observations will provide the frequency dependence necessary for theoretical interpretation. 23 Ionosphere with the SKA Datta et al. 
+
+Author contributions 
+
+Abhirup Datta led the conceptual development of the chapter and coordinated the overall writing process. The other authors made significant contributions to the writing, as well as to the structuring, refinement, and final polishing of the chapter. 
+
+References 
+
+D. Banerjee, A. Ghosh, S. K. Mondal, and P. Ghosh. New Astron. , 126:102562, Aug. 2026. doi: 10.1016/j.newast.2026.102562. A. Bonaldi et al. MNRAS , 482(1):2–19, Jan. 2019. doi: 10.1093/mnras/sty2603. R. Braun et al. arXiv e-prints , art. arXiv:1912.12699, Dec. 2019. B. Brawar, A. Datta, and S. Mangla. Advances in Space Research , 76(7):3830–3839, Oct. 2025. ISSN 0273-1177. doi: 10.1016/j.asr.2025.07.059. URL http://dx.doi.org/10.1016/j. asr.2025.07.059 .M. A. Brentjens and A. G. de Bruyn. A&A , 441(3):1217–1228, Oct. 2005. doi: 10.1051/0004-6361: 20052990. B. J. Burn. MNRAS , 133:67–83, 1966. doi: 10.1093/mnras/133.1.67. S. Chakraborty et al. Advances in Space Research , 66(4):895 – 910, 2020b. URL http://www. sciencedirect.com/science/article/pii/S0273117720302994 .J. K. Chege et al. PASA , 38:e028, June 2021. doi: 10.1017/pasa.2021.22. J. K. Chege et al. PASA , 39:e047, Oct. 2022. doi: 10.1017/pasa.2022.34. A. S. Cohen and H. J. A. Röttgering. The Astronomical Journal , 138(2):439–447, jun 2009. doi: 10. 1088/0004-6256/138/2/439. URL https://doi.org/10.1088%2F0004-6256%2F138%2F2% 2F439 .T. Cornwell and E. B. Fomalont. In G. B. Taylor, C. L. Carilli, and R. A. Perley, editors, Synthesis Imaging in Radio Astronomy II , volume 180 of Astronomical Society of the Pacific Conference Series , page 187, Jan. 1999. A. Datta and S. Chakraborty. 2017 XXXIInd General Assembly and Scientific Symposium of the International Union of Radio Science (URSI GASS) , 2017. A. Datta, S. Bhatnagar, and C. L. Carilli. Astrophysical Journal , 703(2):1851–1862, Oct. 2009. doi: 10.1088/0004-637X/703/2/1851. A. Datta et al. ApJ , 831(1):6, Nov. 2016. doi: 10.3847/0004-637X/831/1/6. S. Datta-Barua, T. Walter, J. Blanch, and P. Enge. Radio Science , 43(5):RS5010, Oct. 2008. doi: 10.1029/2007RS003772. K. Davies. Ionospheric radio . 31. IET, 1990. de Gasperin, F. et al. A&A , 615:A179, 2018. doi: 10.1051/0004-6361/201833012. URL https: //doi.org/10.1051/0004-6361/201833012 .P. E. Dewdney, P. J. Hall, R. T. Schilizzi, and T. J. L. W. Lazio. IEEE Proceedings , 97(8):1482–1496, Aug. 2009. doi: 10.1109/JPROC.2009.2021005. F. Dulwich. OSKAR 2.7.6, Jan. 2020. R. A. Fallows et al. Journal of Space Weather and Space Climate , 10:10, Feb. 2020. doi: 10.1051/swsc/2020010. 24 Ionosphere with the SKA Datta et al. 
+
+B. G. Fejer and M. C. Kelley. Reviews of Geophysics , 18(2):401–454, 1980. doi: https://doi.org/10. 1029/RG018i002p00401. URL https://agupubs.onlinelibrary.wiley.com/doi/abs/ 10.1029/RG018i002p00401 .F. Giannattasio et al. Annals of Geophysics , 61, 09 2018. doi: 10.4401/ag-7790. T. L. Gulyaeva and D. Bilitza. Towards iso standard earth ionosphere and plasmasphere model. In R. J. Larsen, editor, New Developments in the Standard Model , pages 1–39. Nova Science Publishers, Hauppauge, New York, 2012. J. P. Hamaker, J. D. Bregman, and R. J. Sault. A&AS. , 117:137–147, May 1996. M. Harker and P. O’Leary. Journal of Mathematical Imaging and Vision , 51(1):46–70, Jan. 2015. doi: 10.1007/s10851-014-0505-4. J. F. Helmboldt and N. Hurley-Walker. Radio Science , 55(10):e07106, Oct. 2020. doi: 10.1029/ 2020RS007106. J. F. Helmboldt, W. M. Lane, and W. D. Cotton. Radio Science , 47(5):RS5008, Oct. 2012a. doi: 10.1029/2012RS005025. J. F. Helmboldt, T. J. W. Lazio, H. T. Intema, and K. F. Dymond. Radio Science , 47:RS0L02, Feb. 2012b. doi: 10.1029/2011RS004787. J. F. Helmboldt, T. J. W. Lazio, H. T. Intema, and K. F. Dymond. Radio Science , 47:RS0K02, Feb. 2012c. doi: 10.1029/2011RS004883. M. Hernández-Pajares, J. M. Juan, and J. Sanz. Journal of Geophysical Research: Space Physics ,111(A7), 2006. doi: 10.1029/2005JA011474. M. M. Hoque and N. Jakowski. Radio Science , 43(5):RS5008, Oct. 2008. doi: 10.1029/ 2007RS003817. H. T. Intema et al. Astronomy & Astrophysics , 501(3):1185–1205, July 2009. doi: 10.1051/ 0004-6361/200811094. V. Jelić et al. MNRAS , 409(4):1647–1659, Dec. 2010. doi: 10.1111/j.1365-2966.2010.17407.x. C. H. Jordan et al. MNRAS , 471(4):3974–3987, Nov. 2017. doi: 10.1093/mnras/stx1797. N. Kassim et al. In S. Ryan, editor, Advanced Maui Optical and Space Surveillance Technologies Conference , page E59, Sept. 2010. S. T. Loi et al. Radio Science , 50(7):574–597, July 2015. doi: 10.1002/2015RS005711. C. J. Lonsdale. In N. Kassim, M. Perez, W. Junor, and P. Henning, editors, From Clark Lake to the Long Wavelength Array: Bill Erickson’s Radio Science , volume 345 of Astronomical Society of the Pacific Conference Series , page 399, Dec. 2005. S. Mangla and A. Datta. MNRAS , 513(1):964–975, June 2022. doi: 10.1093/mnras/stac942. S. Mangla and A. Datta. Geophys. Res. Lett. , 50(14):e2023GL103305, July 2023. doi: 10.1029/ 2023GL103305. S. Mangla, S. Chakraborty, A. Datta, and A. Paul. Journal of Astrophysics and Astronomy , 44(1): 2, June 2023. doi: 10.1007/s12036-022-09900-0. A. J. Mannucci et al. Radio Science , 33(3):565–582, May 1998. doi: 10.1029/97RS02707. P. L. Martin, J. D. Bray, and A. M. M. Scaife. MNRAS , 459(4):3525–3531, 04 2016. ISSN 0035-8711. doi: 10.1093/mnras/stw853. URL https://doi.org/10.1093/mnras/stw853 .Z. E. Martinot, J. E. Aguirre, S. A. Kohn, and I. Q. Washington. ApJ , 869(1):79, Dec. 2018. doi: 10.3847/1538-4357/aaeac6. M. Materassi, B. Forte, A. Coster, and S. Skone. The Dynamical Ionosphere - A Systems Approach 
+
+25 Ionosphere with the SKA Datta et al. to Ionospheric Irregularity (1st ed.) . Elsevier, Netherlands, Nov. 2019. ISBN 9780128147825. M. Mevius. In Astrophysics and Space Science Library , volume 426 of Astrophysics and Space Science Library , page 103, Jan. 2018a. doi: 10.1007/978-3-319-23434-2_7. M. Mevius. RMextract: Ionospheric Faraday Rotation calculator. Astrophysics Source Code Library, record ascl:1806.024, June 2018b. M. Mevius et al. Radio Science , 51(7):927–941, 2016. doi: 10.1002/2016RS006028. URL 
+
+https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2016RS006028 .M. Mevius, A. Thomson, and T. J. Dijkema. spinifex, Mar. 2025. URL https://doi.org/10. 5281/zenodo.15000430 .D. F. Moore et al. ApJ , 769(2):154, June 2013. doi: 10.1088/0004-637X/769/2/154. J. S. Morgan et al. MNRAS , 473(3):2965–2983, Jan. 2018. doi: 10.1093/mnras/stx2284. B. Mort et al. MNRAS , 465(3):3680–3692, Mar. 2017. doi: 10.1093/mnras/stw2814. C. D. Nunhokee et al. ApJ , 848(1):47, Oct. 2017. doi: 10.3847/1538-4357/aa8b73. S. K. Pal, A. Datta, and A. Mazumder. JCAP , 2025(2):058, Feb. 2025. doi: 10.1088/1475-7516/ 2025/02/058. G. Peng et al. Sensors , 24(14):4723, July 2024. doi: 10.3390/s24144723. R. A. Perley. In G. B. Taylor, C. L. Carilli, and R. A. Perley, editors, Synthesis Imaging in Radio Astronomy II , volume 180 of Astronomical Society of the Pacific Conference Series , page 275, Jan. 1999. R. A. Perley et al. ApJSS , 283(2):82, Apr. 2026. doi: 10.3847/1538-4365/ae503c. G. Petit and B. Luzum. IERS Technical Note , 36:1, Jan. 2010. N. K. Porayko et al. MNRAS , 483(3):4100–4113, Mar. 2019. doi: 10.1093/mnras/sty3324. J. A. Ratcliffe. Reports on Progress in Physics , 19(1):188–267, Jan. 1956. ISSN 0034-4885. doi: 10.1088/0034-4885/19/1/306. URL http://dx.doi.org/10.1088/0034-4885/19/1/306 .M. J. Rioja and R. Dodson. Journal of Astronomical Telescopes, Instruments, and Systems , 8: 011012, Jan. 2022. doi: 10.1117/1.JATIS.8.1.011012. M. J. Rioja, R. Dodson, and T. M. O. Franzen. MNRAS , 478(2):2337–2349, Aug. 2018. doi: 10.1093/mnras/sty1195. D. D. Sokoloff et al. MNRAS , 299(1):189–206, Aug. 1998. doi: 10.1046/j.1365-8711.1998.01782.x. C. Sotomayor-Beltran et al. A&A , 552:A58, Apr. 2013. doi: 10.1051/0004-6361/201220728. M. Spinelli, G. Bernardi, and M. G. Santos. MNRAS , 489(3):4007–4015, Nov. 2019. doi: 10.1093/ mnras/stz2425. S. Srinath, L. A. Poyneer, A. R. Rudy, and S. M. Ammons. Optics Express , 23(26):33335, Dec. 2015. ISSN 1094-4087. doi: 10.1364/oe.23.033335. URL http://dx.doi.org/10.1364/ OE.23.033335 .T. C. Team et al. Publications of the Astronomical Society of the Pacific , 134(1041):114501, nov 2022. doi: 10.1088/1538-3873/ac9642. URL https://dx.doi.org/10.1088/1538-3873/ ac9642 .A. R. Thompson, J. M. Moran, and G. W. Swenson. Interferometry and Synthesis in Radio Astronomy . Springer Open, 3rd edition, 2017. C. Trott, s. Breen, J. Green, and S. Pearcey. Ska-low substation templates, Aug. 2024. URL 
+
+https://doi.org/10.5281/zenodo.16951143 .A. Waszewski, J. Morgan, and C. H. Jordan. PASA , 39:e036, Sept. 2022. doi: 10.1017/pasa.2022.33. 26 Ionosphere with the SKA Datta et al. 
+
+R. B. Wayth et al. Publications of the Astronomical Society of Australia , 32:e025, 2015. doi: 10.1017/pasa.2015.26. R. J. Woodham. Optical engineering , 19(1):139–144, 1980. S. Yoshiura et al. PASJ , 77(3):556–561, June 2025. doi: 10.1093/pasj/psaf024. 27

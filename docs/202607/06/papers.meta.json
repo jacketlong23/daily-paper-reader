@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-06",
+  "date": "2026-07-06",
+  "generated_at": "2026-07-06T20:41:42",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/06/2607.01045v1-studying-ionosphere-using-ska-low-and-ska-mid",
+      "section": "quick",
+      "title_en": "Studying Ionosphere Using SKA-Low and SKA-Mid",
+      "authors": "Abhirup Datta, Samit Kumar Pal, Sarvesh Mangla, Bhuvnesh Brawar, Sumanjit Chakraborty, Sudipta Sasmal, Anshuman Tripathi",
+      "date": "2026-07-01",
+      "pdf": "https://arxiv.org/pdf/2607.01045v1",
+      "score": "6.0",
+      "evidence": "利用射电干涉仪研究电离层，与InSAR电离层延迟相关",
+      "tldr": "地球电离层对低频射电干涉仪（<1 GHz）造成系统性效应，限制观测性能。本文利用uGMRT、VLA、MWA和LOFAR等先导望远镜在多种地磁条件下的观测，通过天线级和场级分析量化相位波动、位置偏移和闪烁效应。结果显示电离层总电子含量梯度灵敏度超过GNSS，揭示了时空结构变化。结合多望远镜结果，预测了SKA-Low和SKA-Mid将面临的电离层效应，为未来校准和成像提供依据。",
+      "tags": "query:insar-deform",
+      "abstract_en": "The Earth's ionosphere introduces systematic effects that limit the performance of radio interferometers operating at low frequencies ($\\lesssim 1$\\,GHz). These ionospheric effects intensify during periods of heightened geomagnetic activity or for observations with extended baseline configurations. As each Pathfinder telescope operates at a different magnetic latitude, they experience distinct ionospheric regimes, offering complementary insights into ionospheric behaviour. In this work, we present a comparative study of ionospheric disturbances using observations from the uGMRT, VLA, MWA, and LOFAR, spanning a wide range of geographic and geomagnetic conditions. We present both antenna-based and field-based analyses to quantify phase fluctuations, positional offsets, and scintillation effects across these arrays. The measured total electron content (TEC) gradients reveal variations in spatial and temporal ionospheric structures with sensitivities that exceed those achievable with Global Navigation Satellite System (GNSS) measurements. By combining multi-telescope results, we assess the impact of ionospheric turbulence on calibration and imaging fidelity, and use these findings to forecast the expected ionospheric effects on observations with SKA-Low and SKA-Mid.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
