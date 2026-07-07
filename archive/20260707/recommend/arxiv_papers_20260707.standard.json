@@ -1,0 +1,88 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-07T22:01:24.494608+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.31136v1",
+      "source": "arxiv",
+      "title": "FROST: Training-Free Few-Shot Segmentation with Frozen Features and Nonparametric Statistics",
+      "abstract": "Few-shot segmentation asks a model to delineate a target class in a query image from only a handful of annotated examples, a setting most acute in remote sensing, where labels are scarce and the imagery departs sharply from the natural images on which vision backbones are pretrained. Prevailing approaches either train a segmenter on labelled episodes, which raises accuracy within the training distribution but binds the model to it, or reduce each class to a lossy summary of frozen features, a single prototype, a few cluster prototypes, or a discrete clustering, none of which preserves the internal structure of a multimodal class. We argue that a class is better described by a distribution than by a point, and that frozen self-supervised features already carry enough structure to estimate that distribution directly. We introduce FROST, a training-free few-shot segmenter that treats the reference foreground and background as two point clouds on the unit sphere of frozen DINOv3 features and labels each query token by a nonparametric density ratio, with a threshold the Bayes rule fixes at zero under equal priors. Because the variance of a density estimate shrinks as its sample grows, the decision sharpens as references accumulate, and every remaining quantity from the kernel bandwidth to the spatial gate is read from the support set rather than tuned. We develop FROST for overhead imagery, where a class is typically a scatter of many small and dissimilar instances that a density tracks but a lossy summary blurs. Across seventeen remote-sensing benchmarks FROST surpasses both training-free and learning-based methods, leading by 5.6 mIoU from a single annotated example and widening its lead as the support set grows, all while remaining among the smallest models compared. Code is available at https://github.com/jhpark-ai/FROST.",
+      "authors": [
+        "Junghwan Park"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-30T05:06:06+00:00",
+      "link": "https://arxiv.org/pdf/2606.31136v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "training-free few-shot segmentation for remote sensing, applicable to automatic interpretation of InSAR deformation features",
+      "llm_evidence_cn": "面向遥感的无训练少样本分割方法，可用于InSAR形变特征的自动解释",
+      "llm_evidence": "面向遥感的无训练少样本分割方法，可用于InSAR形变特征的自动解释",
+      "canonical_evidence": "面向遥感的无训练少样本分割方法，可用于InSAR形变特征的自动解释",
+      "llm_tldr_en": "FROST uses frozen self-supervised features and nonparametric statistical tests to perform few-shot segmentation without training, enabling automatic interpretation of remote sensing images. It preserves class distribution structure, effective in data-scarce scenarios, and applicable to InSAR deformation analysis.",
+      "llm_tldr_cn": "在遥感数据稀缺的场景下，少样本分割面临挑战。现有方法或用有标签数据训练导致泛化受限，或使用单原型总结损失类内结构。本文提出FROST，利用冻结的自监督特征和非参数统计检验进行无训练少样本分割。该方法通过保留类别的分布信息，在遥感少样本分割基准上取得了优异性能。其无需训练的特性使其适用于InSAR形变特征的自动识别与解释。",
+      "llm_tldr": "在遥感数据稀缺的场景下，少样本分割面临挑战。现有方法或用有标签数据训练导致泛化受限，或使用单原型总结损失类内结构。本文提出FROST，利用冻结的自监督特征和非参数统计检验进行无训练少样本分割。该方法通过保留类别的分布信息，在遥感少样本分割基准上取得了优异性能。其无需训练的特性使其适用于InSAR形变特征的自动识别与解释。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "intelligent InSAR processing with automatic deformation interpretation",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.05030v1",
+      "source": "arxiv",
+      "title": "A Mutual Information-Based Ensemble Kalman Filter",
+      "abstract": "Ensemble Kalman filters (EnKFs) are widely used for data assimilation in geophysical systems. Among various implementations, the local ensemble transform Kalman filter (LETKF) has gained popularity because of its computational efficiency. However, the deterministic EnKF such as the LETKF is known to be less robust than the stochastic EnKF in strongly nonlinear regimes. We generalize the LETKF such that it contains a stochastic term and includes the stochastic EnKF within it. We adaptively optimize the parameter that determines the weight of the stochastic term based on an identity of mutual information, which is satisfied by the Kalman filter in linear Gaussian systems. As the analysis perturbation equations of EnKFs are decomposed into a system of equations for modes that are uncorrelated with each other, the application of mutual information is easily achieved. The generalized LETKF thus optimized is named the mutual information-based ensemble Kalman filter (MI-EnKF). The MI-EnKF indirectly uses the third- and fourth-order moments of the forecast ensemble through entropy. To speed up calculations of entropy, we create a lookup table based on maximum entropy distributions. We conduct data assimilation experiments using the Lorenz-96 model to confirm the validity of the optimization method of MI-EnKF. When the observation operator is linear, the ML-EnKF shows the same analysis accuracy as the LETKF. When the observation operator is strongly nonlinear, the MI-EnKF is more accurate than both LETKF and stochastic EnKF regardless of ensemble size. Optimizing just the first mode can lead to significant improvements, but positive impacts of increasing the number of optimized modes are not observed unless the ensemble size is large. The optimized parameter values indicate that the optimal EnKF lies between the deterministic EnKF and the stochastic EnKF.",
+      "authors": [
+        "Tadashi Tsuyuki",
+        "Shunji Kotsuki"
+      ],
+      "primary_category": "physics.ao-ph",
+      "categories": [
+        "physics.ao-ph"
+      ],
+      "published": "2026-07-06T13:11:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.05030v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Kalman filter method for geophysical data assimilation applicable to InSAR time series analysis",
+      "llm_evidence_cn": "卡尔曼滤波数据同化方法可应用于InSAR时间序列分析",
+      "llm_evidence": "卡尔曼滤波数据同化方法可应用于InSAR时间序列分析",
+      "canonical_evidence": "卡尔曼滤波数据同化方法可应用于InSAR时间序列分析",
+      "llm_tldr_en": "Proposes a stochastic generalization of LETKF with adaptive mutual information optimization, improving robustness in nonlinear systems; transferable to InSAR time series analysis.",
+      "llm_tldr_cn": "针对集合卡尔曼滤波在强非线性系统中鲁棒性不足的问题，本文提出一种基于互信息自适应优化随机项权重的广义LETKF方法。该方法将确定性EnKF与随机EnKF统一，通过互信息准则自动平衡确定性预测与随机扰动，在非线性系统实验中显示出比标准LETKF更高的鲁棒性和精度。该工作为地球物理数据同化提供了新工具，并可推广至InSAR时间序列形变估计等应用。",
+      "llm_tldr": "针对集合卡尔曼滤波在强非线性系统中鲁棒性不足的问题，本文提出一种基于互信息自适应优化随机项权重的广义LETKF方法。该方法将确定性EnKF与随机EnKF统一，通过互信息准则自动平衡确定性预测与随机扰动，在非线性系统实验中显示出比标准LETKF更高的鲁棒性和精度。该工作为地球物理数据同化提供了新工具，并可推广至InSAR时间序列形变估计等应用。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "annual deformation rate estimation using InSAR",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
