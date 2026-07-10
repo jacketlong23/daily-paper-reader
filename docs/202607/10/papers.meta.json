@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-10",
+  "date": "2026-07-10",
+  "generated_at": "2026-07-10T21:45:44",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/10/2607.05658v1-integrating-gnss-derived-zenith-wet-delay-into-a-weather-foundation-model-improves-precipitation-forecasting",
+      "section": "quick",
+      "title_en": "Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting",
+      "authors": "Leonardo Trentini, Fanny Lehmann, Laura Crocetti, Benedikt Soja",
+      "date": "2026-07-06",
+      "pdf": "https://arxiv.org/pdf/2607.05658v1",
+      "score": "6.0",
+      "evidence": "将GNSS天顶湿延迟集成到天气基础模型，方法可迁移至InSAR对流层校正",
+      "tldr": "数值天气模型低估强降水，机器学习天气模型虽已取得进展，但未利用直接测量水汽的GNSS天顶湿延迟(ZWD)。本文将ZWD集成到基础模型Aurora中，使其学会预测ZWD，并针对6小时累积降水进行微调。结果显示，引入ZWD后降水预报系统提升，极端降水预报改善8.8%，降水功率谱更真实。该工作首次将直接水汽观测纳入机器学习天气模型，对高影响降水预报有重要意义。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Global Navigation Satellite Systems (GNSS), best known for positioning, also serve weather science, as atmospheric water vapour delays their signals. This delay, the Zenith Wet Delay (ZWD), is a direct, all-weather measure of column moisture. Although assimilated into numerical weather prediction for decades, ZWD is not yet used by leading machine learning weather models (MLWM), despite addressing a known deficiency: the underestimation of severe precipitation. Here we present the first integration of GNSS-derived ZWD into Aurora, a state-of-the-art weather foundation model. Our extended Aurora learns ZWD with skill comparable to its pretrained variables. More importantly, including ZWD systematically improves forecasts when fine-tuning for six-hour accumulated precipitation. Gains grow with severity, reaching an 8.8\\% increase in Equitable Threat Score at the 99th percentile, while the precipitation power spectrum becomes more realistic at synoptic and planetary scales. Direct GNSS observations therefore encode information that MLWM can exploit for high-impact precipitation.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

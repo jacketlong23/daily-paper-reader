@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-10 <!--dpr-date:20260710-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/10/2607.05658v1-integrating-gnss-derived-zenith-wet-delay-into-a-weather-foundation-model-improves-precipitation-forecasting" data-sidebar-item="{&quot;title&quot;: &quot;Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.05658v1-integrating-gnss-derived-zenith-wet-delay-into-a-weather-foundation-model-improves-precipitation-forecasting&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;将GNSS天顶湿延迟集成到天气基础模型，方法可迁移至InSAR对流层校正&quot;}">Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting</a>
   * 2026-07-07 <!--dpr-date:20260707-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/07/2606.31136v1-frost-training-free-few-shot-segmentation-with-frozen-features-and-nonparametric-statistics" data-sidebar-item="{&quot;title&quot;: &quot;FROST: Training-Free Few-Shot Segmentation with Frozen Features and Nonparametric Statistics&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.31136v1-frost-training-free-few-shot-segmentation-with-frozen-features-and-nonparametric-statistics&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;面向遥感的无训练少样本分割方法，可用于InSAR形变特征的自动解释&quot;}">FROST: Training-Free Few-Shot Segmentation with Frozen Features and Nonparametric Statistics</a>
