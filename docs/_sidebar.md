@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-11 <!--dpr-date:20260711-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/11/2607.07758v1-scalable-and-trustworthy-earth-observation-foundation-models" data-sidebar-item="{&quot;title&quot;: &quot;Scalable and Trustworthy Earth Observation Foundation Models&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.07758v1-scalable-and-trustworthy-earth-observation-foundation-models&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;综述地球观测基础模型，为智能InSAR处理与自动形变解译提供框架&quot;}">Scalable and Trustworthy Earth Observation Foundation Models</a>
   * 2026-07-10 <!--dpr-date:20260710-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/10/2607.05658v1-integrating-gnss-derived-zenith-wet-delay-into-a-weather-foundation-model-improves-precipitation-forecasting" data-sidebar-item="{&quot;title&quot;: &quot;Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.05658v1-integrating-gnss-derived-zenith-wet-delay-into-a-weather-foundation-model-improves-precipitation-forecasting&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;将GNSS天顶湿延迟集成到天气基础模型，方法可迁移至InSAR对流层校正&quot;}">Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting</a>
