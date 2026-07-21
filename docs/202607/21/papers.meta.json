@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-21",
+  "date": "2026-07-21",
+  "generated_at": "2026-07-21T21:12:03",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/21/2607.15791v1-accuracy-analysis-of-vlbi-universal-time-measurement-based-on-a-gnss-single-station-regional-ionospheric-model",
+      "section": "quick",
+      "title_en": "Accuracy Analysis of VLBI Universal Time Measurement Based on a GNSS Single-Station Regional Ionospheric Model",
+      "authors": "Xu-chong Duan, Dang Yao, Yuan-wei Wu, Zhe Zhang, Jia Liu, Xu-hai Yang",
+      "date": "2026-07-17",
+      "pdf": "https://arxiv.org/pdf/2607.15791v1",
+      "score": "7.0",
+      "evidence": "利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正",
+      "tldr": "针对全球电离层模型在单频VLBI UT1测量中时效性和精度不足的问题，利用吉林-喀什基线VLBI站的GNSS数据构建了单站区域电离层模型。该模型校正后，UT1与USNO参考值的偏差为-15.6微秒，RMS为82.3微秒，精度优于全球预测模型，接近全球后处理模型。该方法实现了准实时高精度UT1测量，提升了独立UT1产品的时效性。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Universal Time (UT1) is a key parameter characterizing Earth's rotation, and very long baseline interferometry (VLBI) is the mainstream technique for measuring UT1. To address the limitations in the timeliness and accuracy of existing global ionospheric models for single-frequency VLBI UT1 measurements, we construct a single-station regional ionospheric model using GNSS data from the VLBI stations on the Jilin-Kashi baseline. We apply this model to VLBI observations and compare its correction performance with that of a global predictive model and a global post-processed model. The results show that the line-of-sight ionospheric delays and baseline corrections calculated with the single-station regional model have precision close to that of the global post-processed model and are substantially better than those of the global predictive model. After correction with the single-station regional model, the derived UT1 values differ from the US Naval Observatory (USNO) reference values by a mean bias of -15.6 us and an RMS deviation of 82.3 us, both better than the results obtained with the other two model classes. A single-station regional ionospheric model constructed independently from GNSS data available at VLBI stations can effectively correct single-frequency VLBI observations and support quasi-real-time high-precision UT1 measurements. It therefore has important value for improving the timeliness of independent UT1 products.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

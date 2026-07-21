@@ -6,22 +6,24 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-20
-- 运行时间：2026-07-20 21:37:20 UTC
+- 最新运行日期：2026-07-21
+- 运行时间：2026-07-21 21:11:57 UTC
 - 运行状态：成功
-- 本次总论文数：0
+- 本次总论文数：1
 - 精读区：0
-- 速读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202607/20/README](/202607/20/README)
+今日速读一篇聚焦VLBI与GNSS单站区域电离层模型结合的论文。值得关注的是，基于GNSS单站区域电离层模型能有效提升VLBI世界时测量精度。建议感兴趣的读者进一步探索电离层建模对时间基准测量的改进潜力。
+- 详情：[/202607/21/README](/202607/21/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Accuracy Analysis of VLBI Universal Time Measurement Based on a GNSS Single-Station Regional Ionospheric Model](/202607/21/2607.15791v1-accuracy-analysis-of-vlbi-universal-time-measurement-based-on-a-gnss-single-station-regional-ionospheric-model)  
+   标签：评分：7.0/10、query:insar-deform
+   evidence：利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正
 
 
 <div class="dpr-home-promo-card">

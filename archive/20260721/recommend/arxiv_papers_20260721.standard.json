@@ -1,0 +1,58 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-21T21:11:10.598869+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.15791v1",
+      "source": "arxiv",
+      "title": "Accuracy Analysis of VLBI Universal Time Measurement Based on a GNSS Single-Station Regional Ionospheric Model",
+      "abstract": "Universal Time (UT1) is a key parameter characterizing Earth's rotation, and very long baseline interferometry (VLBI) is the mainstream technique for measuring UT1. To address the limitations in the timeliness and accuracy of existing global ionospheric models for single-frequency VLBI UT1 measurements, we construct a single-station regional ionospheric model using GNSS data from the VLBI stations on the Jilin-Kashi baseline. We apply this model to VLBI observations and compare its correction performance with that of a global predictive model and a global post-processed model. The results show that the line-of-sight ionospheric delays and baseline corrections calculated with the single-station regional model have precision close to that of the global post-processed model and are substantially better than those of the global predictive model. After correction with the single-station regional model, the derived UT1 values differ from the US Naval Observatory (USNO) reference values by a mean bias of -15.6 us and an RMS deviation of 82.3 us, both better than the results obtained with the other two model classes. A single-station regional ionospheric model constructed independently from GNSS data available at VLBI stations can effectively correct single-frequency VLBI observations and support quasi-real-time high-precision UT1 measurements. It therefore has important value for improving the timeliness of independent UT1 products.",
+      "authors": [
+        "Xu-chong Duan",
+        "Dang Yao",
+        "Yuan-wei Wu",
+        "Zhe Zhang",
+        "Jia Liu",
+        "Xu-hai Yang"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-17T09:52:42+00:00",
+      "link": "https://arxiv.org/pdf/2607.15791v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "regional ionospheric model using GNSS for VlBI delay correction applicable to InSAR",
+      "llm_evidence_cn": "利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正",
+      "llm_evidence": "利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正",
+      "canonical_evidence": "利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正",
+      "llm_tldr_en": "Constructs a single-station regional ionospheric model from GNSS data to correct VLBI line-of-sight delays; evaluation shows improved accuracy over global models. The concept directly translates to InSAR ionospheric correction.",
+      "llm_tldr_cn": "该论文针对VLBI单频观测中电离层延迟校正时效性与精度不足的问题，利用VLBI测站GNSS数据构建了单站区域电离层模型，并将其应用于基线延迟校正。与全球预测模型和全球事后模型对比表明，该模型在视线延迟和基线校正上均取得更优结果。该方法可被直接借鉴至InSAR时间序列的电离层校正任务中，通过局部GNSS网提升大气校正精度，从而改善形变测量质量。",
+      "llm_tldr": "该论文针对VLBI单频观测中电离层延迟校正时效性与精度不足的问题，利用VLBI测站GNSS数据构建了单站区域电离层模型，并将其应用于基线延迟校正。与全球预测模型和全球事后模型对比表明，该模型在视线延迟和基线校正上均取得更优结果。该方法可被直接借鉴至InSAR时间序列的电离层校正任务中，通过局部GNSS网提升大气校正精度，从而改善形变测量质量。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "ionospheric delay correction for InSAR time series",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
