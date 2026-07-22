@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-22",
+  "date": "2026-07-22",
+  "generated_at": "2026-07-22T21:16:18",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/22/2607.13387v1-change-aware-self-adaptive-ai-aided-kalman-filters-with-neural-change-point-detection",
+      "section": "quick",
+      "title_en": "Change-Aware Self-Adaptive AI-Aided Kalman Filters With Neural Change Point Detection",
+      "authors": "Wenyi Zhang, Xiaoyong Ni, Nir Shlezinger, Zengfu Wang",
+      "date": "2026-07-15",
+      "pdf": "https://arxiv.org/pdf/2607.13387v1",
+      "score": "6.0",
+      "evidence": "神经网络自适应卡尔曼滤波可用于InSAR时间序列形变速率估计",
+      "tldr": "状态估计在模型失配、噪声未知和时变条件下可靠性差，现有AI辅助卡尔曼滤波器易受分布偏移影响且无法自主适应。本文提出CASA-KalmanNet，集成神经网络CPDNet监测内部特征并输出软指标，动态触发在线学习，实现数据高效的自适应。实验表明，该方法在多种模型失配下优于现有学习滤波器，精度接近具有完整知识的最优经典方法。",
+      "tags": "query:insar-deform",
+      "abstract_en": "Reliable state estimation in dynamical systems is often challenged by model mismatches, unknown noise statistics, and temporal variations. While AI-aided Kalman filters such as KalmanNet leverage deep learning to enhance classical estimation, they remain vulnerable to distribution shifts and lack mechanisms for autonomous adaptation. This work introduces Change-Aware Self-Adaptive KalmanNet (CASA-KalmanNet), an online adaptation framework that integrates a dedicated neural module, termed CPDNet, to monitor the interpretable internal features of KalmanNet and provide soft indicators of reliability degradation. These indicators dynamically regulate an online learning process, enabling data-efficient and timely adaptation to both abrupt and gradual changes in the system without requiring additional state labels from the changed regime. Numerical experiments on linear and nonlinear state-space models show that CASA-KalmanNet consistently outperforms existing learning-based filters under model mismatch, while approaching the accuracy of optimal classical methods with full domain knowledge.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

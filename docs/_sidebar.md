@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-22 <!--dpr-date:20260722-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/22/2607.13387v1-change-aware-self-adaptive-ai-aided-kalman-filters-with-neural-change-point-detection" data-sidebar-item="{&quot;title&quot;: &quot;Change-Aware Self-Adaptive AI-Aided Kalman Filters With Neural Change Point Detection&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.13387v1-change-aware-self-adaptive-ai-aided-kalman-filters-with-neural-change-point-detection&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;神经网络自适应卡尔曼滤波可用于InSAR时间序列形变速率估计&quot;}">Change-Aware Self-Adaptive AI-Aided Kalman Filters With Neural Change Point Detection</a>
   * 2026-07-21 <!--dpr-date:20260721-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/21/2607.15791v1-accuracy-analysis-of-vlbi-universal-time-measurement-based-on-a-gnss-single-station-regional-ionospheric-model" data-sidebar-item="{&quot;title&quot;: &quot;Accuracy Analysis of VLBI Universal Time Measurement Based on a GNSS Single-Station Regional Ionospheric Model&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.15791v1-accuracy-analysis-of-vlbi-universal-time-measurement-based-on-a-gnss-single-station-regional-ionospheric-model&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;insar-deform&quot;}], &quot;evidence&quot;: &quot;利用GNSS构建区域电离层模型用于VLBI延迟校正，可直接迁移至InSAR电离层校正&quot;}">Accuracy Analysis of VLBI Universal Time Measurement Based on a GNSS Single-Station Regional Ionospheric Model</a>
