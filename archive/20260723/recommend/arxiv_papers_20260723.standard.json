@@ -1,0 +1,61 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-23T21:25:10.139355+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.14196v1",
+      "source": "arxiv",
+      "title": "OCELOT: Direct Atmospheric Forecasting from Heterogeneous Earth Observations Using a Graph-Transformer Hybrid Model",
+      "abstract": "This study presents OCELOT (Observation-Centric Estimation and Learning for Outlook Trajectories), a global machine-learning forecasting system that predicts future Earth observations directly from heterogeneous satellite and in-situ measurements. Unlike data-driven weather models trained on gridded reanalysis states, OCELOT operates natively in observation space, preserving instrument-specific sampling, viewing geometry, and measurement characteristics. The system combines per-instrument graph-attention encoders, a shared spherical icosahedral latent mesh, a hybrid sliding-window Transformer/spatial graph neural network processor, and metadata-conditioned decoders to produce forecasts up to 12 h ahead. OCELOT is trained on observations for the years 2015 through 2023, validated on the year 2024, and evaluated out of sample on 2025 observations across satellite radiances, radiosondes, aircraft, and surface networks. In the 2025 evaluation, OCELOT produces spatially coherent +12 h forecasts across independent observing systems: microwave temperature-sounding channels show RMSE values of 1.24-1.87 K, while the more surface- and cloud-sensitive AVHRR infrared window channel shows a higher RMSE of 3.95 K. Vertical profile diagnostics show physically consistent radiosonde and aircraft temperature structure. Surface forecasts remain stable through 12 h, with 2-m air-temperature RMSE increasing from about 3.2 K at +3 h to about 3.6 K at +12 h. In paired observation-space comparisons, OCELOT remains less accurate than operational GFS but substantially outperforms persistence at longer lead times for 2-m temperature and 10-m wind components. These results demonstrate that observation-space forecasting can recover large-scale atmospheric structure and provide meaningful short-range skill without reanalysis supervision.",
+      "authors": [
+        "Azadeh Gholoubi",
+        "Ronald McLaren",
+        "Mu-Chieh Ko",
+        "Xin Jin",
+        "Nicholas Esposito",
+        "Andrew Collard",
+        "Cory Martin",
+        "Russ Treadon",
+        "Daniel Holdaway",
+        "Daryl Kleist"
+      ],
+      "primary_category": "physics.ao-ph",
+      "categories": [
+        "physics.ao-ph"
+      ],
+      "published": "2026-07-15T16:40:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.14196v1",
+      "tags": [
+        "keyword:insar-deform",
+        "query:insar-deform"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Graph-transformer hybrid model for direct atmospheric forecasting from satellite observations; can be adapted for tropospheric delay correction in InSAR",
+      "llm_evidence_cn": "利用图-Transformer混合模型直接从卫星观测进行大气预测，可应用于InSAR对流层延迟校正",
+      "llm_evidence": "利用图-Transformer混合模型直接从卫星观测进行大气预测，可应用于InSAR对流层延迟校正",
+      "canonical_evidence": "利用图-Transformer混合模型直接从卫星观测进行大气预测，可应用于InSAR对流层延迟校正",
+      "llm_tldr_en": "OCELOT forecasts Earth observations directly from heterogeneous satellite data using a graph-transformer hybrid, enabling atmospheric modeling relevant to InSAR delay correction.",
+      "llm_tldr_cn": "OCELOT提出了一种基于图-Transformer混合模型的全球机器学习预报系统，直接从异质卫星和原位观测预测未来地球观测数据，避免了传统再分析网格数据的局限。该方法通过逐仪器图注意力编码器和共享球面网格实现多源数据融合，能够为InSAR对流层延迟校正提供高精度的大气状态估计，有望提升形变监测的准确性。",
+      "llm_tldr": "OCELOT提出了一种基于图-Transformer混合模型的全球机器学习预报系统，直接从异质卫星和原位观测预测未来地球观测数据，避免了传统再分析网格数据的局限。该方法通过逐仪器图注意力编码器和共享球面网格实现多源数据融合，能够为InSAR对流层延迟校正提供高精度的大气状态估计，有望提升形变监测的准确性。",
+      "llm_tags": [
+        "query:insar-deform"
+      ],
+      "matched_query_tag": "query:insar-deform",
+      "matched_query_text": "deep learning for atmospheric error correction in InSAR",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

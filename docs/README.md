@@ -6,24 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-22
-- 运行时间：2026-07-22 21:16:11 UTC
+- 最新运行日期：2026-07-23
+- 运行时间：2026-07-23 21:26:33 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日仅速读1篇论文：AI辅助卡尔曼滤波结合神经网络变化点检测。核心方向是让滤波算法根据系统状态变化自适应调整，适合监测突变信号的应用。建议感兴趣的读者后续关注其在实际时序异常检测中的验证。
-- 详情：[/202607/22/README](/202607/22/README)
+今天速读了一篇用图-Transformer混合模型直接预测大气的论文。  
+核心方向是处理异质地球观测数据，直接进行大气预测。  
+若想跟进，可重点观察该混合架构在真实多源遥感数据上的泛化表现。
+- 详情：[/202607/23/README](/202607/23/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Change-Aware Self-Adaptive AI-Aided Kalman Filters With Neural Change Point Detection](/202607/22/2607.13387v1-change-aware-self-adaptive-ai-aided-kalman-filters-with-neural-change-point-detection)  
+1. [OCELOT: Direct Atmospheric Forecasting from Heterogeneous Earth Observations Using a Graph-Transformer Hybrid Model](/202607/23/2607.14196v1-ocelot-direct-atmospheric-forecasting-from-heterogeneous-earth-observations-using-a-graph-transformer-hybrid-model)  
    标签：评分：6.0/10、query:insar-deform
-   evidence：神经网络自适应卡尔曼滤波可用于InSAR时间序列形变速率估计
+   evidence：利用图-Transformer混合模型直接从卫星观测进行大气预测，可应用于InSAR对流层延迟校正
 
 
 <div class="dpr-home-promo-card">
